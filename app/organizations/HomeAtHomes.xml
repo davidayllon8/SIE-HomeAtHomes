@@ -38,7 +38,41 @@
       <customUserInfoValues/>
     </user>
   </users>
-  <roles/>
-  <groups/>
-  <memberships/>
+  <roles>
+    <role name="Employee">
+      <displayName>Employee</displayName>
+    </role>
+  </roles>
+  <groups>
+    <group name="Grupo1">
+      <displayName>Grupo1</displayName>
+    </group>
+  </groups>
+  <memberships>
+    <membership>
+      <userName>David.A</userName>
+      <roleName>Employee</roleName>
+      <groupName>Grupo1</groupName>
+    </membership>
+    <membership>
+      <userName>David.R</userName>
+      <roleName>Employee</roleName>
+      <groupName>Grupo1</groupName>
+    </membership>
+    <membership>
+      <userName>Guille</userName>
+      <roleName>Employee</roleName>
+      <groupName>Grupo1</groupName>
+    </membership>
+    <membership>
+      <userName>Julio.I</userName>
+      <roleName>Employee</roleName>
+      <groupName>Grupo1</groupName>
+    </membership>
+    <membership>
+      <userName>Paco.S</userName>
+      <roleName>Employee</roleName>
+      <groupName>Grupo1</groupName>
+    </membership>
+  </memberships>
 </organization:Organization>
