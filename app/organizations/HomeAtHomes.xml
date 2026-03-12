@@ -29,6 +29,14 @@
       <password encrypted="false">bpm</password>
       <customUserInfoValues/>
     </user>
+    <user userName="Paco.S">
+      <firstName>Paco</firstName>
+      <lastName>Sanz</lastName>
+      <personalData/>
+      <professionalData/>
+      <password encrypted="false">bpm</password>
+      <customUserInfoValues/>
+    </user>
   </users>
   <roles/>
   <groups/>
