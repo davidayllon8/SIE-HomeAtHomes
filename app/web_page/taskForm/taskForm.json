@@ -1,0 +1,32 @@
+{
+  "id" : "taskForm",
+  "name" : "taskForm",
+  "type" : "form",
+  "uuid" : "7239e654-fdd7-432e-904b-c7859bfb3146",
+  "modelVersion" : "2.6",
+  "lastUpdate" : 1773331591410,
+  "description" : "Page generated with Bonita UI designer",
+  "rows" : [
+    [ ]
+  ],
+  "variables" : { },
+  "assets" : [
+    {
+      "id" : "7f349b0d-13a5-4916-b712-7ba172856c97",
+      "name" : "style.css",
+      "type" : "css",
+      "order" : 0,
+      "external" : false
+    },
+    {
+      "id" : "8fa64c67-4c2b-4818-8cf6-caf83cd83762",
+      "name" : "localization.json",
+      "type" : "json",
+      "order" : 0,
+      "external" : false
+    }
+  ],
+  "inactiveAssets" : [ ],
+  "webResources" : [ ],
+  "hasValidationError" : false
+}
