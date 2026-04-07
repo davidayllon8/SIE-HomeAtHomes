@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:decision="http://www.bonitasoft.org/ns/bpm/process/decision" xmlns:expression="http://www.bonitasoft.org/ns/bpm/expression" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:process="http://www.bonitasoft.org/ns/bpm/process">
-  <process:MainProcess xmi:id="_fBdBYB4oEfGQyODtFBtFZA" name="MiDiagrama2" bonitaModelVersion="8">
-    <elements xmi:type="process:Pool" xmi:id="_fBdBYR4oEfGQyODtFBtFZA" name="Prueba">
-      <elements xmi:type="process:Lane" xmi:id="_fBdBYh4oEfGQyODtFBtFZA" name="Empleado (lane) " actor="_fBdBex4oEfGQyODtFBtFZA">
-        <elements xmi:type="process:StartEvent" xmi:id="_fBdBYx4oEfGQyODtFBtFZA" name="Inicio1" outgoing="_fBdBeB4oEfGQyODtFBtFZA">
+  <process:MainProcess xmi:id="_fBdBYB4oEfGQyODtFBtFZA" name="ReservaPiso" bonitaModelVersion="8">
+    <elements xmi:type="process:Pool" xmi:id="_fBdBYR4oEfGQyODtFBtFZA" name="Reserva">
+      <elements xmi:type="process:Lane" xmi:id="_fBdBYh4oEfGQyODtFBtFZA" name="Empleado (lane) " actor="_2yn8MDKPEfGm9KuYaHXMLA">
+        <elements xmi:type="process:StartEvent" xmi:id="_fBdBYx4oEfGQyODtFBtFZA" name="EmpiezaReserva" outgoing="_fBdBeB4oEfGQyODtFBtFZA">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_fBdBZB4oEfGQyODtFBtFZA" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_fBdBZR4oEfGQyODtFBtFZA" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_fBdBZh4oEfGQyODtFBtFZA" name="" content="" returnTypeFixed="true"/>
         </elements>
-        <elements xmi:type="process:Task" xmi:id="_fBdBZx4oEfGQyODtFBtFZA" name="Tarea1" incoming="_fBdBeB4oEfGQyODtFBtFZA" overrideActorsOfTheLane="false">
+        <elements xmi:type="process:Task" xmi:id="_fBdBZx4oEfGQyODtFBtFZA" name="ElegirPisoYFechas" incoming="_fBdBeB4oEfGQyODtFBtFZA" overrideActorsOfTheLane="false">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_fBdBaB4oEfGQyODtFBtFZA" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_fBdBaR4oEfGQyODtFBtFZA" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_fBdBah4oEfGQyODtFBtFZA" name="" content="" returnTypeFixed="true"/>
@@ -34,7 +34,7 @@
         <decisionTable xmi:type="decision:DecisionTable" xmi:id="_fBdBeR4oEfGQyODtFBtFZA"/>
         <condition xmi:type="expression:Expression" xmi:id="_fBdBeh4oEfGQyODtFBtFZA" name="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
       </connections>
-      <actors xmi:type="process:Actor" xmi:id="_fBdBex4oEfGQyODtFBtFZA" documentation="Este es un ejemplo de actor que está mapeado a cualquier usuario de la organización ACME" name="Employee actor" initiator="true"/>
+      <actors xmi:type="process:Actor" xmi:id="_2yn8MDKPEfGm9KuYaHXMLA" name="Cliente" initiator="true"/>
       <contract xmi:type="process:Contract" xmi:id="_fBdBfB4oEfGQyODtFBtFZA"/>
       <searchIndexes xmi:type="process:SearchIndex" xmi:id="_fBdBfR4oEfGQyODtFBtFZA">
         <name xmi:type="expression:Expression" xmi:id="_fBdBfh4oEfGQyODtFBtFZA" content="" returnTypeFixed="true"/>
@@ -76,13 +76,13 @@
           <children xmi:type="notation:DecorationNode" xmi:id="_fBdBmx4oEfGQyODtFBtFZA" type="7002">
             <children xmi:type="notation:Shape" xmi:id="_fBdBnB4oEfGQyODtFBtFZA" type="3005" element="_fBdBZx4oEfGQyODtFBtFZA" fontName="Segoe UI" fillColor="14334392" lineColor="10710316">
               <children xmi:type="notation:DecorationNode" xmi:id="_fBdBnR4oEfGQyODtFBtFZA" type="5005"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fBdBnh4oEfGQyODtFBtFZA" x="160" y="60"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fBdBnh4oEfGQyODtFBtFZA" x="302" y="110" width="120" height="60"/>
             </children>
             <children xmi:type="notation:Shape" xmi:id="_fBdBnx4oEfGQyODtFBtFZA" type="3002" element="_fBdBYx4oEfGQyODtFBtFZA" fontName="Segoe UI">
               <children xmi:type="notation:DecorationNode" xmi:id="_fBdBoB4oEfGQyODtFBtFZA" type="5024">
                 <layoutConstraint xmi:type="notation:Location" xmi:id="_fBdBoR4oEfGQyODtFBtFZA" y="5"/>
               </children>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fBdBoh4oEfGQyODtFBtFZA" x="60" y="68"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fBdBoh4oEfGQyODtFBtFZA" x="110" y="110"/>
             </children>
           </children>
           <styles xmi:type="notation:DescriptionStyle" xmi:id="_fBdBox4oEfGQyODtFBtFZA"/>
