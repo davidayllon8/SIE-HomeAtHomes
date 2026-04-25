@@ -38,7 +38,21 @@
       <customUserInfoValues/>
     </user>
   </users>
-  <roles/>
-  <groups/>
-  <memberships/>
+  <roles>
+    <role name="Greeter">
+      <displayName>Greeter</displayName>
+    </role>
+  </roles>
+  <groups>
+    <group name="Empleados">
+      <displayName>Empleados</displayName>
+    </group>
+  </groups>
+  <memberships>
+    <membership>
+      <userName>Guille</userName>
+      <roleName>Greeter</roleName>
+      <groupName>Empleados</groupName>
+    </membership>
+  </memberships>
 </organization:Organization>
