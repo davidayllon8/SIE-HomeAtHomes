@@ -97,6 +97,16 @@
       <artifactId>bonita-connector-google-calendar-v3</artifactId>
       <version>1.1.1</version>
     </dependency>
+    <dependency>
+      <groupId>org.bonitasoft.connectors</groupId>
+      <artifactId>bonita-connector-database</artifactId>
+      <version>2.0.3</version>
+    </dependency>
+    <dependency>
+      <groupId>org.bonitasoft.connectors</groupId>
+      <artifactId>bonita-connector-rest</artifactId>
+      <version>1.5.0</version>
+    </dependency>
   </dependencies>
   <build>
     <plugins>
