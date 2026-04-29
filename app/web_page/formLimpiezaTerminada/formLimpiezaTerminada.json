@@ -1,0 +1,234 @@
+{
+  "id" : "formLimpiezaTerminada",
+  "name" : "formLimpiezaTerminada",
+  "type" : "form",
+  "uuid" : "509b86fb-fee1-4eac-b217-51c5de9081ec",
+  "modelVersion" : "2.6",
+  "lastUpdate" : 1777385613000,
+  "description" : "Page generated with Bonita UI designer",
+  "rows" : [
+    [
+      {
+        "type" : "component",
+        "dimension" : {
+          "xs" : 12,
+          "sm" : 12,
+          "md" : 12,
+          "lg" : 12
+        },
+        "propertyValues" : {
+          "cssClasses" : {
+            "type" : "constant",
+            "value" : ""
+          },
+          "hidden" : {
+            "type" : "constant",
+            "value" : false
+          },
+          "disabled" : {
+            "type" : "constant",
+            "value" : false
+          },
+          "required" : {
+            "type" : "constant",
+            "value" : false
+          },
+          "allowHTML" : {
+            "type" : "constant",
+            "value" : false
+          },
+          "labelHidden" : {
+            "type" : "constant",
+            "value" : false
+          },
+          "label" : {
+            "type" : "interpolation",
+            "value" : "Apartamentos"
+          },
+          "labelPosition" : {
+            "type" : "constant",
+            "value" : "top"
+          },
+          "labelWidth" : {
+            "type" : "constant",
+            "value" : 4
+          },
+          "placeholder" : {
+            "type" : "interpolation",
+            "value" : "Select an option"
+          },
+          "availableValues" : {
+            "type" : "expression",
+            "value" : "listaApartamentos"
+          },
+          "displayedKey" : {
+            "type" : "constant",
+            "value" : "nombre"
+          },
+          "returnedKey" : {
+            "type" : "constant"
+          },
+          "value" : {
+            "type" : "variable",
+            "value" : "formInput.idApartamento"
+          }
+        },
+        "reference" : "95c5702e-79f8-4425-8766-3d81b6676730",
+        "hasValidationError" : false,
+        "id" : "pbSelect"
+      }
+    ],
+    [
+      {
+        "type" : "component",
+        "dimension" : {
+          "xs" : 12,
+          "sm" : 12,
+          "md" : 12,
+          "lg" : 12
+        },
+        "propertyValues" : {
+          "cssClasses" : {
+            "type" : "constant",
+            "value" : ""
+          },
+          "hidden" : {
+            "type" : "constant",
+            "value" : false
+          },
+          "disabled" : {
+            "type" : "constant",
+            "value" : false
+          },
+          "allowHTML" : {
+            "type" : "constant",
+            "value" : false
+          },
+          "label" : {
+            "type" : "interpolation",
+            "value" : "¡APARTAMENTO LISTO!"
+          },
+          "alignment" : {
+            "type" : "constant",
+            "value" : "center"
+          },
+          "buttonStyle" : {
+            "type" : "constant",
+            "value" : "success"
+          },
+          "action" : {
+            "type" : "constant",
+            "value" : "POST"
+          },
+          "assign" : {
+            "type" : "constant",
+            "value" : false
+          },
+          "url" : {
+            "type" : "interpolation",
+            "value" : "https://davidayllon8.app.n8n.cloud/webhook/Limpieza-apartamento-test"
+          },
+          "responseStatusCode" : {
+            "type" : "variable"
+          },
+          "dataToSend" : {
+            "type" : "expression",
+            "value" : "formInput"
+          },
+          "dataFromSuccess" : {
+            "type" : "variable"
+          },
+          "closeOnSuccess" : {
+            "type" : "constant",
+            "value" : false
+          },
+          "dataFromError" : {
+            "type" : "variable"
+          },
+          "targetUrlOnSuccess" : {
+            "type" : "interpolation"
+          },
+          "collectionToModify" : {
+            "type" : "variable"
+          },
+          "modalId" : {
+            "type" : "constant",
+            "value" : ""
+          },
+          "collectionPosition" : {
+            "type" : "constant",
+            "value" : "Last"
+          },
+          "valueToAdd" : {
+            "type" : "constant"
+          },
+          "removeItem" : {
+            "type" : "variable"
+          }
+        },
+        "reference" : "e3dfaf0d-3fad-45f1-b42b-9514143b2893",
+        "hasValidationError" : false,
+        "id" : "pbButton"
+      }
+    ]
+  ],
+  "variables" : {
+    "listaApartamentos" : {
+      "type" : "json",
+      "value" : [
+        "[\r",
+        "  { \"nombre\": \"Abades I Luxury\", \"direccion\": \"Calle Abades, 1, 41004 Sevilla\", \"zona\": \"Santa Cruz\" },\r",
+        "  { \"nombre\": \"Adriano 1.1 View\", \"direccion\": \"Calle Adriano, 1, 41001 Sevilla\", \"zona\": \"Arenal\" },\r",
+        "  { \"nombre\": \"Adriano 1.3\", \"direccion\": \"Calle Adriano, 1, 41001 Sevilla\", \"zona\": \"Arenal\" },\r",
+        "  { \"nombre\": \"Alameda Corner\", \"direccion\": \"Alameda de Hércules, 41002 Sevilla\", \"zona\": \"Alameda\" },\r",
+        "  { \"nombre\": \"Alcázar de María\", \"direccion\": \"Plaza de la Alianza, 41004 Sevilla\", \"zona\": \"Santa Cruz\" },\r",
+        "  { \"nombre\": \"Alfalfa Terrace\", \"direccion\": \"Calle Alfalfa, 8, 41004 Sevilla\", \"zona\": \"Alfalfa\" },\r",
+        "  { \"nombre\": \"Bailén Premium\", \"direccion\": \"Calle Bailén, 18, 41001 Sevilla\", \"zona\": \"Museo\" },\r",
+        "  { \"nombre\": \"Betis Riverside\", \"direccion\": \"Calle Betis, 22, 41010 Sevilla\", \"zona\": \"Triana\" },\r",
+        "  { \"nombre\": \"Casa Palacio San José\", \"direccion\": \"Calle San José, 7, 41004 Sevilla\", \"zona\": \"Santa Cruz\" },\r",
+        "  { \"nombre\": \"Conde de Ibarra\", \"direccion\": \"Calle Conde de Ibarra, 4, 41004 Sevilla\", \"zona\": \"Centro\" },\r",
+        "  { \"nombre\": \"Francos 14 Luxury\", \"direccion\": \"Calle Francos, 14, 41004 Sevilla\", \"zona\": \"Catedral\" },\r",
+        "  { \"nombre\": \"García de Vinuesa Ático\", \"direccion\": \"Calle García de Vinuesa, 12, 41001 Sevilla\", \"zona\": \"Arenal\" },\r",
+        "  { \"nombre\": \"Los Remedios Designer\", \"direccion\": \"Calle de los Remedios, 41011 Sevilla\", \"zona\": \"Los Remedios\" },\r",
+        "  { \"nombre\": \"Luis de Vargas\", \"direccion\": \"Calle Luis de Vargas, 2, 41001 Sevilla\", \"zona\": \"Plaza de Armas\" },\r",
+        "  { \"nombre\": \"Mateos Gago Suite\", \"direccion\": \"Calle Mateos Gago, 20, 41004 Sevilla\", \"zona\": \"Santa Cruz\" },\r",
+        "  { \"nombre\": \"Mesón de los Caballeros\", \"direccion\": \"Calle Mesón de los Caballeros, 1, 41004 Sevilla\", \"zona\": \"Centro\" },\r",
+        "  { \"nombre\": \"Puerta del Arenal I\", \"direccion\": \"Calle Castelar, 4, 41001 Sevilla\", \"zona\": \"Arenal\" },\r",
+        "  { \"nombre\": \"San Fernando Ático\", \"direccion\": \"Calle San Fernando, 29, 41004 Sevilla\", \"zona\": \"Centro\" },\r",
+        "  { \"nombre\": \"Viapol Homes 1.1\", \"direccion\": \"Calle Gregorio Cabeza, 2, 41018 Sevilla\", \"zona\": \"Nervión\" },\r",
+        "  { \"nombre\": \"Viapol Homes 3.1\", \"direccion\": \"Calle Gregorio Cabeza, 2, 41018 Sevilla\", \"zona\": \"Nervión\" }\r",
+        "]"
+      ],
+      "exposed" : false
+    },
+    "formInput" : {
+      "type" : "json",
+      "value" : [
+        "{ \r",
+        "  \"idApartamento\": \"\", \r",
+        "  \"telefonoTest\": \"+34653660133\" \r",
+        "}"
+      ],
+      "exposed" : false
+    }
+  },
+  "assets" : [
+    {
+      "id" : "11744ce6-c68a-49b3-ab15-d7f006f538c1",
+      "name" : "style.css",
+      "type" : "css",
+      "order" : 0,
+      "external" : false
+    },
+    {
+      "id" : "707bd3f1-daf1-4777-a23e-5ea2774b3a7c",
+      "name" : "localization.json",
+      "type" : "json",
+      "order" : 0,
+      "external" : false
+    }
+  ],
+  "inactiveAssets" : [ ],
+  "webResources" : [ ],
+  "hasValidationError" : false
+}
