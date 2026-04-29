@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <businessObjectModel xmlns="http://documentation.bonitasoft.com/bdm-xml-schema/1.0" modelVersion="1.0">
     <businessObjects>
-        <businessObject qualifiedName="com.company.model.BusinessObject">
+        <businessObject qualifiedName="com.company.model.Incidencia">
             <fields>
-                <field type="STRING" length="255" name="attribute" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="idTicketOdoo" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="clienteNombre" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="pisoActual" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="motivoQueja" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="estado" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="decisionFinal" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="pisoNuevoId" nullable="false" collection="false"/>
             </fields>
             <uniqueConstraints/>
             <queries/>

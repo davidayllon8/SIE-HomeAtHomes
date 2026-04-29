@@ -3,6 +3,7 @@
   <customUserInfoDefinitions/>
   <users>
     <user userName="Guille">
+      <manager>David.A</manager>
       <personalData/>
       <professionalData/>
       <password encrypted="false">bpm</password>
@@ -10,6 +11,7 @@
     </user>
     <user userName="David.A">
       <firstName>Aylllon</firstName>
+      <manager></manager>
       <personalData/>
       <professionalData/>
       <password encrypted="false">bpm</password>
@@ -24,6 +26,8 @@
     <user userName="Julio.I">
       <firstName>Julio</firstName>
       <lastName>Iglesias</lastName>
+      <jobTitle>Administrador</jobTitle>
+      <manager></manager>
       <personalData/>
       <professionalData/>
       <password encrypted="false">bpm</password>
@@ -41,6 +45,10 @@
   <roles>
     <role name="Employee">
       <displayName>Employee</displayName>
+    </role>
+    <role name="Administrador">
+      <displayName>Administrador</displayName>
+      <description>Se encarga de adminsitrar la incidencia de los clientes</description>
     </role>
   </roles>
   <groups>
@@ -66,7 +74,7 @@
     </membership>
     <membership>
       <userName>Julio.I</userName>
-      <roleName>Employee</roleName>
+      <roleName>Administrador</roleName>
       <groupName>Grupo1</groupName>
     </membership>
     <membership>
