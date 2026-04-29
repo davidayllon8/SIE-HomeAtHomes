@@ -245,6 +245,16 @@
           <iteratorExpression xmi:type="expression:Expression" xmi:id="_dIr76UOrEfGgfttdFKB59A" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
           <completionCondition xmi:type="expression:Expression" xmi:id="_dIr76kOrEfGgfttdFKB59A" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
         </elements>
+        <elements xmi:type="process:Activity" xmi:id="_L0xuEEOsEfGB9YpD0_myuA" name="Tarea1">
+          <dynamicLabel xmi:type="expression:Expression" xmi:id="_L1BlsUOsEfGB9YpD0_myuA" name="" content="" returnTypeFixed="true"/>
+          <dynamicDescription xmi:type="expression:Expression" xmi:id="_L1BlsEOsEfGB9YpD0_myuA" name="" content="" returnTypeFixed="true"/>
+          <stepSummary xmi:type="expression:Expression" xmi:id="_L1CMwEOsEfGB9YpD0_myuA" name="" content="" returnTypeFixed="true"/>
+          <loopCondition xmi:type="expression:Expression" xmi:id="_L1CMwUOsEfGB9YpD0_myuA" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+          <loopMaximum xmi:type="expression:Expression" xmi:id="_L1CMwkOsEfGB9YpD0_myuA" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
+          <cardinalityExpression xmi:type="expression:Expression" xmi:id="_L1CMw0OsEfGB9YpD0_myuA" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
+          <iteratorExpression xmi:type="expression:Expression" xmi:id="_L1CMxUOsEfGB9YpD0_myuA" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
+          <completionCondition xmi:type="expression:Expression" xmi:id="_L1CMxEOsEfGB9YpD0_myuA" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+        </elements>
       </elements>
       <elements xmi:type="process:Lane" xmi:id="_dIr760OrEfGgfttdFKB59A" name="Greeter" actor="_dIr8FkOrEfGgfttdFKB59A">
         <elements xmi:type="process:ANDGateway" xmi:id="_dIr77EOrEfGgfttdFKB59A" name="Finalizado?" outgoing="_dIr8DEOrEfGgfttdFKB59A" incoming="_dIr8EkOrEfGgfttdFKB59A">
@@ -365,6 +375,10 @@
             <children xmi:type="notation:Shape" xmi:id="_dIr8S0OrEfGgfttdFKB59A" type="3027" element="_dIr7YUOrEfGgfttdFKB59A" fontName="Segoe UI" fillColor="14334392" lineColor="10710316">
               <children xmi:type="notation:DecorationNode" xmi:id="_dIr8TEOrEfGgfttdFKB59A" type="5017"/>
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dIr8TUOrEfGgfttdFKB59A" x="935" y="231"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_L2JAAEOsEfGB9YpD0_myuA" type="3006" element="_L0xuEEOsEfGB9YpD0_myuA" fontName="Segoe UI" fillColor="14334392" lineColor="10710316">
+              <children xmi:type="notation:DecorationNode" xmi:id="_L2JnEEOsEfGB9YpD0_myuA" type="5006"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_L2JAAUOsEfGB9YpD0_myuA" x="734" y="227"/>
             </children>
           </children>
           <styles xmi:type="notation:DescriptionStyle" xmi:id="_dIr8TkOrEfGgfttdFKB59A"/>
