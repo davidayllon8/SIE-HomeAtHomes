@@ -257,6 +257,16 @@
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_C12tIUA8EfGPgJRrM5G2XA" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_C12tI0A8EfGPgJRrM5G2XA" name="" content="" returnTypeFixed="true"/>
         </elements>
+        <elements xmi:type="process:Activity" xmi:id="_wNEIAEOnEfGCqt9dMeJTOg" name="Tarea1">
+          <dynamicLabel xmi:type="expression:Expression" xmi:id="_wN840EOnEfGCqt9dMeJTOg" name="" content="" returnTypeFixed="true"/>
+          <dynamicDescription xmi:type="expression:Expression" xmi:id="_wN8RwEOnEfGCqt9dMeJTOg" name="" content="" returnTypeFixed="true"/>
+          <stepSummary xmi:type="expression:Expression" xmi:id="_wN840UOnEfGCqt9dMeJTOg" name="" content="" returnTypeFixed="true"/>
+          <loopCondition xmi:type="expression:Expression" xmi:id="_wN9f4EOnEfGCqt9dMeJTOg" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+          <loopMaximum xmi:type="expression:Expression" xmi:id="_wN9f4UOnEfGCqt9dMeJTOg" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
+          <cardinalityExpression xmi:type="expression:Expression" xmi:id="_wN9f4kOnEfGCqt9dMeJTOg" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
+          <iteratorExpression xmi:type="expression:Expression" xmi:id="_wN9f5EOnEfGCqt9dMeJTOg" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
+          <completionCondition xmi:type="expression:Expression" xmi:id="_wN9f40OnEfGCqt9dMeJTOg" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+        </elements>
       </elements>
       <data xmi:type="process:BusinessObjectData" xmi:id="_6bJ7sD_NEfGPgJRrM5G2XA" name="apartamento" dataType="_fBdBlB4oEfGQyODtFBtFZA" className="com.company.model.Piso">
         <defaultValue xmi:type="expression:Expression" xmi:id="_6bJ7sT_NEfGPgJRrM5G2XA" name="" content="" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object"/>
@@ -387,6 +397,10 @@
                 <layoutConstraint xmi:type="notation:Location" xmi:id="_C12tJ0A8EfGPgJRrM5G2XA" y="5"/>
               </children>
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_C12tJUA8EfGPgJRrM5G2XA" x="1406" y="233"/>
+            </children>
+            <children xmi:type="notation:Shape" xmi:id="_wQ8icEOnEfGCqt9dMeJTOg" type="3006" element="_wNEIAEOnEfGCqt9dMeJTOg" fontName="Segoe UI" fillColor="14334392" lineColor="10710316">
+              <children xmi:type="notation:DecorationNode" xmi:id="_wQ9wkEOnEfGCqt9dMeJTOg" type="5006"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wQ8icUOnEfGCqt9dMeJTOg" x="411" y="180"/>
             </children>
           </children>
           <styles xmi:type="notation:DescriptionStyle" xmi:id="_eV80ITKeEfGkxJLm55BAOg"/>
