@@ -42,10 +42,16 @@
     <role name="Greeter">
       <displayName>Greeter</displayName>
     </role>
+    <role name="Cliente">
+      <displayName>Cliente</displayName>
+    </role>
   </roles>
   <groups>
     <group name="Empleados">
       <displayName>Empleados</displayName>
+    </group>
+    <group name="Clientes">
+      <displayName>Clientes</displayName>
     </group>
   </groups>
   <memberships>
