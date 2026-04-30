@@ -4,7 +4,7 @@
   "type" : "form",
   "uuid" : "9049bde3-4fdc-403c-9e7c-4967afa5287f",
   "modelVersion" : "2.6",
-  "lastUpdate" : 1777547675943,
+  "lastUpdate" : 1777563216696,
   "description" : "Page generated with Bonita UI designer",
   "rows" : [
     [
@@ -115,91 +115,147 @@
                     {
                       "type" : "component",
                       "dimension" : {
-                        "md" : 12,
-                        "sm" : 12,
                         "xs" : 12,
+                        "sm" : 12,
+                        "md" : 12,
                         "lg" : 12
                       },
                       "propertyValues" : {
-                        "labelHidden" : {
+                        "cssClasses" : {
                           "type" : "constant",
-                          "value" : false
+                          "value" : ""
                         },
                         "hidden" : {
                           "type" : "constant",
                           "value" : false
                         },
-                        "labelPosition" : {
-                          "type" : "constant",
-                          "value" : "top"
-                        },
-                        "cssClasses" : {
-                          "type" : "constant",
-                          "value" : ""
-                        },
-                        "labelWidth" : {
-                          "type" : "constant",
-                          "value" : 1
-                        },
                         "readOnly" : {
                           "type" : "constant",
                           "value" : false
                         },
-                        "label" : {
-                          "type" : "interpolation",
-                          "value" : "Identificador del Cliente"
-                        },
-                        "placeholder" : {
-                          "type" : "constant",
-                          "value" : "nombre"
-                        },
-                        "type" : {
-                          "type" : "constant",
-                          "value" : "text"
-                        },
-                        "dimension" : {
-                          "type" : "constant",
-                          "value" : 12
-                        },
-                        "value" : {
-                          "type" : "variable",
-                          "value" : "formInput.incidenciaInput.clienteId"
-                        },
                         "required" : {
                           "type" : "constant",
-                          "value" : true
+                          "value" : false
                         },
                         "allowHTML" : {
                           "type" : "constant",
                           "value" : false
                         },
-                        "minLength" : {
+                        "labelHidden" : {
                           "type" : "constant",
-                          "value" : ""
+                          "value" : false
                         },
-                        "maxLength" : {
+                        "label" : {
+                          "type" : "interpolation",
+                          "value" : "Nombre Cliente"
+                        },
+                        "labelPosition" : {
                           "type" : "constant",
-                          "value" : ""
+                          "value" : "top"
+                        },
+                        "labelWidth" : {
+                          "type" : "constant",
+                          "value" : 4
+                        },
+                        "placeholder" : {
+                          "type" : "interpolation",
+                          "value" : "nombre"
+                        },
+                        "availableValues" : {
+                          "type" : "expression",
+                          "value" : "listaClientes"
+                        },
+                        "displayedKey" : {
+                          "type" : "constant",
+                          "value" : "nombre"
+                        },
+                        "returnedKey" : {
+                          "type" : "constant"
+                        },
+                        "value" : {
+                          "type" : "variable",
+                          "value" : "formInput.incidenciaInput.idCliente"
                         },
                         "debounce" : {
                           "type" : "constant",
                           "value" : 0
-                        },
-                        "min" : {
-                          "type" : "constant"
-                        },
-                        "max" : {
-                          "type" : "constant"
-                        },
-                        "step" : {
-                          "type" : "constant",
-                          "value" : 1
                         }
                       },
-                      "reference" : "8f357ec6-a833-4458-abf1-2269ae94904d",
+                      "reference" : "711ee273-669f-44ac-978c-6490178eae88",
                       "hasValidationError" : false,
-                      "id" : "pbInput",
-                      "description" : ""
+                      "id" : "pbAutocomplete"
+                    }
+                  ],
+                  [
+                    {
+                      "type" : "component",
+                      "dimension" : {
+                        "xs" : 12,
+                        "sm" : 12,
+                        "md" : 12,
+                        "lg" : 12
+                      },
+                      "propertyValues" : {
+                        "cssClasses" : {
+                          "type" : "constant",
+                          "value" : ""
+                        },
+                        "hidden" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "disabled" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "required" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "allowHTML" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "labelHidden" : {
+                          "type" : "constant",
+                          "value" : false
+                        },
+                        "label" : {
+                          "type" : "interpolation",
+                          "value" : "Alojamiento"
+                        },
+                        "labelPosition" : {
+                          "type" : "constant",
+                          "value" : "top"
+                        },
+                        "labelWidth" : {
+                          "type" : "constant",
+                          "value" : 4
+                        },
+                        "placeholder" : {
+                          "type" : "interpolation",
+                          "value" : "Select an option"
+                        },
+                        "availableValues" : {
+                          "type" : "expression",
+                          "value" : "listaPisos"
+                        },
+                        "displayedKey" : {
+                          "type" : "constant",
+                          "value" : "nombre"
+                        },
+                        "returnedKey" : {
+                          "type" : "constant",
+                          "value" : "persistenceId"
+                        },
+                        "value" : {
+                          "type" : "variable",
+                          "value" : "formInput.incidenciaInput.pisoId"
+                        }
+                      },
+                      "reference" : "f7ebce6b-9c2d-478e-b103-ed3aa4ed99ec",
+                      "hasValidationError" : false,
+                      "id" : "pbSelect"
                     }
                   ],
                   [
@@ -246,7 +302,7 @@
                         },
                         "label" : {
                           "type" : "interpolation",
-                          "value" : "Alojamiento actual"
+                          "value" : "Reserva afectada"
                         },
                         "labelPosition" : {
                           "type" : "constant",
@@ -258,11 +314,11 @@
                         },
                         "placeholder" : {
                           "type" : "interpolation",
-                          "value" : "Calle Alfonso"
+                          "value" : "Casa Pepe"
                         },
                         "value" : {
                           "type" : "variable",
-                          "value" : "formInput.incidenciaInput.pisoId"
+                          "value" : "formInput.incidenciaInput.idReservaInput"
                         },
                         "debounce" : {
                           "type" : "constant",
@@ -283,7 +339,7 @@
                           "value" : 1
                         }
                       },
-                      "reference" : "e8dcadf1-d6f8-4ff5-aa12-b321f230e85b",
+                      "reference" : "87b87b8c-ff6e-444d-b16c-1928b2858ca2",
                       "hasValidationError" : false,
                       "id" : "pbInput"
                     }
@@ -672,9 +728,48 @@
     "formOutput" : {
       "type" : "expression",
       "value" : [
-        "return {",
-        "\tincidenciaInput: $data.formInput.incidenciaInput",
-        "}"
+        "var datosLimpios = angular.copy($data.formInput.incidenciaInput);\r",
+        "\r",
+        "// 1. Extraemos el ID numérico del piso \r",
+        "if (datosLimpios.idPiso && datosLimpios.idPiso.persistenceId) {\r",
+        "    datosLimpios.pisoId = datosLimpios.idPiso.persistenceId;\r",
+        "}\r",
+        "\r",
+        "// 2. NUEVO: Extraemos el ID numérico del cliente del Autocomplete\r",
+        "if (datosLimpios.clienteId && datosLimpios.clienteId.persistenceId) {\r",
+        "    datosLimpios.clienteId = datosLimpios.clienteId.persistenceId;\r",
+        "}\r",
+        "// (Por si tu variable en el formulario se llama idCliente en vez de clienteId)\r",
+        "if (datosLimpios.idCliente && datosLimpios.idCliente.persistenceId) {\r",
+        "    datosLimpios.clienteId = datosLimpios.idCliente.persistenceId;\r",
+        "}\r",
+        "\r",
+        "// 3. Forzamos los números (Long) y limpiamos vacíos\r",
+        "if (datosLimpios.pisoId) datosLimpios.pisoId = parseInt(datosLimpios.pisoId, 10);\r",
+        "if (datosLimpios.clienteId) datosLimpios.clienteId = parseInt(datosLimpios.clienteId, 10);\r",
+        "if (datosLimpios.idReservaInput) datosLimpios.idReservaInput = parseInt(datosLimpios.idReservaInput, 10);\r",
+        "\r",
+        "// 4. Borramos basura\r",
+        "delete datosLimpios.idPiso;\r",
+        "delete datosLimpios.idCliente;\r",
+        "\r",
+        "return {\r",
+        "  \"incidenciaInput\": datosLimpios\r",
+        "};"
+      ],
+      "exposed" : false
+    },
+    "listaClientes" : {
+      "type" : "url",
+      "value" : [
+        "../API/bdm/businessData/com.company.model.UserCliente?q=find&p=0&c=100"
+      ],
+      "exposed" : false
+    },
+    "listaPisos" : {
+      "type" : "url",
+      "value" : [
+        "../API/bdm/businessData/com.company.model.Piso?q=find&p=0&c=100"
       ],
       "exposed" : false
     }
