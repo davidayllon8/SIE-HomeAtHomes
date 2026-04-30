@@ -48,8 +48,8 @@
                 <expression xmi:type="expression:Expression" xmi:id="_buKXskOjEfGJ3usuMHBVgw" name="X-Bonita-Task-Assignee-Id" content="X-Bonita-Task-Assignee-Id" returnTypeFixed="true"/>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_buKXs0OjEfGJ3usuMHBVgw" key="body">
-                <expression xmi:type="expression:Expression" xmi:id="_buKXtEOjEfGJ3usuMHBVgw" name="buildPayloadN8n()" content="import groovy.json.JsonBuilder&#xD;&#xA;&#xD;&#xA;// Utilizamos el JsonBuilder para crear una estructura JSON segura y limpia&#xD;&#xA;def builder = new JsonBuilder()&#xD;&#xA;&#xD;&#xA;builder {&#xD;&#xA;&#x9;// Mapeamos los datos de nuestra variable de negocio (BDM)&#xD;&#xA;&#x9;clienteId incidencia.clienteNombre&#xD;&#xA;&#x9;pisoId incidencia.pisoActual&#xD;&#xA;&#x9;motivo incidencia.motivoQueja&#xD;&#xA;&#x9;estado incidencia.estado&#xD;&#xA;&#x9;origen &quot;BonitaBPM&quot; // Dato extra útil para trazabilidad en n8n/Odoo&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;// Retornamos el JSON como un String&#xD;&#xA;return builder.toString()" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
-                  <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_KqVcwEPDEfGLSaZ7z7RuYw" name="incidencia" dataType="_Elg-JEOfEfGJ3usuMHBVgw" className="com.company.model.Incidencia"/>
+                <expression xmi:type="expression:Expression" xmi:id="_buKXtEOjEfGJ3usuMHBVgw" name="buildPayloadN8n()" content="import groovy.json.JsonBuilder&#xD;&#xA;&#xD;&#xA;// Utilizamos el JsonBuilder para crear una estructura JSON segura y limpia&#xD;&#xA;def builder = new JsonBuilder()&#xD;&#xA;&#xD;&#xA;builder {&#xD;&#xA;&#x9;// Mapeamos los datos de nuestra variable de negocio (BDM)&#xD;&#xA;&#x9;clienteId incidencia.clienteNombre&#xD;&#xA;&#x9;pisoId incidencia.pisoActual&#xD;&#xA;&#x9;motivo incidencia.motivoQueja&#xD;&#xA;&#x9;estado incidencia.estado&#xD;&#xA;&#x9;correo incidencia.correo&#xD;&#xA;&#x9;telefono incidencia.telefono&#xD;&#xA;&#x9;origen &quot;BonitaBPM&quot; // Dato extra útil para trazabilidad en n8n/Odoo&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;// Retornamos el JSON como un String&#xD;&#xA;return builder.toString()" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
+                  <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_1X3sAESDEfGDX6UbdATF6A" name="incidencia" dataType="_Elg-JEOfEfGJ3usuMHBVgw" className="com.company.model.Incidencia"/>
                 </expression>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_buKXtUOjEfGJ3usuMHBVgw" key="do_not_follow_redirect">
@@ -407,7 +407,7 @@
           <connectors xmi:type="process:Connector" xmi:id="_82-wsEO5EfGJ3usuMHBVgw" name="POST_Devolucion_n8n" definitionId="rest-post" event="ON_ENTER" definitionVersion="1.5.0">
             <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_82_XwEO5EfGJ3usuMHBVgw" definitionId="rest-post" version="1.5.0" modelVersion="8">
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_82_XwUO5EfGJ3usuMHBVgw" key="url">
-                <expression xmi:type="expression:Expression" xmi:id="_82_XwkO5EfGJ3usuMHBVgw" name="http://localhost:5678/webhook-test/procesar-devolucion" content="http://localhost:5678/webhook-test/procesar-devolucion" returnTypeFixed="true"/>
+                <expression xmi:type="expression:Expression" xmi:id="_82_XwkO5EfGJ3usuMHBVgw" name="http://localhost:5678/webhook-test/resolucion-alternativa" content="http://localhost:5678/webhook-test/resolucion-alternativa" returnTypeFixed="true"/>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_82_Xw0O5EfGJ3usuMHBVgw" key="contentType">
                 <expression xmi:type="expression:Expression" xmi:id="_82_XxEO5EfGJ3usuMHBVgw" name="application/json" content="application/json" returnTypeFixed="true"/>
@@ -440,8 +440,8 @@
                 <expression xmi:type="expression:Expression" xmi:id="_82_X1kO5EfGJ3usuMHBVgw" name="X-Bonita-Task-Assignee-Id" content="X-Bonita-Task-Assignee-Id" returnTypeFixed="true"/>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_82_X10O5EfGJ3usuMHBVgw" key="body">
-                <expression xmi:type="expression:Expression" xmi:id="_82_X2EO5EfGJ3usuMHBVgw" name="body()" content="import groovy.json.JsonBuilder&#xD;&#xA;&#xD;&#xA;def builder = new JsonBuilder()&#xD;&#xA;&#xD;&#xA;builder {&#xD;&#xA;    ticket_odoo_id incidencia.idTicketOdoo&#xD;&#xA;    cliente_id incidencia.clienteId&#xD;&#xA;    piso_id incidencia.pisoActual&#xD;&#xA;    accion_requerida &quot;CANCELAR_Y_REEMBOLSAR&quot;&#xD;&#xA;    motivo_cierre incidencia.motivoQueja&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;return builder.toString()" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
-                  <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_DXepQEO6EfGJ3usuMHBVgw" name="incidencia" dataType="_Elg-JEOfEfGJ3usuMHBVgw" className="com.company.model.Incidencia"/>
+                <expression xmi:type="expression:Expression" xmi:id="_82_X2EO5EfGJ3usuMHBVgw" name="body()" content="import groovy.json.JsonBuilder&#xD;&#xA;def builder = new JsonBuilder()&#xD;&#xA;builder {&#xD;&#xA;&#x9;ticket_odoo_id incidencia.idTicketOdoo&#xD;&#xA;&#x9;resolucion &quot;DEVOLUCIÓN PROCESADA. El cliente abandona el piso y se le devuelve el dinero.&quot;&#xD;&#xA;}&#xD;&#xA;return builder.toString()" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
+                  <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_ogaNMESKEfGDX6UbdATF6A" name="incidencia" dataType="_Elg-JEOfEfGJ3usuMHBVgw" className="com.company.model.Incidencia"/>
                 </expression>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_82_X2UO5EfGJ3usuMHBVgw" key="do_not_follow_redirect">
@@ -604,14 +604,14 @@
           <iteratorExpression xmi:type="expression:Expression" xmi:id="_NVzJB0O5EfGJ3usuMHBVgw" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
           <completionCondition xmi:type="expression:Expression" xmi:id="_NVzJBkO5EfGJ3usuMHBVgw" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
         </elements>
-        <elements xmi:type="process:ServiceTask" xmi:id="_OQsrAEO5EfGJ3usuMHBVgw" name="Aplicar Compensacion" outgoing="_epzyAEO6EfGJ3usuMHBVgw" incoming="_OQt5IUO5EfGJ3usuMHBVgw">
+        <elements xmi:type="process:ServiceTask" xmi:id="_OQsrAEO5EfGJ3usuMHBVgw" name="Mantener Piso" outgoing="_epzyAEO6EfGJ3usuMHBVgw" incoming="_OQt5IUO5EfGJ3usuMHBVgw">
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_OQtSEUO5EfGJ3usuMHBVgw" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_OQtSEEO5EfGJ3usuMHBVgw" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_OQtSEkO5EfGJ3usuMHBVgw" name="" content="" returnTypeFixed="true"/>
-          <connectors xmi:type="process:Connector" xmi:id="_OiZCgEO6EfGJ3usuMHBVgw" name="POST_Compensacion_n8n" definitionId="rest-post" event="ON_ENTER" definitionVersion="1.5.0">
+          <connectors xmi:type="process:Connector" xmi:id="_OiZCgEO6EfGJ3usuMHBVgw" name="POST_Mantiene_n8n" definitionId="rest-post" event="ON_ENTER" definitionVersion="1.5.0">
             <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_OiZCgUO6EfGJ3usuMHBVgw" definitionId="rest-post" version="1.5.0" modelVersion="8">
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_OiZCgkO6EfGJ3usuMHBVgw" key="url">
-                <expression xmi:type="expression:Expression" xmi:id="_OiZCg0O6EfGJ3usuMHBVgw" name="http://localhost:5678/webhook-test/aplicar-compensacion" content="http://localhost:5678/webhook-test/aplicar-compensacion" returnTypeFixed="true"/>
+                <expression xmi:type="expression:Expression" xmi:id="_OiZCg0O6EfGJ3usuMHBVgw" name="http://localhost:5678/webhook-test/resolucion-alternativa" content="http://localhost:5678/webhook-test/resolucion-alternativa" returnTypeFixed="true"/>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_OiZChEO6EfGJ3usuMHBVgw" key="contentType">
                 <expression xmi:type="expression:Expression" xmi:id="_OiZChUO6EfGJ3usuMHBVgw" name="application/json" content="application/json" returnTypeFixed="true"/>
@@ -626,7 +626,7 @@
                 <expression xmi:type="expression:TableExpression" xmi:id="_OiZpkkO6EfGJ3usuMHBVgw"/>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_OiZpk0O6EfGJ3usuMHBVgw" key="add_bonita_context_headers">
-                <expression xmi:type="expression:Expression" xmi:id="_OiZplEO6EfGJ3usuMHBVgw" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+                <expression xmi:type="expression:Expression" xmi:id="_OiZplEO6EfGJ3usuMHBVgw" name="false" content="false" returnType="java.lang.Boolean" returnTypeFixed="true"/>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_OiZplUO6EfGJ3usuMHBVgw" key="bonita_activity_instance_id_header">
                 <expression xmi:type="expression:Expression" xmi:id="_OiZplkO6EfGJ3usuMHBVgw" name="X-Bonita-Activity-Instance-Id" content="X-Bonita-Activity-Instance-Id" returnTypeFixed="true"/>
@@ -644,15 +644,15 @@
                 <expression xmi:type="expression:Expression" xmi:id="_OiZpnkO6EfGJ3usuMHBVgw" name="X-Bonita-Task-Assignee-Id" content="X-Bonita-Task-Assignee-Id" returnTypeFixed="true"/>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_OiZpn0O6EfGJ3usuMHBVgw" key="body">
-                <expression xmi:type="expression:Expression" xmi:id="_OiZpoEO6EfGJ3usuMHBVgw" name="body()" content="import groovy.json.JsonBuilder&#xD;&#xA;&#xD;&#xA;def builder = new JsonBuilder()&#xD;&#xA;&#xD;&#xA;builder {&#xD;&#xA;ticket_odoo_id incidencia.idTicketOdoo&#xD;&#xA;cliente_id incidencia.clienteId&#xD;&#xA;piso_mantenido incidencia.pisoActual&#xD;&#xA;accion_requerida &quot;CERRAR_CON_ACUERDO&quot;&#xD;&#xA;estado_final &quot;Resuelto - Compensación Aplicada&quot;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;return builder.toString()" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
-                  <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_UqiFcEO6EfGJ3usuMHBVgw" name="incidencia" dataType="_Elg-JEOfEfGJ3usuMHBVgw" className="com.company.model.Incidencia"/>
+                <expression xmi:type="expression:Expression" xmi:id="_OiZpoEO6EfGJ3usuMHBVgw" name="body()" content="import groovy.json.JsonBuilder&#xD;&#xA;def builder = new JsonBuilder()&#xD;&#xA;builder {&#xD;&#xA;    ticket_odoo_id incidencia.idTicketOdoo&#xD;&#xA;    resolucion &quot;MANTIENE PISO. El cliente decide quedarse en el alojamiento sin compensación.&quot;&#xD;&#xA;}&#xD;&#xA;return builder.toString()" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
+                  <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_r8huwESKEfGDX6UbdATF6A" name="incidencia" dataType="_Elg-JEOfEfGJ3usuMHBVgw" className="com.company.model.Incidencia"/>
                 </expression>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_OiZpoUO6EfGJ3usuMHBVgw" key="do_not_follow_redirect">
-                <expression xmi:type="expression:Expression" xmi:id="_OiZpokO6EfGJ3usuMHBVgw" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+                <expression xmi:type="expression:Expression" xmi:id="_OiZpokO6EfGJ3usuMHBVgw" name="false" content="false" returnType="java.lang.Boolean" returnTypeFixed="true"/>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_OiZpo0O6EfGJ3usuMHBVgw" key="ignore_body">
-                <expression xmi:type="expression:Expression" xmi:id="_OiZppEO6EfGJ3usuMHBVgw" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+                <expression xmi:type="expression:Expression" xmi:id="_OiZppEO6EfGJ3usuMHBVgw" name="false" content="false" returnType="java.lang.Boolean" returnTypeFixed="true"/>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_OiZppUO6EfGJ3usuMHBVgw" key="fail_on_http_4xx">
                 <expression xmi:type="expression:Expression" xmi:id="_OiZppkO6EfGJ3usuMHBVgw" returnType="java.lang.Boolean" returnTypeFixed="true"/>
@@ -955,9 +955,9 @@
         </elements>
       </elements>
       <data xmi:type="process:BusinessObjectData" xmi:id="_gfEy4EOsEfGJ3usuMHBVgw" name="incidencia" dataType="_Elg-JEOfEfGJ3usuMHBVgw" className="com.company.model.Incidencia">
-        <defaultValue xmi:type="expression:Expression" xmi:id="_gfEy4UOsEfGJ3usuMHBVgw" name="init_incidencia()" content="// 1. Creamos un nuevo objeto vacío de tu base de datos&#xD;&#xA;def incidenciaVar = new com.company.model.Incidencia()&#xD;&#xA;&#xD;&#xA;// 2. Le inyectamos los datos que acaban de entrar por el formulario (Contrato)&#xD;&#xA;incidenciaVar.clienteNombre = incidenciaInput.clienteId&#xD;&#xA;incidenciaVar.pisoActual = incidenciaInput.pisoId&#xD;&#xA;incidenciaVar.motivoQueja = incidenciaInput.motivo&#xD;&#xA;incidenciaVar.estado = &quot;Abierta&quot; // Estado por defecto al crear&#xD;&#xA;&#xD;&#xA;// 3. Devolvemos el objeto para que Bonita lo guarde en la BD real&#xD;&#xA;return incidenciaVar" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.Incidencia">
-          <referencedElements xmi:type="process:ContractInput" xmi:id="_nFXR8EPOEfGdypp2W3E4OQ" name="incidenciaInput" type="COMPLEX">
-            <mapping xmi:type="process:ContractInputMapping" xmi:id="_nFXR8UPOEfGdypp2W3E4OQ"/>
+        <defaultValue xmi:type="expression:Expression" xmi:id="_gfEy4UOsEfGJ3usuMHBVgw" name="init_incidencia()" content="// 1. Creamos un nuevo objeto vacío de tu base de datos&#xD;&#xA;def incidenciaVar = new com.company.model.Incidencia()&#xD;&#xA;&#xD;&#xA;// 2. Le inyectamos los datos que acaban de entrar por el formulario (Contrato)&#xD;&#xA;incidenciaVar.clienteNombre = incidenciaInput.clienteId&#xD;&#xA;incidenciaVar.pisoActual = incidenciaInput.pisoId&#xD;&#xA;incidenciaVar.motivoQueja = incidenciaInput.motivo&#xD;&#xA;incidenciaVar.correo = incidenciaInput.correoInput&#xD;&#xA;incidenciaVar.telefono = incidenciaInput.telefonoInput&#xD;&#xA;incidenciaVar.estado = &quot;Abierta&quot; // Estado por defecto al crear&#xD;&#xA;&#xD;&#xA;// 3. Devolvemos el objeto para que Bonita lo guarde en la BD real&#xD;&#xA;return incidenciaVar" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.Incidencia">
+          <referencedElements xmi:type="process:ContractInput" xmi:id="_6KW1gESBEfGDX6UbdATF6A" name="incidenciaInput" type="COMPLEX">
+            <mapping xmi:type="process:ContractInputMapping" xmi:id="_6KW1gUSBEfGDX6UbdATF6A"/>
           </referencedElements>
         </defaultValue>
       </data>
@@ -1015,7 +1015,7 @@
           <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_UxoocEO5EfGJ3usuMHBVgw" name="incidencia" dataType="_Elg-JEOfEfGJ3usuMHBVgw" className="com.company.model.Incidencia"/>
         </condition>
       </connections>
-      <connections xmi:type="process:SequenceFlow" xmi:id="_OQt5IUO5EfGJ3usuMHBVgw" name="Compensación / Mantener Piso" target="_OQsrAEO5EfGJ3usuMHBVgw" source="_HG-2UEO5EfGJ3usuMHBVgw" isDefault="true">
+      <connections xmi:type="process:SequenceFlow" xmi:id="_OQt5IUO5EfGJ3usuMHBVgw" name="Mantener Piso" target="_OQsrAEO5EfGJ3usuMHBVgw" source="_HG-2UEO5EfGJ3usuMHBVgw" isDefault="true">
         <decisionTable xmi:type="decision:DecisionTable" xmi:id="_OQugMEO5EfGJ3usuMHBVgw"/>
         <condition xmi:type="expression:Expression" xmi:id="_OQugMUO5EfGJ3usuMHBVgw" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
       </connections>
@@ -1073,8 +1073,14 @@
           <inputs xmi:type="process:ContractInput" xmi:id="_-dyVQEOfEfGJ3usuMHBVgw" name="motivo">
             <mapping xmi:type="process:ContractInputMapping" xmi:id="_-dyVQUOfEfGJ3usuMHBVgw"/>
           </inputs>
+          <inputs xmi:type="process:ContractInput" xmi:id="_Yc-U4ESBEfGDX6UbdATF6A" name="correoInput">
+            <mapping xmi:type="process:ContractInputMapping" xmi:id="_Yc-U4USBEfGDX6UbdATF6A"/>
+          </inputs>
+          <inputs xmi:type="process:ContractInput" xmi:id="_Ziz7kESBEfGDX6UbdATF6A" name="telefonoInput">
+            <mapping xmi:type="process:ContractInputMapping" xmi:id="_Ziz7kUSBEfGDX6UbdATF6A"/>
+          </inputs>
         </inputs>
-        <constraints xmi:type="process:ContractConstraint" xmi:id="_C-Hs4EOgEfGJ3usuMHBVgw" expression="// Validamos que el clienteId exista y no esté vacío&#xD;&#xA;if (incidenciaInput.clienteId == null || incidenciaInput.clienteId.trim().isEmpty()) {&#xD;&#xA;    return false&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;// Validamos que el pisoId exista y no esté vacío&#xD;&#xA;if (incidenciaInput.pisoId == null || incidenciaInput.pisoId.trim().isEmpty()) {&#xD;&#xA;    return false&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;// Validamos que el motivo exista y tenga al menos 10 caracteres&#xD;&#xA;if (incidenciaInput.motivo == null || incidenciaInput.motivo.trim().length() &lt; 10) {&#xD;&#xA;    return false&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;// Si pasa todas las validaciones, el contrato es válido&#xD;&#xA;return true" errorMessage="Error de validación: Debe proporcionar un ID de cliente válido, un ID de piso válido, y el motivo de la queja debe contener al menos 10 caracteres." name="validarDatosIncidencia">
+        <constraints xmi:type="process:ContractConstraint" xmi:id="_C-Hs4EOgEfGJ3usuMHBVgw" expression="if (incidenciaInput.clienteId == null || incidenciaInput.clienteId.trim().isEmpty()) {&#xD;&#xA;    return false&#xD;&#xA;}&#xD;&#xA;if (incidenciaInput.pisoId == null || incidenciaInput.pisoId.trim().isEmpty()) {&#xD;&#xA;    return false&#xD;&#xA;}&#xD;&#xA;if (incidenciaInput.motivo == null || incidenciaInput.motivo.trim().length() &lt; 10) {&#xD;&#xA;    return false&#xD;&#xA;}&#xD;&#xA;return true" errorMessage="Error de validación: Debe proporcionar un ID de cliente válido, un ID de piso válido, y el motivo de la queja debe contener al menos 10 caracteres." name="validarDatosIncidencia">
           <inputNames>incidenciaInput</inputNames>
         </constraints>
       </contract>

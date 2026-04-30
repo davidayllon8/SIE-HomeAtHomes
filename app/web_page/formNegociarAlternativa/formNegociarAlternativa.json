@@ -4,7 +4,7 @@
   "type" : "form",
   "uuid" : "feb234ae-ee5d-40f6-83c3-8bf5d38f5591",
   "modelVersion" : "2.6",
-  "lastUpdate" : 1777459719852,
+  "lastUpdate" : 1777549932165,
   "description" : "Page generated with Bonita UI designer",
   "rows" : [
     [
@@ -30,107 +30,7 @@
         "hasValidationError" : false,
         "id" : "pbContainer",
         "rows" : [
-          [
-            {
-              "type" : "component",
-              "dimension" : {
-                "md" : 12,
-                "sm" : 12,
-                "xs" : 12,
-                "lg" : 12
-              },
-              "propertyValues" : {
-                "hidden" : {
-                  "type" : "constant",
-                  "value" : false
-                },
-                "level" : {
-                  "type" : "constant",
-                  "value" : "Level 1"
-                },
-                "cssClasses" : {
-                  "type" : "constant",
-                  "value" : ""
-                },
-                "text" : {
-                  "type" : "interpolation",
-                  "value" : "{{ task.displayName }}"
-                },
-                "alignment" : {
-                  "type" : "constant",
-                  "value" : "center"
-                },
-                "dimension" : {
-                  "type" : "constant",
-                  "value" : 12
-                }
-              },
-              "reference" : "938a4ad7-1478-4365-bc69-89410ec7bad5",
-              "hasValidationError" : false,
-              "id" : "pbTitle",
-              "description" : ""
-            }
-          ],
-          [
-            {
-              "type" : "component",
-              "dimension" : {
-                "md" : 12,
-                "sm" : 12,
-                "xs" : 12,
-                "lg" : 12
-              },
-              "propertyValues" : {
-                "allowHtml" : {
-                  "type" : "constant",
-                  "value" : true
-                },
-                "labelHidden" : {
-                  "type" : "constant",
-                  "value" : true
-                },
-                "hidden" : {
-                  "type" : "constant",
-                  "value" : false
-                },
-                "cssClasses" : {
-                  "type" : "constant",
-                  "value" : ""
-                },
-                "label" : {
-                  "type" : "interpolation"
-                },
-                "text" : {
-                  "type" : "interpolation",
-                  "value" : "{{ task.displayDescription }}"
-                },
-                "alignment" : {
-                  "type" : "constant",
-                  "value" : "left"
-                },
-                "dimension" : {
-                  "type" : "constant",
-                  "value" : 12
-                },
-                "allowHTML" : {
-                  "type" : "constant",
-                  "value" : false
-                },
-                "labelPosition" : {
-                  "type" : "constant",
-                  "value" : "top"
-                },
-                "labelWidth" : {
-                  "type" : "constant",
-                  "value" : 4
-                }
-              },
-              "reference" : "50832fce-6c19-41cf-a2df-38ef7db9905a",
-              "hasValidationError" : false,
-              "id" : "pbText",
-              "description" : ""
-            }
-          ]
+          [ ]
         ]
       }
     ],
@@ -185,34 +85,22 @@
                     "type" : "constant",
                     "value" : false
                   },
-                  "labelHidden" : {
-                    "type" : "constant",
-                    "value" : true
-                  },
-                  "label" : {
-                    "type" : "interpolation",
-                    "value" : "Default label"
-                  },
-                  "labelPosition" : {
-                    "type" : "constant",
-                    "value" : "top"
-                  },
-                  "labelWidth" : {
-                    "type" : "constant",
-                    "value" : 4
-                  },
                   "text" : {
                     "type" : "interpolation",
-                    "value" : "Negociando con cliente: {{incidenciaData.clienteNombre}}"
+                    "value" : "Opciones ante Incidencias: {{incidenciaData.clienteNombre}}"
+                  },
+                  "level" : {
+                    "type" : "constant",
+                    "value" : "Level 2"
                   },
                   "alignment" : {
                     "type" : "constant",
                     "value" : "left"
                   }
                 },
-                "reference" : "9f64820c-8a9e-4be0-90c9-60ab7d50e82d",
+                "reference" : "6fab6a0f-c8fe-43c7-b442-ce26d93a2f3b",
                 "hasValidationError" : false,
-                "id" : "pbText"
+                "id" : "pbTitle"
               }
             ],
             [
@@ -251,7 +139,7 @@
                   },
                   "label" : {
                     "type" : "interpolation",
-                    "value" : "Acuerdo Cliente"
+                    "value" : "Selecciona una opción"
                   },
                   "labelPosition" : {
                     "type" : "constant",
@@ -261,30 +149,30 @@
                     "type" : "constant",
                     "value" : 4
                   },
-                  "inline" : {
-                    "type" : "constant",
-                    "value" : false
+                  "placeholder" : {
+                    "type" : "interpolation",
+                    "value" : "Select an option"
                   },
                   "availableValues" : {
                     "type" : "expression",
                     "value" : "opcionesAcuerdo"
                   },
                   "displayedKey" : {
-                    "type" : "expression",
+                    "type" : "constant",
                     "value" : "etiqueta"
                   },
                   "returnedKey" : {
                     "type" : "constant",
                     "value" : "valor"
                   },
-                  "selectedValue" : {
+                  "value" : {
                     "type" : "variable",
                     "value" : "formInput.acuerdoClienteInput"
                   }
                 },
-                "reference" : "8270fd81-92f0-4da3-9c1b-2c3330f0bc76",
+                "reference" : "b7055aff-272e-47b5-9442-14faace950cf",
                 "hasValidationError" : false,
-                "id" : "pbRadioButtons"
+                "id" : "pbSelect"
               }
             ],
             [
@@ -310,11 +198,11 @@
                   },
                   "buttonStyle" : {
                     "type" : "constant",
-                    "value" : "primary"
+                    "value" : "success"
                   },
                   "label" : {
                     "type" : "interpolation",
-                    "value" : "Submit"
+                    "value" : "Aceptar"
                   },
                   "dataToSend" : {
                     "type" : "expression",
