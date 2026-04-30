@@ -1,29 +1,127 @@
 {
-  "id" : "seleccionPisoFecha",
-  "name" : "seleccionPisoFecha",
+  "id" : "Credenciales",
+  "name" : "Credenciales",
   "type" : "form",
-  "uuid" : "bd5b95d1-77bd-4fc6-833b-42a934e7a723",
+  "uuid" : "1733bdb0-c090-49c3-9ec9-c3a22ba17276",
   "modelVersion" : "2.6",
-  "lastUpdate" : 1777558620592,
+  "lastUpdate" : 1777561992268,
   "description" : "Page generated with Bonita UI designer",
   "rows" : [
+    [
+      {
+        "type" : "container",
+        "dimension" : {
+          "xs" : 12
+        },
+        "propertyValues" : { },
+        "reference" : "7b2e2e36-2566-4c32-8add-d7993855e4c0",
+        "hasValidationError" : false,
+        "id" : "pbContainer",
+        "rows" : [
+          [
+            {
+              "type" : "component",
+              "dimension" : {
+                "md" : 12,
+                "sm" : 12,
+                "xs" : 12,
+                "lg" : 12
+              },
+              "propertyValues" : {
+                "hidden" : {
+                  "type" : "constant",
+                  "value" : false
+                },
+                "level" : {
+                  "type" : "constant",
+                  "value" : "Level 1"
+                },
+                "cssClasses" : {
+                  "type" : "constant",
+                  "value" : ""
+                },
+                "text" : {
+                  "type" : "interpolation",
+                  "value" : "Introduce tus datos"
+                },
+                "alignment" : {
+                  "type" : "constant",
+                  "value" : "center"
+                },
+                "dimension" : {
+                  "type" : "constant",
+                  "value" : 12
+                },
+                "allowHTML" : {
+                  "type" : "constant",
+                  "value" : false
+                }
+              },
+              "reference" : "b01941fa-7259-4eac-9329-c43eb6c06ac1",
+              "hasValidationError" : false,
+              "id" : "pbTitle",
+              "description" : ""
+            }
+          ],
+          [
+            {
+              "type" : "component",
+              "dimension" : {
+                "md" : 12,
+                "sm" : 12,
+                "xs" : 12,
+                "lg" : 12
+              },
+              "propertyValues" : {
+                "allowHtml" : {
+                  "type" : "constant",
+                  "value" : true
+                },
+                "labelHidden" : {
+                  "type" : "constant",
+                  "value" : true
+                },
+                "hidden" : {
+                  "type" : "constant",
+                  "value" : false
+                },
+                "cssClasses" : {
+                  "type" : "constant",
+                  "value" : ""
+                },
+                "label" : {
+                  "type" : "interpolation"
+                },
+                "text" : {
+                  "type" : "interpolation",
+                  "value" : "{{ task.displayDescription }}"
+                },
+                "alignment" : {
+                  "type" : "constant",
+                  "value" : "left"
+                },
+                "dimension" : {
+                  "type" : "constant",
+                  "value" : 12
+                }
+              },
+              "reference" : "35ed5ef4-399d-4f26-bc80-d2c2603b74b9",
+              "hasValidationError" : false,
+              "id" : "pbText",
+              "description" : ""
+            }
+          ]
+        ]
+      }
+    ],
     [
       {
         "type" : "formContainer",
         "dimension" : {
           "xs" : 12
         },
-        "propertyValues" : {
-          "cssClasses" : {
-            "type" : "constant",
-            "value" : ""
-          },
-          "hidden" : {
-            "type" : "constant",
-            "value" : false
-          }
-        },
-        "reference" : "6dd3c12d-33b5-4012-abe7-97088073688a",
+        "propertyValues" : { },
+        "reference" : "b0e77498-e198-4299-9463-c04fcca54f0c",
         "hasValidationError" : false,
         "id" : "pbFormContainer",
         "container" : {
@@ -32,7 +130,7 @@
             "xs" : 12
           },
           "propertyValues" : { },
-          "reference" : "38a22b7f-b86e-4a17-bc59-01e305fb0865",
+          "reference" : "820a655b-9e49-4069-8338-a869fc07ac75",
           "hasValidationError" : false,
           "id" : "pbContainer",
           "rows" : [
@@ -40,91 +138,23 @@
               {
                 "type" : "component",
                 "dimension" : {
-                  "xs" : 12,
-                  "sm" : 12,
                   "md" : 12,
+                  "sm" : 12,
+                  "xs" : 12,
                   "lg" : 12
                 },
                 "propertyValues" : {
-                  "cssClasses" : {
-                    "type" : "constant",
-                    "value" : ""
-                  },
-                  "hidden" : {
-                    "type" : "constant",
-                    "value" : false
-                  },
-                  "disabled" : {
-                    "type" : "constant",
-                    "value" : false
-                  },
-                  "required" : {
-                    "type" : "constant",
-                    "value" : false
-                  },
-                  "allowHTML" : {
-                    "type" : "constant",
-                    "value" : false
-                  },
                   "labelHidden" : {
                     "type" : "constant",
                     "value" : false
                   },
-                  "label" : {
-                    "type" : "interpolation",
-                    "value" : "Piso Seleccionado"
-                  },
-                  "labelPosition" : {
-                    "type" : "constant",
-                    "value" : "top"
-                  },
-                  "labelWidth" : {
-                    "type" : "constant",
-                    "value" : 4
-                  },
-                  "placeholder" : {
-                    "type" : "interpolation",
-                    "value" : "Select an option"
-                  },
-                  "availableValues" : {
-                    "type" : "expression",
-                    "value" : "listaApartamentos"
-                  },
-                  "displayedKey" : {
-                    "type" : "constant",
-                    "value" : "nombre"
-                  },
-                  "returnedKey" : {
-                    "type" : "constant",
-                    "value" : "nombre"
-                  },
-                  "value" : {
-                    "type" : "variable",
-                    "value" : "formInput.pisoSeleccionado"
-                  }
-                },
-                "reference" : "6073d2cb-ef4a-4739-a77c-cae3f2ae4a56",
-                "hasValidationError" : false,
-                "id" : "pbSelect"
-              }
-            ],
-            [
-              {
-                "type" : "component",
-                "dimension" : {
-                  "md" : 12,
-                  "sm" : 12,
-                  "xs" : 12,
-                  "lg" : 12
-                },
-                "propertyValues" : {
                   "hidden" : {
                     "type" : "constant",
                     "value" : false
                   },
-                  "dateFormat" : {
+                  "labelPosition" : {
                     "type" : "constant",
-                    "value" : "MM/dd/yyyy"
+                    "value" : "top"
                   },
                   "cssClasses" : {
                     "type" : "constant",
@@ -140,34 +170,14 @@
                   },
                   "label" : {
                     "type" : "interpolation",
-                    "value" : "Fecha Entrada"
-                  },
-                  "type" : {
-                    "type" : "constant"
-                  },
-                  "required" : {
-                    "type" : "constant",
-                    "value" : true
-                  },
-                  "todayLabel" : {
-                    "type" : "constant",
-                    "value" : "Today"
-                  },
-                  "labelHidden" : {
-                    "type" : "constant",
-                    "value" : false
-                  },
-                  "showToday" : {
-                    "type" : "constant",
-                    "value" : true
-                  },
-                  "labelPosition" : {
-                    "type" : "constant",
-                    "value" : "top"
+                    "value" : "Nombre"
                   },
                   "placeholder" : {
+                    "type" : "constant"
+                  },
+                  "type" : {
                     "type" : "constant",
-                    "value" : "Enter a date (mm/dd/yyyy)"
+                    "value" : "text"
                   },
                   "dimension" : {
                     "type" : "constant",
@@ -175,16 +185,42 @@
                   },
                   "value" : {
                     "type" : "variable",
-                    "value" : "formInput.fechaEntrada"
+                    "value" : "formInput.nombre"
+                  },
+                  "required" : {
+                    "type" : "constant",
+                    "value" : true
                   },
                   "allowHTML" : {
                     "type" : "constant",
                     "value" : false
+                  },
+                  "minLength" : {
+                    "type" : "constant",
+                    "value" : ""
+                  },
+                  "maxLength" : {
+                    "type" : "constant",
+                    "value" : ""
+                  },
+                  "debounce" : {
+                    "type" : "constant",
+                    "value" : 0
+                  },
+                  "min" : {
+                    "type" : "constant"
+                  },
+                  "max" : {
+                    "type" : "constant"
+                  },
+                  "step" : {
+                    "type" : "constant",
+                    "value" : 1
                   }
                 },
-                "reference" : "156b7e7f-069e-4d79-8d1c-7495a0855225",
+                "reference" : "f6e0d931-9ded-4f3b-8123-4e3cfe0943e9",
                 "hasValidationError" : false,
-                "id" : "pbDatePicker",
+                "id" : "pbInput",
                 "description" : ""
               }
             ],
@@ -220,7 +256,7 @@
                   },
                   "label" : {
                     "type" : "interpolation",
-                    "value" : "Fecha Salida"
+                    "value" : "Fecha Nacimiento"
                   },
                   "type" : {
                     "type" : "constant"
@@ -255,16 +291,204 @@
                   },
                   "value" : {
                     "type" : "variable",
-                    "value" : "formInput.fechaSalida"
-                  },
-                  "allowHTML" : {
-                    "type" : "constant",
-                    "value" : false
+                    "value" : "formInput.fechaNacimiento"
                   }
                 },
-                "reference" : "ffcbbe7d-af00-4090-bf3a-4952ec0c0b05",
+                "reference" : "62d62a56-2ab2-4236-bca4-66ec3862e3fe",
                 "hasValidationError" : false,
                 "id" : "pbDatePicker",
+                "description" : ""
+              }
+            ],
+            [
+              {
+                "type" : "component",
+                "dimension" : {
+                  "md" : 12,
+                  "sm" : 12,
+                  "xs" : 12,
+                  "lg" : 12
+                },
+                "propertyValues" : {
+                  "labelHidden" : {
+                    "type" : "constant",
+                    "value" : false
+                  },
+                  "hidden" : {
+                    "type" : "constant",
+                    "value" : false
+                  },
+                  "labelPosition" : {
+                    "type" : "constant",
+                    "value" : "top"
+                  },
+                  "cssClasses" : {
+                    "type" : "constant",
+                    "value" : ""
+                  },
+                  "labelWidth" : {
+                    "type" : "constant",
+                    "value" : 1
+                  },
+                  "readOnly" : {
+                    "type" : "constant",
+                    "value" : false
+                  },
+                  "label" : {
+                    "type" : "interpolation",
+                    "value" : "Dni"
+                  },
+                  "placeholder" : {
+                    "type" : "constant"
+                  },
+                  "type" : {
+                    "type" : "constant",
+                    "value" : "text"
+                  },
+                  "dimension" : {
+                    "type" : "constant",
+                    "value" : 12
+                  },
+                  "value" : {
+                    "type" : "variable",
+                    "value" : "formInput.dni"
+                  },
+                  "required" : {
+                    "type" : "constant",
+                    "value" : true
+                  }
+                },
+                "reference" : "5d8c358f-0f3a-459c-8c7e-9b04948f3966",
+                "hasValidationError" : false,
+                "id" : "pbInput",
+                "description" : ""
+              }
+            ],
+            [
+              {
+                "type" : "component",
+                "dimension" : {
+                  "md" : 12,
+                  "sm" : 12,
+                  "xs" : 12,
+                  "lg" : 12
+                },
+                "propertyValues" : {
+                  "labelHidden" : {
+                    "type" : "constant",
+                    "value" : false
+                  },
+                  "hidden" : {
+                    "type" : "constant",
+                    "value" : false
+                  },
+                  "labelPosition" : {
+                    "type" : "constant",
+                    "value" : "top"
+                  },
+                  "cssClasses" : {
+                    "type" : "constant",
+                    "value" : ""
+                  },
+                  "labelWidth" : {
+                    "type" : "constant",
+                    "value" : 1
+                  },
+                  "readOnly" : {
+                    "type" : "constant",
+                    "value" : false
+                  },
+                  "label" : {
+                    "type" : "interpolation",
+                    "value" : "Password"
+                  },
+                  "placeholder" : {
+                    "type" : "constant"
+                  },
+                  "type" : {
+                    "type" : "constant",
+                    "value" : "text"
+                  },
+                  "dimension" : {
+                    "type" : "constant",
+                    "value" : 12
+                  },
+                  "value" : {
+                    "type" : "variable",
+                    "value" : "formInput.password"
+                  },
+                  "required" : {
+                    "type" : "constant",
+                    "value" : true
+                  }
+                },
+                "reference" : "8ba8c042-499c-43a2-94bc-0f90b6c1f416",
+                "hasValidationError" : false,
+                "id" : "pbInput",
+                "description" : ""
+              }
+            ],
+            [
+              {
+                "type" : "component",
+                "dimension" : {
+                  "md" : 12,
+                  "sm" : 12,
+                  "xs" : 12,
+                  "lg" : 12
+                },
+                "propertyValues" : {
+                  "labelHidden" : {
+                    "type" : "constant",
+                    "value" : false
+                  },
+                  "hidden" : {
+                    "type" : "constant",
+                    "value" : false
+                  },
+                  "labelPosition" : {
+                    "type" : "constant",
+                    "value" : "top"
+                  },
+                  "cssClasses" : {
+                    "type" : "constant",
+                    "value" : ""
+                  },
+                  "labelWidth" : {
+                    "type" : "constant",
+                    "value" : 1
+                  },
+                  "readOnly" : {
+                    "type" : "constant",
+                    "value" : false
+                  },
+                  "label" : {
+                    "type" : "interpolation",
+                    "value" : "Correo Electronico"
+                  },
+                  "placeholder" : {
+                    "type" : "constant"
+                  },
+                  "type" : {
+                    "type" : "constant",
+                    "value" : "text"
+                  },
+                  "dimension" : {
+                    "type" : "constant",
+                    "value" : 12
+                  },
+                  "value" : {
+                    "type" : "variable",
+                    "value" : "formInput.correoElectronico"
+                  },
+                  "required" : {
+                    "type" : "constant",
+                    "value" : true
+                  }
+                },
+                "reference" : "8cc214b3-e2e6-4877-91da-9ba492871af1",
+                "hasValidationError" : false,
+                "id" : "pbInput",
                 "description" : ""
               }
             ],
@@ -322,7 +546,7 @@
                   },
                   "action" : {
                     "type" : "constant",
-                    "value" : "Start process"
+                    "value" : "Submit task"
                   },
                   "collectionToModify" : {
                     "type" : "variable"
@@ -364,7 +588,7 @@
                     "value" : ""
                   }
                 },
-                "reference" : "beee38c1-3a48-4565-bea4-16f06c5b19f7",
+                "reference" : "3dcc3a1f-3a04-414f-a430-8a4729f17b17",
                 "hasValidationError" : false,
                 "id" : "pbButton",
                 "description" : ""
@@ -414,17 +638,9 @@
                   "dimension" : {
                     "type" : "constant",
                     "value" : 12
-                  },
-                  "labelPosition" : {
-                    "type" : "constant",
-                    "value" : "top"
-                  },
-                  "labelWidth" : {
-                    "type" : "constant",
-                    "value" : 4
                   }
                 },
-                "reference" : "3f36a27a-dcd4-48b1-a096-87976bd0e8f2",
+                "reference" : "14030145-a5f9-4a29-b8cb-ead8b4b4aeb9",
                 "hasValidationError" : false,
                 "id" : "pbText",
                 "description" : ""
@@ -436,13 +652,22 @@
     ]
   ],
   "variables" : {
+    "task" : {
+      "type" : "url",
+      "value" : [
+        "../API/bpm/userTask/{{taskId}}"
+      ],
+      "exposed" : false
+    },
     "formInput" : {
       "type" : "json",
       "value" : [
         "{\r",
-        "  \"pisoSeleccionado\" : \"\",\r",
-        "  \"fechaEntrada\" : null,\r",
-        "  \"fechaSalida\" : null\r",
+        "  \"nombre\" : \"\",\r",
+        "  \"fechaNacimiento\" : null,\r",
+        "  \"dni\" : \"\",\r",
+        "  \"password\" : \"\",\r",
+        "  \"correoElectronico\" : \"\"\r",
         "}"
       ],
       "exposed" : false
@@ -466,54 +691,42 @@
       "type" : "expression",
       "value" : [
         "return {",
-        "\tpisoSeleccionado: $data.formInput.pisoSeleccionado,",
-        "\tfechaEntrada: $data.formInput.fechaEntrada,",
-        "\tfechaSalida: $data.formInput.fechaSalida",
+        "\tnombre: $data.formInput.nombre,",
+        "\tfechaNacimiento: $data.formInput.fechaNacimiento,",
+        "\tdni: $data.formInput.dni,",
+        "\tpassword: $data.formInput.password,",
+        "\tcorreoElectronico: $data.formInput.correoElectronico",
         "}"
       ],
       "exposed" : false
     },
-    "listaApartamentos" : {
-      "type" : "json",
+    "context" : {
+      "type" : "url",
       "value" : [
-        "[\r",
-        "  { \"nombre\": \"Abades I Luxury\", \"direccion\": \"Calle Abades, 1, 41004 Sevilla\", \"zona\": \"Santa Cruz\" },\r",
-        "  { \"nombre\": \"Adriano 1.1 View\", \"direccion\": \"Calle Adriano, 1, 41001 Sevilla\", \"zona\": \"Arenal\" },\r",
-        "  { \"nombre\": \"Adriano 1.3\", \"direccion\": \"Calle Adriano, 1, 41001 Sevilla\", \"zona\": \"Arenal\" },\r",
-        "  { \"nombre\": \"Alameda Corner\", \"direccion\": \"Alameda de Hércules, 41002 Sevilla\", \"zona\": \"Alameda\" },\r",
-        "  { \"nombre\": \"Alcázar de María\", \"direccion\": \"Plaza de la Alianza, 41004 Sevilla\", \"zona\": \"Santa Cruz\" },\r",
-        "  { \"nombre\": \"Alfalfa Terrace\", \"direccion\": \"Calle Alfalfa, 8, 41004 Sevilla\", \"zona\": \"Alfalfa\" },\r",
-        "  { \"nombre\": \"Bailén Premium\", \"direccion\": \"Calle Bailén, 18, 41001 Sevilla\", \"zona\": \"Museo\" },\r",
-        "  { \"nombre\": \"Betis Riverside\", \"direccion\": \"Calle Betis, 22, 41010 Sevilla\", \"zona\": \"Triana\" },\r",
-        "  { \"nombre\": \"Casa Palacio San José\", \"direccion\": \"Calle San José, 7, 41004 Sevilla\", \"zona\": \"Santa Cruz\" },\r",
-        "  { \"nombre\": \"Conde de Ibarra\", \"direccion\": \"Calle Conde de Ibarra, 4, 41004 Sevilla\", \"zona\": \"Centro\" },\r",
-        "  { \"nombre\": \"Francos 14 Luxury\", \"direccion\": \"Calle Francos, 14, 41004 Sevilla\", \"zona\": \"Catedral\" },\r",
-        "  { \"nombre\": \"García de Vinuesa Ático\", \"direccion\": \"Calle García de Vinuesa, 12, 41001 Sevilla\", \"zona\": \"Arenal\" },\r",
-        "  { \"nombre\": \"Los Remedios Designer\", \"direccion\": \"Calle de los Remedios, 41011 Sevilla\", \"zona\": \"Los Remedios\" },\r",
-        "  { \"nombre\": \"Luis de Vargas\", \"direccion\": \"Calle Luis de Vargas, 2, 41001 Sevilla\", \"zona\": \"Plaza de Armas\" },\r",
-        "  { \"nombre\": \"Mateos Gago Suite\", \"direccion\": \"Calle Mateos Gago, 20, 41004 Sevilla\", \"zona\": \"Santa Cruz\" },\r",
-        "  { \"nombre\": \"Mesón de los Caballeros\", \"direccion\": \"Calle Mesón de los Caballeros, 1, 41004 Sevilla\", \"zona\": \"Centro\" },\r",
-        "  { \"nombre\": \"Puerta del Arenal I\", \"direccion\": \"Calle Castelar, 4, 41001 Sevilla\", \"zona\": \"Arenal\" },\r",
-        "  { \"nombre\": \"San Fernando Ático\", \"direccion\": \"Calle San Fernando, 29, 41004 Sevilla\", \"zona\": \"Centro\" },\r",
-        "  { \"nombre\": \"Viapol Homes 1.1\", \"direccion\": \"Calle Gregorio Cabeza, 2, 41018 Sevilla\", \"zona\": \"Nervión\" },\r",
-        "  { \"nombre\": \"Viapol Homes 3.1\", \"direccion\": \"Calle Gregorio Cabeza, 2, 41018 Sevilla\", \"zona\": \"Nervión\" }\r",
-        "]"
+        "../API/bpm/userTask/{{taskId}}/context"
+      ],
+      "exposed" : false
+    },
+    "taskId" : {
+      "type" : "urlparameter",
+      "value" : [
+        "id"
       ],
       "exposed" : false
     }
   },
   "assets" : [
     {
-      "id" : "49aec383-9240-41fb-a021-cbacf3770603",
-      "name" : "style.css",
-      "type" : "css",
+      "id" : "b690d0e1-26e4-4c3d-a119-a20e0cc03e36",
+      "name" : "localization.json",
+      "type" : "json",
       "order" : 0,
       "external" : false
     },
     {
-      "id" : "5c41a70e-8de1-4ec8-9d8f-6cb5921c2bcb",
-      "name" : "localization.json",
-      "type" : "json",
+      "id" : "99890730-f7c5-4a9c-930a-8f8ffe5afdf9",
+      "name" : "style.css",
+      "type" : "css",
       "order" : 0,
       "external" : false
     }
