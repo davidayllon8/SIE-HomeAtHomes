@@ -49,7 +49,11 @@
               </parameters>
             </configuration>
           </filters>
-          <contract xmi:type="process:Contract" xmi:id="_dIr7X0OrEfGgfttdFKB59A"/>
+          <contract xmi:type="process:Contract" xmi:id="_dIr7X0OrEfGgfttdFKB59A">
+            <inputs xmi:type="process:ContractInput" xmi:id="_7kNlkESbEfGz0-4TJv7qDg" name="input1">
+              <mapping xmi:type="process:ContractInputMapping" xmi:id="_7kNlkUSbEfGz0-4TJv7qDg"/>
+            </inputs>
+          </contract>
           <expectedDuration xmi:type="expression:Expression" xmi:id="_dIr7YEOrEfGgfttdFKB59A" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
         </elements>
         <elements xmi:type="process:ServiceTask" xmi:id="_dIr7YUOrEfGgfttdFKB59A" name="Conexion N8N" outgoing="_dIr8EkOrEfGgfttdFKB59A" incoming="_mZf4AEOuEfGWJfQQ-wAzTg">
@@ -276,6 +280,9 @@
       </elements>
       <data xmi:type="process:BusinessObjectData" xmi:id="_dIr7_UOrEfGgfttdFKB59A" name="apartamento" dataType="_dIr8NUOrEfGgfttdFKB59A" className="com.company.model.Piso">
         <defaultValue xmi:type="expression:Expression" xmi:id="_dIr7_kOrEfGgfttdFKB59A" name="" content="" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object"/>
+      </data>
+      <data xmi:type="process:BusinessObjectData" xmi:id="_PXHk0ESbEfGz0-4TJv7qDg" name="reserva" dataType="_dIr8NUOrEfGgfttdFKB59A" className="com.company.model.Reserva">
+        <defaultValue xmi:type="expression:Expression" xmi:id="_PXHk0USbEfGz0-4TJv7qDg" name="" content="" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object"/>
       </data>
       <formMapping xmi:type="process:FormMapping" xmi:id="_dIr7_0OrEfGgfttdFKB59A">
         <targetForm xmi:type="expression:Expression" xmi:id="_dIr8AEOrEfGgfttdFKB59A" name="seleccionPisoFecha" content="bd5b95d1-77bd-4fc6-833b-42a934e7a723" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
