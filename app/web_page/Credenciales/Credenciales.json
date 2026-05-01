@@ -4,7 +4,7 @@
   "type" : "form",
   "uuid" : "1733bdb0-c090-49c3-9ec9-c3a22ba17276",
   "modelVersion" : "2.6",
-  "lastUpdate" : 1777561992268,
+  "lastUpdate" : 1777567132187,
   "description" : "Page generated with Bonita UI designer",
   "rows" : [
     [
@@ -292,6 +292,10 @@
                   "value" : {
                     "type" : "variable",
                     "value" : "formInput.fechaNacimiento"
+                  },
+                  "allowHTML" : {
+                    "type" : "constant",
+                    "value" : false
                   }
                 },
                 "reference" : "62d62a56-2ab2-4236-bca4-66ec3862e3fe",
@@ -565,27 +569,6 @@
                   "dimension" : {
                     "type" : "constant",
                     "value" : 12
-                  },
-                  "assign" : {
-                    "type" : "constant",
-                    "value" : false
-                  },
-                  "url" : {
-                    "type" : "interpolation"
-                  },
-                  "responseStatusCode" : {
-                    "type" : "variable"
-                  },
-                  "dataFromSuccess" : {
-                    "type" : "variable"
-                  },
-                  "closeOnSuccess" : {
-                    "type" : "constant",
-                    "value" : false
-                  },
-                  "modalId" : {
-                    "type" : "constant",
-                    "value" : ""
                   }
                 },
                 "reference" : "3dcc3a1f-3a04-414f-a430-8a4729f17b17",

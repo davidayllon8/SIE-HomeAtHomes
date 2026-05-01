@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <businessObjectModel xmlns="http://documentation.bonitasoft.com/bdm-xml-schema/1.0" modelVersion="1.0">
     <businessObjects>
+        <businessObject qualifiedName="com.company.model.Incidencia">
+            <fields>
+                <field type="STRING" length="255" name="idTicketOdoo" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="clienteNombre" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="pisoActual" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="motivoQueja" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="estado" nullable="false" collection="false"/>
+                <field type="STRING" length="255" name="decisionFinal" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="pisoNuevoId" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="correo" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="telefono" nullable="true" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.company.model.Reserva" fetchType="LAZY" name="reserva" nullable="true" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.company.model.Piso" fetchType="LAZY" name="pisoRelacionado" nullable="true" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.company.model.UserCliente" fetchType="LAZY" name="clienteRelacionado" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
         <businessObject qualifiedName="com.company.model.Piso">
             <fields>
                 <field type="STRING" length="255" name="nombre" nullable="true" collection="false"/>
@@ -23,10 +42,11 @@
             </fields>
             <uniqueConstraints/>
             <queries>
-                <query name="solapamiento" content="SELECT r&#10; FROM Reserva r &#10;WHERE r.piso.persistenceId = :pisoId&#10;AND r.fechaEntrada &lt; :fechaSalida&#10;AND r.fechaSalida &gt; :fechaEntrada" returnType="com.company.model.Reserva">
+                <query name="buscaSolapamiento" content="SELECT r FROM Reserva r&#13;&#10;&#13;&#10;WHERE r.piso = :pisoBuscado AND r.fechaEntrada &lt;= :fechaFinBuscada AND r.fechaSalida &gt;= :fechaInicioBuscada " returnType="com.company.model.Reserva">
                     <queryParameters>
                         <queryParameter name="fechaEntrada" className="java.time.OffsetDateTime"/>
                         <queryParameter name="fechaSalida" className="java.time.OffsetDateTime"/>
+                        <queryParameter name="estado" className="java.lang.String"/>
                     </queryParameters>
                 </query>
             </queries>
