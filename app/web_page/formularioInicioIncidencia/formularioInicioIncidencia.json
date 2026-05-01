@@ -4,7 +4,7 @@
   "type" : "form",
   "uuid" : "9049bde3-4fdc-403c-9e7c-4967afa5287f",
   "modelVersion" : "2.6",
-  "lastUpdate" : 1777547675943,
+  "lastUpdate" : 1777652348782,
   "description" : "Page generated with Bonita UI designer",
   "rows" : [
     [
@@ -115,97 +115,6 @@
                     {
                       "type" : "component",
                       "dimension" : {
-                        "md" : 12,
-                        "sm" : 12,
-                        "xs" : 12,
-                        "lg" : 12
-                      },
-                      "propertyValues" : {
-                        "labelHidden" : {
-                          "type" : "constant",
-                          "value" : false
-                        },
-                        "hidden" : {
-                          "type" : "constant",
-                          "value" : false
-                        },
-                        "labelPosition" : {
-                          "type" : "constant",
-                          "value" : "top"
-                        },
-                        "cssClasses" : {
-                          "type" : "constant",
-                          "value" : ""
-                        },
-                        "labelWidth" : {
-                          "type" : "constant",
-                          "value" : 1
-                        },
-                        "readOnly" : {
-                          "type" : "constant",
-                          "value" : false
-                        },
-                        "label" : {
-                          "type" : "interpolation",
-                          "value" : "Identificador del Cliente"
-                        },
-                        "placeholder" : {
-                          "type" : "constant",
-                          "value" : "nombre"
-                        },
-                        "type" : {
-                          "type" : "constant",
-                          "value" : "text"
-                        },
-                        "dimension" : {
-                          "type" : "constant",
-                          "value" : 12
-                        },
-                        "value" : {
-                          "type" : "variable",
-                          "value" : "formInput.incidenciaInput.clienteId"
-                        },
-                        "required" : {
-                          "type" : "constant",
-                          "value" : true
-                        },
-                        "allowHTML" : {
-                          "type" : "constant",
-                          "value" : false
-                        },
-                        "minLength" : {
-                          "type" : "constant",
-                          "value" : ""
-                        },
-                        "maxLength" : {
-                          "type" : "constant",
-                          "value" : ""
-                        },
-                        "debounce" : {
-                          "type" : "constant",
-                          "value" : 0
-                        },
-                        "min" : {
-                          "type" : "constant"
-                        },
-                        "max" : {
-                          "type" : "constant"
-                        },
-                        "step" : {
-                          "type" : "constant",
-                          "value" : 1
-                        }
-                      },
-                      "reference" : "8f357ec6-a833-4458-abf1-2269ae94904d",
-                      "hasValidationError" : false,
-                      "id" : "pbInput",
-                      "description" : ""
-                    }
-                  ],
-                  [
-                    {
-                      "type" : "component",
-                      "dimension" : {
                         "xs" : 12,
                         "sm" : 12,
                         "md" : 12,
@@ -246,7 +155,7 @@
                         },
                         "label" : {
                           "type" : "interpolation",
-                          "value" : "Alojamiento actual"
+                          "value" : "Numero de reserva afectada"
                         },
                         "labelPosition" : {
                           "type" : "constant",
@@ -258,11 +167,11 @@
                         },
                         "placeholder" : {
                           "type" : "interpolation",
-                          "value" : "Calle Alfonso"
+                          "value" : "Casa Pepe"
                         },
                         "value" : {
                           "type" : "variable",
-                          "value" : "formInput.incidenciaInput.pisoId"
+                          "value" : "formInput.incidenciaInput.idReservaInput"
                         },
                         "debounce" : {
                           "type" : "constant",
@@ -283,186 +192,9 @@
                           "value" : 1
                         }
                       },
-                      "reference" : "e8dcadf1-d6f8-4ff5-aa12-b321f230e85b",
+                      "reference" : "87b87b8c-ff6e-444d-b16c-1928b2858ca2",
                       "hasValidationError" : false,
                       "id" : "pbInput"
-                    }
-                  ],
-                  [
-                    {
-                      "type" : "component",
-                      "dimension" : {
-                        "xs" : 12,
-                        "sm" : 12,
-                        "md" : 12,
-                        "lg" : 12
-                      },
-                      "propertyValues" : {
-                        "cssClasses" : {
-                          "type" : "constant",
-                          "value" : ""
-                        },
-                        "hidden" : {
-                          "type" : "constant",
-                          "value" : false
-                        },
-                        "required" : {
-                          "type" : "constant",
-                          "value" : false
-                        },
-                        "allowHTML" : {
-                          "type" : "constant",
-                          "value" : false
-                        },
-                        "minLength" : {
-                          "type" : "constant",
-                          "value" : ""
-                        },
-                        "maxLength" : {
-                          "type" : "constant",
-                          "value" : ""
-                        },
-                        "readOnly" : {
-                          "type" : "constant",
-                          "value" : false
-                        },
-                        "labelHidden" : {
-                          "type" : "constant",
-                          "value" : false
-                        },
-                        "label" : {
-                          "type" : "interpolation",
-                          "value" : "Correo electrónico"
-                        },
-                        "labelPosition" : {
-                          "type" : "constant",
-                          "value" : "top"
-                        },
-                        "labelWidth" : {
-                          "type" : "constant",
-                          "value" : 4
-                        },
-                        "placeholder" : {
-                          "type" : "interpolation",
-                          "value" : "example@gmail.com"
-                        },
-                        "value" : {
-                          "type" : "variable",
-                          "value" : "formInput.incidenciaInput.correoInput"
-                        },
-                        "debounce" : {
-                          "type" : "constant",
-                          "value" : 0
-                        },
-                        "type" : {
-                          "type" : "constant",
-                          "value" : "text"
-                        },
-                        "min" : {
-                          "type" : "constant"
-                        },
-                        "max" : {
-                          "type" : "constant"
-                        },
-                        "step" : {
-                          "type" : "constant",
-                          "value" : 1
-                        }
-                      },
-                      "reference" : "871230b4-f20c-4267-91b3-d52f11b4e9f1",
-                      "hasValidationError" : false,
-                      "id" : "pbInput"
-                    }
-                  ],
-                  [
-                    {
-                      "type" : "component",
-                      "dimension" : {
-                        "md" : 12,
-                        "sm" : 12,
-                        "xs" : 12,
-                        "lg" : 12
-                      },
-                      "propertyValues" : {
-                        "labelHidden" : {
-                          "type" : "constant",
-                          "value" : false
-                        },
-                        "hidden" : {
-                          "type" : "constant",
-                          "value" : false
-                        },
-                        "labelPosition" : {
-                          "type" : "constant",
-                          "value" : "top"
-                        },
-                        "cssClasses" : {
-                          "type" : "constant",
-                          "value" : ""
-                        },
-                        "labelWidth" : {
-                          "type" : "constant",
-                          "value" : 1
-                        },
-                        "readOnly" : {
-                          "type" : "constant",
-                          "value" : false
-                        },
-                        "label" : {
-                          "type" : "interpolation",
-                          "value" : "Teléfono de Contacto"
-                        },
-                        "placeholder" : {
-                          "type" : "constant",
-                          "value" : "+00 000000000"
-                        },
-                        "type" : {
-                          "type" : "constant",
-                          "value" : "text"
-                        },
-                        "dimension" : {
-                          "type" : "constant",
-                          "value" : 12
-                        },
-                        "value" : {
-                          "type" : "variable",
-                          "value" : "formInput.incidenciaInput.telefonoInput"
-                        },
-                        "required" : {
-                          "type" : "constant",
-                          "value" : true
-                        },
-                        "allowHTML" : {
-                          "type" : "constant",
-                          "value" : false
-                        },
-                        "minLength" : {
-                          "type" : "constant",
-                          "value" : ""
-                        },
-                        "maxLength" : {
-                          "type" : "constant",
-                          "value" : ""
-                        },
-                        "debounce" : {
-                          "type" : "constant",
-                          "value" : 0
-                        },
-                        "min" : {
-                          "type" : "constant"
-                        },
-                        "max" : {
-                          "type" : "constant"
-                        },
-                        "step" : {
-                          "type" : "constant",
-                          "value" : 1
-                        }
-                      },
-                      "reference" : "c3ea6e5e-80a6-4b84-abbe-5d0b4032561d",
-                      "hasValidationError" : false,
-                      "id" : "pbInput",
-                      "description" : ""
                     }
                   ]
                 ]
@@ -645,10 +377,11 @@
       "type" : "json",
       "value" : [
         "{\r",
-        "  \"incidenciaInput\" : {\r",
-        "    \"clienteId\" : \"\",\r",
-        "    \"pisoId\" : \"\",\r",
-        "    \"motivo\" : \"\"\r",
+        "  \"incidenciaInput\": {\r",
+        "    \"idReservaInput\": \"\",\r",
+        "    \"motivo\": \"\",\r",
+        "    \"clienteNombre\": \"\",\r",
+        "    \"idTicketOdoo\": \"\"\r",
         "  }\r",
         "}"
       ],
@@ -672,9 +405,46 @@
     "formOutput" : {
       "type" : "expression",
       "value" : [
-        "return {",
-        "\tincidenciaInput: $data.formInput.incidenciaInput",
-        "}"
+        "var datosLimpios = angular.copy($data.formInput.incidenciaInput);\r",
+        "\r",
+        "// 1. Extraemos el Piso\r",
+        "if (datosLimpios.idPiso && datosLimpios.idPiso.persistenceId) {\r",
+        "    datosLimpios.pisoId = datosLimpios.idPiso.persistenceId;\r",
+        "}\r",
+        "\r",
+        "// 2. Forzamos los números (Long) para el piso y la reserva\r",
+        "if (datosLimpios.pisoId) {\r",
+        "    datosLimpios.pisoId = parseInt(datosLimpios.pisoId, 10);\r",
+        "} else {\r",
+        "    datosLimpios.pisoId = null;\r",
+        "}\r",
+        "\r",
+        "if (datosLimpios.idReservaInput) {\r",
+        "    datosLimpios.idReservaInput = parseInt(datosLimpios.idReservaInput, 10);\r",
+        "} else {\r",
+        "    datosLimpios.idReservaInput = null;\r",
+        "}\r",
+        "\r",
+        "// 3. Borramos la variable temporal del piso\r",
+        "delete datosLimpios.idPiso;\r",
+        "\r",
+        "return {\r",
+        "  \"incidenciaInput\": datosLimpios\r",
+        "};"
+      ],
+      "exposed" : false
+    },
+    "listaClientes" : {
+      "type" : "url",
+      "value" : [
+        "../API/bdm/businessData/com.company.model.UserCliente?q=find&p=0&c=100"
+      ],
+      "exposed" : false
+    },
+    "listaPisos" : {
+      "type" : "url",
+      "value" : [
+        "../API/bdm/businessData/com.company.model.Piso?q=find&p=0&c=100"
       ],
       "exposed" : false
     }

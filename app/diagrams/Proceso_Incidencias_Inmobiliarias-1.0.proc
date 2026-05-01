@@ -197,7 +197,7 @@
           <connectors xmi:type="process:Connector" xmi:id="_xe6-MEO3EfGJ3usuMHBVgw" name="PATCH_Reubicar_Odoo" definitionId="rest-post" event="ON_ENTER" definitionVersion="1.5.0">
             <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_xe6-MUO3EfGJ3usuMHBVgw" definitionId="rest-post" version="1.5.0" modelVersion="8">
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_xe6-MkO3EfGJ3usuMHBVgw" key="url">
-                <expression xmi:type="expression:Expression" xmi:id="_xe6-M0O3EfGJ3usuMHBVgw" name="http://localhost:5678/webhook-test/reubicar-cliente" content="http://localhost:5678/webhook-test/reubicar-cliente" returnTypeFixed="true"/>
+                <expression xmi:type="expression:Expression" xmi:id="_xe6-M0O3EfGJ3usuMHBVgw" name="http://localhost:5678/webhook/reubicar-cliente" content="http://localhost:5678/webhook/reubicar-cliente" returnTypeFixed="true"/>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_xe6-NEO3EfGJ3usuMHBVgw" key="contentType">
                 <expression xmi:type="expression:Expression" xmi:id="_xe6-NUO3EfGJ3usuMHBVgw" name="application/json" content="application/json" returnTypeFixed="true"/>
@@ -212,7 +212,7 @@
                 <expression xmi:type="expression:TableExpression" xmi:id="_xe6-O0O3EfGJ3usuMHBVgw"/>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_xe6-PEO3EfGJ3usuMHBVgw" key="add_bonita_context_headers">
-                <expression xmi:type="expression:Expression" xmi:id="_xe6-PUO3EfGJ3usuMHBVgw" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+                <expression xmi:type="expression:Expression" xmi:id="_xe6-PUO3EfGJ3usuMHBVgw" name="false" content="false" returnType="java.lang.Boolean" returnTypeFixed="true"/>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_xe6-PkO3EfGJ3usuMHBVgw" key="bonita_activity_instance_id_header">
                 <expression xmi:type="expression:Expression" xmi:id="_xe6-P0O3EfGJ3usuMHBVgw" name="X-Bonita-Activity-Instance-Id" content="X-Bonita-Activity-Instance-Id" returnTypeFixed="true"/>
@@ -230,15 +230,16 @@
                 <expression xmi:type="expression:Expression" xmi:id="_xe6-R0O3EfGJ3usuMHBVgw" name="X-Bonita-Task-Assignee-Id" content="X-Bonita-Task-Assignee-Id" returnTypeFixed="true"/>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_xe6-SEO3EfGJ3usuMHBVgw" key="body">
-                <expression xmi:type="expression:Expression" xmi:id="_xe6-SUO3EfGJ3usuMHBVgw" name="body()" content="import groovy.json.JsonBuilder&#xD;&#xA;&#xD;&#xA;def builder = new JsonBuilder()&#xD;&#xA;&#xD;&#xA;builder {&#xD;&#xA;    ticket_odoo_id incidencia.idTicketOdoo&#xD;&#xA;    cliente incidencia.clienteNombre&#xD;&#xA;    piso_a_liberar incidencia.pisoActual&#xD;&#xA;    piso_a_ocupar incidencia.pisoNuevoId&#xD;&#xA;    accion &quot;REUBICACION&quot;&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;return builder.toString()" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
-                  <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_BRUw4EPBEfGLSaZ7z7RuYw" name="incidencia" dataType="_Elg-JEOfEfGJ3usuMHBVgw" className="com.company.model.Incidencia"/>
+                <expression xmi:type="expression:Expression" xmi:id="_xe6-SUO3EfGJ3usuMHBVgw" name="body()" content="import groovy.json.JsonBuilder&#xD;&#xA;&#xD;&#xA;def nombreNuevoPiso = &quot;un alojamiento alternativo&quot;&#xD;&#xA;if (incidencia.pisoNuevoId != null) {&#xD;&#xA;    try {&#xD;&#xA;        def idPiso = Long.valueOf(incidencia.pisoNuevoId.toString().trim())&#xD;&#xA;        def pisoObj = pisoDAO.findByPersistenceId(idPiso)&#xD;&#xA;        if(pisoObj != null) nombreNuevoPiso = pisoObj.nombre&#xD;&#xA;    } catch(Exception e) {}&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;def textoFinal = &quot;RESOLUCIÓN FINAL:\nREUBICACIÓN APROBADA. El cliente ha sido trasladado al alojamiento: &quot; + nombreNuevoPiso&#xD;&#xA;&#xD;&#xA;def builder = new JsonBuilder()&#xD;&#xA;builder {&#xD;&#xA;    ticket_odoo_id incidencia.idTicketOdoo != null ? incidencia.idTicketOdoo : &quot;&quot;&#xD;&#xA;    tipo_resolucion &quot;REUBICACIÓN&quot;&#xD;&#xA;    cliente_nombre incidencia.clienteNombre != null ? incidencia.clienteNombre : &quot;Cliente&quot;&#xD;&#xA;    resolucion_texto textoFinal&#xD;&#xA;}&#xD;&#xA;return builder.toString()" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
+                  <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_meDiwEVtEfGo6KXgfcmcBA" name="incidencia" dataType="_Elg-JEOfEfGJ3usuMHBVgw" className="com.company.model.Incidencia"/>
+                  <referencedElements xmi:type="expression:Expression" xmi:id="_meDiwUVtEfGo6KXgfcmcBA" name="pisoDAO" content="pisoDAO" type="TYPE_BUSINESS_OBJECT_DAO" returnType="com.company.model.PisoDAO" returnTypeFixed="true"/>
                 </expression>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_xe6-SkO3EfGJ3usuMHBVgw" key="do_not_follow_redirect">
-                <expression xmi:type="expression:Expression" xmi:id="_xe6-S0O3EfGJ3usuMHBVgw" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+                <expression xmi:type="expression:Expression" xmi:id="_xe6-S0O3EfGJ3usuMHBVgw" name="false" content="false" returnType="java.lang.Boolean" returnTypeFixed="true"/>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_xe6-TEO3EfGJ3usuMHBVgw" key="ignore_body">
-                <expression xmi:type="expression:Expression" xmi:id="_xe6-TUO3EfGJ3usuMHBVgw" returnType="java.lang.Boolean" returnTypeFixed="true"/>
+                <expression xmi:type="expression:Expression" xmi:id="_xe6-TUO3EfGJ3usuMHBVgw" name="false" content="false" returnType="java.lang.Boolean" returnTypeFixed="true"/>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_xe6-TkO3EfGJ3usuMHBVgw" key="fail_on_http_4xx">
                 <expression xmi:type="expression:Expression" xmi:id="_xe6-T0O3EfGJ3usuMHBVgw" returnType="java.lang.Boolean" returnTypeFixed="true"/>
@@ -388,6 +389,18 @@
               <operator xmi:type="expression:Operator" xmi:id="_xe6-sEO3EfGJ3usuMHBVgw" type="ASSIGNMENT"/>
             </outputs>
           </connectors>
+          <operations xmi:type="expression:Operation" xmi:id="_hZJ0oESgEfGOIJUXqEtkXA">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_hZJ0oUSgEfGOIJUXqEtkXA" name="incidencia" content="incidencia" type="TYPE_VARIABLE" returnType="com.company.model.Incidencia">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_iH5xAESgEfGOIJUXqEtkXA" name="incidencia" dataType="_Elg-JEOfEfGJ3usuMHBVgw" className="com.company.model.Incidencia"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_hZJ0okSgEfGOIJUXqEtkXA" name="newScript()" content="if (incidencia.reserva != null) {&#xD;&#xA;&#x9;def reservaVieja = incidencia.reserva&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;// 1. Clonamos el &quot;ADN&quot; de la reserva&#xD;&#xA;&#x9;def cliente = reservaVieja.persona&#xD;&#xA;&#x9;def fechaIn = reservaVieja.fechaEntrada&#xD;&#xA;&#x9;def fechaOut = reservaVieja.fechaSalida&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;// 2. Ponemos el piso anterior en restauración (Garantizado)&#xD;&#xA;&#x9;if (reservaVieja.piso != null) {&#xD;&#xA;&#x9;&#x9;reservaVieja.piso.estado = &quot;En Restauracion&quot;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;// 3. BÚSQUEDA DEL PISO NUEVO (Convertimos a Long a la fuerza)&#xD;&#xA;&#x9;def pisoNuevo = null&#xD;&#xA;&#x9;if (incidencia.pisoNuevoId != null) {&#xD;&#xA;&#x9;&#x9;try {&#xD;&#xA;&#x9;&#x9;&#x9;Long idSeguro = Long.valueOf(incidencia.pisoNuevoId.toString().trim())&#xD;&#xA;&#x9;&#x9;&#x9;pisoNuevo = pisoDAO.findByPersistenceId(idSeguro)&#xD;&#xA;&#x9;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;&#x9;if (pisoNuevo != null) {&#xD;&#xA;&#x9;&#x9;&#x9;&#x9;pisoNuevo.estado = &quot;Ocupado&quot;&#xD;&#xA;&#x9;&#x9;&#x9;}&#xD;&#xA;&#x9;&#x9;} catch (Exception e) {&#xD;&#xA;&#x9;&#x9;&#x9;// Si el ID viene corrupto, no rompemos el proceso&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;// 4. Desvinculamos la reserva de la incidencia y cambiamos su estado a Cancelada&#xD;&#xA;&#x9;incidencia.reserva = null&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;if (reservaVieja != null) {&#xD;&#xA;&#x9;&#x9;// Simplemente cambiamos el atributo.&#xD;&#xA;&#x9;&#x9;// Bonita/Hibernate detectará el cambio y lo guardará automáticamente al terminar la tarea.&#xD;&#xA;&#x9;&#x9;reservaVieja.estado = &quot;Cancelada por Reubicación&quot;&#xD;&#xA;&#x9;}&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;// 5. NACIMIENTO DE LA NUEVA RESERVA&#xD;&#xA;&#x9;def nuevaReserva = new com.company.model.Reserva()&#xD;&#xA;&#x9;nuevaReserva.persona = cliente&#xD;&#xA;&#x9;nuevaReserva.piso = pisoNuevo&#xD;&#xA;&#x9;nuevaReserva.fechaEntrada = fechaIn&#xD;&#xA;&#x9;nuevaReserva.fechaSalida = fechaOut&#xD;&#xA;&#x9;nuevaReserva.estado = &quot;Reubicada&quot;&#xD;&#xA;&#x9;&#xD;&#xA;&#x9;// 6. Vinculamos&#xD;&#xA;&#x9;incidencia.reserva = nuevaReserva&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;return incidencia" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.Incidencia">
+              <referencedElements xmi:type="expression:Expression" xmi:id="_LlgzMEWSEfGThIBhimn82g" name="pisoDAO" content="pisoDAO" type="TYPE_BUSINESS_OBJECT_DAO" returnType="com.company.model.PisoDAO" returnTypeFixed="true"/>
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_LlhaQEWSEfGThIBhimn82g" name="incidencia" dataType="_Elg-JEOfEfGJ3usuMHBVgw" className="com.company.model.Incidencia"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_hZJ0o0SgEfGOIJUXqEtkXA" type="ASSIGNMENT" expression="setEstado">
+              <inputTypes>java.lang.String</inputTypes>
+            </operator>
+          </operations>
           <loopCondition xmi:type="expression:Expression" xmi:id="_eNP5M0O3EfGJ3usuMHBVgw" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <loopMaximum xmi:type="expression:Expression" xmi:id="_eNP5NEO3EfGJ3usuMHBVgw" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
           <cardinalityExpression xmi:type="expression:Expression" xmi:id="_eNP5NUO3EfGJ3usuMHBVgw" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
@@ -407,7 +420,7 @@
           <connectors xmi:type="process:Connector" xmi:id="_82-wsEO5EfGJ3usuMHBVgw" name="POST_Devolucion_n8n" definitionId="rest-post" event="ON_ENTER" definitionVersion="1.5.0">
             <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_82_XwEO5EfGJ3usuMHBVgw" definitionId="rest-post" version="1.5.0" modelVersion="8">
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_82_XwUO5EfGJ3usuMHBVgw" key="url">
-                <expression xmi:type="expression:Expression" xmi:id="_82_XwkO5EfGJ3usuMHBVgw" name="http://localhost:5678/webhook-test/resolucion-alternativa" content="http://localhost:5678/webhook-test/resolucion-alternativa" returnTypeFixed="true"/>
+                <expression xmi:type="expression:Expression" xmi:id="_82_XwkO5EfGJ3usuMHBVgw" name="http://localhost:5678/webhook/resolucion-alternativa" content="http://localhost:5678/webhook/resolucion-alternativa" returnTypeFixed="true"/>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_82_Xw0O5EfGJ3usuMHBVgw" key="contentType">
                 <expression xmi:type="expression:Expression" xmi:id="_82_XxEO5EfGJ3usuMHBVgw" name="application/json" content="application/json" returnTypeFixed="true"/>
@@ -440,8 +453,8 @@
                 <expression xmi:type="expression:Expression" xmi:id="_82_X1kO5EfGJ3usuMHBVgw" name="X-Bonita-Task-Assignee-Id" content="X-Bonita-Task-Assignee-Id" returnTypeFixed="true"/>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_82_X10O5EfGJ3usuMHBVgw" key="body">
-                <expression xmi:type="expression:Expression" xmi:id="_82_X2EO5EfGJ3usuMHBVgw" name="body()" content="import groovy.json.JsonBuilder&#xD;&#xA;def builder = new JsonBuilder()&#xD;&#xA;builder {&#xD;&#xA;&#x9;ticket_odoo_id incidencia.idTicketOdoo&#xD;&#xA;&#x9;resolucion &quot;DEVOLUCIÓN PROCESADA. El cliente abandona el piso y se le devuelve el dinero.&quot;&#xD;&#xA;}&#xD;&#xA;return builder.toString()" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
-                  <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_ogaNMESKEfGDX6UbdATF6A" name="incidencia" dataType="_Elg-JEOfEfGJ3usuMHBVgw" className="com.company.model.Incidencia"/>
+                <expression xmi:type="expression:Expression" xmi:id="_82_X2EO5EfGJ3usuMHBVgw" name="body()" content="import groovy.json.JsonBuilder&#xD;&#xA;import java.time.LocalDate&#xD;&#xA;import java.time.temporal.ChronoUnit&#xD;&#xA;&#xD;&#xA;double totalDevolucion = 0.0&#xD;&#xA;def diagnostico = &quot;OK&quot;&#xD;&#xA;&#xD;&#xA;try {&#xD;&#xA;&#x9;if (incidencia.reserva != null &amp;&amp; incidencia.reserva.piso != null) {&#xD;&#xA;&#x9;&#x9;// 1. Extraemos el precio del piso (Si es null, ponemos 0 para que no explote)&#xD;&#xA;&#x9;&#x9;def precioNoche = incidencia.reserva.piso.precioDia != null ? incidencia.reserva.piso.precioDia : 0.0&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;// 2. Extraemos las fechas como texto bruto&#xD;&#xA;&#x9;&#x9;def fechaInStr = incidencia.reserva.fechaEntrada.toString()&#xD;&#xA;&#x9;&#x9;def fechaOutStr = incidencia.reserva.fechaSalida.toString()&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;// 3. Recortamos SOLO la parte de la fecha (YYYY-MM-DD) para evitar problemas de TimeZone&#xD;&#xA;&#x9;&#x9;LocalDate inicio = LocalDate.parse(fechaInStr.substring(0, 10))&#xD;&#xA;&#x9;&#x9;LocalDate fin = LocalDate.parse(fechaOutStr.substring(0, 10))&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;// 4. Calculamos los días matemáticamente&#xD;&#xA;&#x9;&#x9;long noches = ChronoUnit.DAYS.between(inicio, fin)&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;// 5. Anti-errores: Si por algún motivo da negativo o 0, cobramos 1 noche mínima&#xD;&#xA;&#x9;&#x9;if (noches &lt;= 0) { noches = 1 }&#xD;&#xA;&#x9;&#x9;&#xD;&#xA;&#x9;&#x9;totalDevolucion = noches * precioNoche&#xD;&#xA;&#x9;} else {&#xD;&#xA;&#x9;&#x9;diagnostico = &quot;Datos de reserva o piso nulos&quot;&#xD;&#xA;&#x9;}&#xD;&#xA;} catch (Exception e) {&#xD;&#xA;&#x9;diagnostico = &quot;Error interno: &quot; + e.getMessage()&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;// Opcional: He dejado la variable 'diagnostico' en el texto. Si sale 0.0, Odoo nos chivará por qué falló.&#xD;&#xA;def textoFinal = &quot;RESOLUCIÓN FINAL:\nEl cliente abandona el alojamiento.\n===================================\n💰 TOTAL A DEVOLVER: &quot; + totalDevolucion + &quot; €\n===================================\n(Diagnóstico: &quot; + diagnostico + &quot;)&quot;&#xD;&#xA;&#xD;&#xA;def builder = new JsonBuilder()&#xD;&#xA;builder {&#xD;&#xA;&#x9;ticket_odoo_id incidencia.idTicketOdoo != null ? incidencia.idTicketOdoo : &quot;&quot;&#xD;&#xA;&#x9;tipo_resolucion &quot;DEVOLUCIÓN&quot;&#xD;&#xA;&#x9;cliente_nombre incidencia.clienteNombre != null ? incidencia.clienteNombre : &quot;Cliente&quot;&#xD;&#xA;&#x9;resolucion_texto textoFinal&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;return builder.toString()" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
+                  <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_dyGloEV1EfGo6KXgfcmcBA" name="incidencia" dataType="_Elg-JEOfEfGJ3usuMHBVgw" className="com.company.model.Incidencia"/>
                 </expression>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_82_X2UO5EfGJ3usuMHBVgw" key="do_not_follow_redirect">
@@ -598,6 +611,15 @@
               <operator xmi:type="expression:Operator" xmi:id="_82_YP0O5EfGJ3usuMHBVgw" type="ASSIGNMENT"/>
             </outputs>
           </connectors>
+          <operations xmi:type="expression:Operation" xmi:id="_5kzwAEVTEfG6c9K846KY8A">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_5kzwAUVTEfG6c9K846KY8A" name="incidencia" content="incidencia" type="TYPE_VARIABLE" returnType="com.company.model.Incidencia">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_5_5JgEVTEfG6c9K846KY8A" name="incidencia" dataType="_Elg-JEOfEfGJ3usuMHBVgw" className="com.company.model.Incidencia"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_5kzwAkVTEfG6c9K846KY8A" name="newScript()" content="if (incidencia.reserva != null) {&#xD;&#xA;    // 1. El piso entra en restauración&#xD;&#xA;    if (incidencia.reserva.piso != null) {&#xD;&#xA;        incidencia.reserva.piso.estado = &quot;En restauración&quot;&#xD;&#xA;    }&#xD;&#xA;    &#xD;&#xA;    // 2. La reserva queda anulada históricamente&#xD;&#xA;    incidencia.reserva.estado = &quot;Cancelada por Devolución&quot;&#xD;&#xA;    &#xD;&#xA;    // (Opcional) Desvinculamos la reserva de la incidencia si no quieres que sigan atadas&#xD;&#xA;    // incidencia.reserva = null&#xD;&#xA;}&#xD;&#xA;return incidencia" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.Incidencia">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_zgmBoEWREfGThIBhimn82g" name="incidencia" dataType="_Elg-JEOfEfGJ3usuMHBVgw" className="com.company.model.Incidencia"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_5kzwA0VTEfG6c9K846KY8A" type="ASSIGNMENT"/>
+          </operations>
           <loopCondition xmi:type="expression:Expression" xmi:id="_NVzJA0O5EfGJ3usuMHBVgw" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <loopMaximum xmi:type="expression:Expression" xmi:id="_NVzJBEO5EfGJ3usuMHBVgw" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
           <cardinalityExpression xmi:type="expression:Expression" xmi:id="_NVzJBUO5EfGJ3usuMHBVgw" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
@@ -611,7 +633,7 @@
           <connectors xmi:type="process:Connector" xmi:id="_OiZCgEO6EfGJ3usuMHBVgw" name="POST_Mantiene_n8n" definitionId="rest-post" event="ON_ENTER" definitionVersion="1.5.0">
             <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_OiZCgUO6EfGJ3usuMHBVgw" definitionId="rest-post" version="1.5.0" modelVersion="8">
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_OiZCgkO6EfGJ3usuMHBVgw" key="url">
-                <expression xmi:type="expression:Expression" xmi:id="_OiZCg0O6EfGJ3usuMHBVgw" name="http://localhost:5678/webhook-test/resolucion-alternativa" content="http://localhost:5678/webhook-test/resolucion-alternativa" returnTypeFixed="true"/>
+                <expression xmi:type="expression:Expression" xmi:id="_OiZCg0O6EfGJ3usuMHBVgw" name="http://localhost:5678/webhook/resolucion-alternativa" content="http://localhost:5678/webhook/resolucion-alternativa" returnTypeFixed="true"/>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_OiZChEO6EfGJ3usuMHBVgw" key="contentType">
                 <expression xmi:type="expression:Expression" xmi:id="_OiZChUO6EfGJ3usuMHBVgw" name="application/json" content="application/json" returnTypeFixed="true"/>
@@ -644,8 +666,8 @@
                 <expression xmi:type="expression:Expression" xmi:id="_OiZpnkO6EfGJ3usuMHBVgw" name="X-Bonita-Task-Assignee-Id" content="X-Bonita-Task-Assignee-Id" returnTypeFixed="true"/>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_OiZpn0O6EfGJ3usuMHBVgw" key="body">
-                <expression xmi:type="expression:Expression" xmi:id="_OiZpoEO6EfGJ3usuMHBVgw" name="body()" content="import groovy.json.JsonBuilder&#xD;&#xA;def builder = new JsonBuilder()&#xD;&#xA;builder {&#xD;&#xA;    ticket_odoo_id incidencia.idTicketOdoo&#xD;&#xA;    resolucion &quot;MANTIENE PISO. El cliente decide quedarse en el alojamiento sin compensación.&quot;&#xD;&#xA;}&#xD;&#xA;return builder.toString()" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
-                  <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_r8huwESKEfGDX6UbdATF6A" name="incidencia" dataType="_Elg-JEOfEfGJ3usuMHBVgw" className="com.company.model.Incidencia"/>
+                <expression xmi:type="expression:Expression" xmi:id="_OiZpoEO6EfGJ3usuMHBVgw" name="body()" content="import groovy.json.JsonBuilder&#xD;&#xA;&#xD;&#xA;def builder = new JsonBuilder()&#xD;&#xA;builder {&#xD;&#xA;    ticket_odoo_id incidencia.idTicketOdoo != null ? incidencia.idTicketOdoo : &quot;&quot;&#xD;&#xA;    tipo_resolucion &quot;MANTIENE PISO&quot;&#xD;&#xA;    cliente_nombre incidencia.clienteNombre != null ? incidencia.clienteNombre : &quot;Cliente&quot;&#xD;&#xA;    resolucion_texto &quot;RESOLUCIÓN FINAL:\nEl cliente decide quedarse en el alojamiento sin compensación.&quot;&#xD;&#xA;}&#xD;&#xA;return builder.toString()" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnTypeFixed="true">
+                  <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_izLzgEVtEfGo6KXgfcmcBA" name="incidencia" dataType="_Elg-JEOfEfGJ3usuMHBVgw" className="com.company.model.Incidencia"/>
                 </expression>
               </parameters>
               <parameters xmi:type="connectorconfiguration:ConnectorParameter" xmi:id="_OiZpoUO6EfGJ3usuMHBVgw" key="do_not_follow_redirect">
@@ -802,6 +824,15 @@
               <operator xmi:type="expression:Operator" xmi:id="_OiZqB0O6EfGJ3usuMHBVgw" type="ASSIGNMENT"/>
             </outputs>
           </connectors>
+          <operations xmi:type="expression:Operation" xmi:id="_ms8CYEVkEfGo6KXgfcmcBA">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_ms8CYUVkEfGo6KXgfcmcBA" name="incidencia" content="incidencia" type="TYPE_VARIABLE" returnType="com.company.model.Incidencia">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_oIfaYEVkEfGo6KXgfcmcBA" name="incidencia" dataType="_Elg-JEOfEfGJ3usuMHBVgw" className="com.company.model.Incidencia"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_ms8CYkVkEfGo6KXgfcmcBA" name="newScript()" content="if (incidencia.reserva != null &amp;&amp; incidencia.reserva.piso != null) {&#xD;&#xA;    incidencia.reserva.piso.estado = &quot;Ocupado&quot;&#xD;&#xA;}&#xD;&#xA;return incidencia" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.Incidencia">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_mZyyAEVmEfGo6KXgfcmcBA" name="incidencia" dataType="_Elg-JEOfEfGJ3usuMHBVgw" className="com.company.model.Incidencia"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_ms8CY0VkEfGo6KXgfcmcBA" type="ASSIGNMENT"/>
+          </operations>
           <loopCondition xmi:type="expression:Expression" xmi:id="_OQtSE0O5EfGJ3usuMHBVgw" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <loopMaximum xmi:type="expression:Expression" xmi:id="_OQtSFEO5EfGJ3usuMHBVgw" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
           <cardinalityExpression xmi:type="expression:Expression" xmi:id="_OQtSFUO5EfGJ3usuMHBVgw" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
@@ -848,9 +879,6 @@
           <contract xmi:type="process:Contract" xmi:id="_1aq8tEOkEfGJ3usuMHBVgw">
             <inputs xmi:type="process:ContractInput" xmi:id="_9yI98EOkEfGJ3usuMHBVgw" name="opcionElegida">
               <mapping xmi:type="process:ContractInputMapping" xmi:id="_9yI98UOkEfGJ3usuMHBVgw"/>
-            </inputs>
-            <inputs xmi:type="process:ContractInput" xmi:id="__UdsUEOkEfGJ3usuMHBVgw" name="comentariosGestor">
-              <mapping xmi:type="process:ContractInputMapping" xmi:id="__UeTYEOkEfGJ3usuMHBVgw"/>
             </inputs>
           </contract>
           <expectedDuration xmi:type="expression:Expression" xmi:id="_1arjwEOkEfGJ3usuMHBVgw" name="" content="" returnType="java.lang.Long" returnTypeFixed="true"/>
@@ -955,10 +983,11 @@
         </elements>
       </elements>
       <data xmi:type="process:BusinessObjectData" xmi:id="_gfEy4EOsEfGJ3usuMHBVgw" name="incidencia" dataType="_Elg-JEOfEfGJ3usuMHBVgw" className="com.company.model.Incidencia">
-        <defaultValue xmi:type="expression:Expression" xmi:id="_gfEy4UOsEfGJ3usuMHBVgw" name="init_incidencia()" content="// 1. Creamos un nuevo objeto vacío de tu base de datos&#xD;&#xA;def incidenciaVar = new com.company.model.Incidencia()&#xD;&#xA;&#xD;&#xA;// 2. Le inyectamos los datos que acaban de entrar por el formulario (Contrato)&#xD;&#xA;incidenciaVar.clienteNombre = incidenciaInput.clienteId&#xD;&#xA;incidenciaVar.pisoActual = incidenciaInput.pisoId&#xD;&#xA;incidenciaVar.motivoQueja = incidenciaInput.motivo&#xD;&#xA;incidenciaVar.correo = incidenciaInput.correoInput&#xD;&#xA;incidenciaVar.telefono = incidenciaInput.telefonoInput&#xD;&#xA;incidenciaVar.estado = &quot;Abierta&quot; // Estado por defecto al crear&#xD;&#xA;&#xD;&#xA;// 3. Devolvemos el objeto para que Bonita lo guarde en la BD real&#xD;&#xA;return incidenciaVar" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.Incidencia">
-          <referencedElements xmi:type="process:ContractInput" xmi:id="_6KW1gESBEfGDX6UbdATF6A" name="incidenciaInput" type="COMPLEX">
-            <mapping xmi:type="process:ContractInputMapping" xmi:id="_6KW1gUSBEfGDX6UbdATF6A"/>
+        <defaultValue xmi:type="expression:Expression" xmi:id="_gfEy4UOsEfGJ3usuMHBVgw" name="init_incidencia()" content="def incidenciaVar = new com.company.model.Incidencia()&#xD;&#xA;&#xD;&#xA;// 1. Buscamos la Reserva Maestra&#xD;&#xA;if (incidenciaInput.idReservaInput != null) {&#xD;&#xA;    def reservaEncontrada = reservaDAO.findByPersistenceId(incidenciaInput.idReservaInput)&#xD;&#xA;    &#xD;&#xA;    if (reservaEncontrada != null) {&#xD;&#xA;        // 2. Vinculamos la reserva a la incidencia&#xD;&#xA;        incidenciaVar.reserva = reservaEncontrada&#xD;&#xA;        &#xD;&#xA;        // 3. Extraemos los datos obligatorios para que Hibernate no se queje&#xD;&#xA;        incidenciaVar.clienteNombre = reservaEncontrada.persona.nombre&#xD;&#xA;        incidenciaVar.pisoActual = reservaEncontrada.piso.nombre&#xD;&#xA;    }&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;// 4. Datos básicos&#xD;&#xA;incidenciaVar.motivoQueja = incidenciaInput.motivo&#xD;&#xA;incidenciaVar.estado = &quot;Abierta&quot;&#xD;&#xA;&#xD;&#xA;return incidenciaVar" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.Incidencia">
+          <referencedElements xmi:type="process:ContractInput" xmi:id="_IkqP8EVTEfG6c9K846KY8A" name="incidenciaInput" type="COMPLEX">
+            <mapping xmi:type="process:ContractInputMapping" xmi:id="_IkqP8UVTEfG6c9K846KY8A"/>
           </referencedElements>
+          <referencedElements xmi:type="expression:Expression" xmi:id="_IkqP8kVTEfG6c9K846KY8A" name="reservaDAO" content="reservaDAO" type="TYPE_BUSINESS_OBJECT_DAO" returnType="com.company.model.ReservaDAO" returnTypeFixed="true"/>
         </defaultValue>
       </data>
       <formMapping xmi:type="process:FormMapping" xmi:id="_Elg-BEOfEfGJ3usuMHBVgw">
@@ -1064,23 +1093,14 @@
       <contract xmi:type="process:Contract" xmi:id="_Elg-DEOfEfGJ3usuMHBVgw">
         <inputs xmi:type="process:ContractInput" xmi:id="_5ZZOUEOfEfGJ3usuMHBVgw" name="incidenciaInput" type="COMPLEX">
           <mapping xmi:type="process:ContractInputMapping" xmi:id="_5ZZOUUOfEfGJ3usuMHBVgw"/>
-          <inputs xmi:type="process:ContractInput" xmi:id="_7e6JUEOfEfGJ3usuMHBVgw" name="clienteId">
-            <mapping xmi:type="process:ContractInputMapping" xmi:id="_7e6JUUOfEfGJ3usuMHBVgw"/>
-          </inputs>
-          <inputs xmi:type="process:ContractInput" xmi:id="_8-VUsEOfEfGJ3usuMHBVgw" name="pisoId">
-            <mapping xmi:type="process:ContractInputMapping" xmi:id="_8-VUsUOfEfGJ3usuMHBVgw"/>
-          </inputs>
           <inputs xmi:type="process:ContractInput" xmi:id="_-dyVQEOfEfGJ3usuMHBVgw" name="motivo">
             <mapping xmi:type="process:ContractInputMapping" xmi:id="_-dyVQUOfEfGJ3usuMHBVgw"/>
           </inputs>
-          <inputs xmi:type="process:ContractInput" xmi:id="_Yc-U4ESBEfGDX6UbdATF6A" name="correoInput">
-            <mapping xmi:type="process:ContractInputMapping" xmi:id="_Yc-U4USBEfGDX6UbdATF6A"/>
-          </inputs>
-          <inputs xmi:type="process:ContractInput" xmi:id="_Ziz7kESBEfGDX6UbdATF6A" name="telefonoInput">
-            <mapping xmi:type="process:ContractInputMapping" xmi:id="_Ziz7kUSBEfGDX6UbdATF6A"/>
+          <inputs xmi:type="process:ContractInput" xmi:id="_EiOFkESgEfGOIJUXqEtkXA" name="idReservaInput" type="LONG">
+            <mapping xmi:type="process:ContractInputMapping" xmi:id="_EiOFkUSgEfGOIJUXqEtkXA"/>
           </inputs>
         </inputs>
-        <constraints xmi:type="process:ContractConstraint" xmi:id="_C-Hs4EOgEfGJ3usuMHBVgw" expression="if (incidenciaInput.clienteId == null || incidenciaInput.clienteId.trim().isEmpty()) {&#xD;&#xA;    return false&#xD;&#xA;}&#xD;&#xA;if (incidenciaInput.pisoId == null || incidenciaInput.pisoId.trim().isEmpty()) {&#xD;&#xA;    return false&#xD;&#xA;}&#xD;&#xA;if (incidenciaInput.motivo == null || incidenciaInput.motivo.trim().length() &lt; 10) {&#xD;&#xA;    return false&#xD;&#xA;}&#xD;&#xA;return true" errorMessage="Error de validación: Debe proporcionar un ID de cliente válido, un ID de piso válido, y el motivo de la queja debe contener al menos 10 caracteres." name="validarDatosIncidencia">
+        <constraints xmi:type="process:ContractConstraint" xmi:id="_C-Hs4EOgEfGJ3usuMHBVgw" expression="// 1. Comprobamos que la reserva no venga vacía&#xD;&#xA;boolean isReservaValid = incidenciaInput.idReservaInput != null&#xD;&#xA;&#xD;&#xA;// 2. Comprobamos que el motivo tenga al menos 10 letras&#xD;&#xA;boolean isMotivoValid = incidenciaInput.motivo != null &amp;&amp; incidenciaInput.motivo.toString().trim().length() >= 10&#xD;&#xA;&#xD;&#xA;// 3. Devolvemos el resultado&#xD;&#xA;return isReservaValid &amp;&amp; isMotivoValid" errorMessage="Error de validación: Debe proporcionar un ID de cliente válido, un ID de piso válido, y el motivo de la queja debe contener al menos 10 caracteres." name="validarDatosIncidencia">
           <inputNames>incidenciaInput</inputNames>
         </constraints>
       </contract>

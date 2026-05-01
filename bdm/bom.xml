@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <businessObjectModel xmlns="http://documentation.bonitasoft.com/bdm-xml-schema/1.0" modelVersion="1.0">
     <businessObjects>
-<<<<<<< HEAD
         <businessObject qualifiedName="com.company.model.Piso">
             <fields>
                 <field type="STRING" length="255" name="nombre" nullable="true" collection="false"/>
                 <field type="STRING" length="255" name="direccion" nullable="true" collection="false"/>
                 <field type="DOUBLE" length="255" name="precioDia" nullable="true" collection="false"/>
                 <field type="INTEGER" length="255" name="capacidad" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="estado" nullable="true" collection="false"/>
             </fields>
             <uniqueConstraints/>
             <queries/>
@@ -19,6 +19,7 @@
                 <relationField type="AGGREGATION" reference="com.company.model.UserCliente" fetchType="LAZY" name="persona" nullable="true" collection="false"/>
                 <field type="OFFSETDATETIME" length="255" name="fechaEntrada" nullable="true" collection="false"/>
                 <field type="OFFSETDATETIME" length="255" name="fechaSalida" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="estado" nullable="true" collection="false"/>
             </fields>
             <uniqueConstraints/>
             <queries>
@@ -36,8 +37,12 @@
                 <field type="STRING" length="255" name="nombre" nullable="true" collection="false"/>
                 <field type="STRING" length="255" name="password" nullable="true" collection="false"/>
                 <field type="STRING" length="255" name="dni" nullable="true" collection="false"/>
-                <field type="STRING" length="255" name="fechaNacimiento" nullable="true" collection="false"/>
-=======
+                <field type="LOCALDATE" length="255" name="fechaNacimiento" nullable="true" collection="false"/>
+            </fields>
+            <uniqueConstraints/>
+            <queries/>
+            <indexes/>
+        </businessObject>
         <businessObject qualifiedName="com.company.model.Incidencia">
             <fields>
                 <field type="STRING" length="255" name="idTicketOdoo" nullable="true" collection="false"/>
@@ -49,7 +54,9 @@
                 <field type="STRING" length="255" name="pisoNuevoId" nullable="true" collection="false"/>
                 <field type="STRING" length="255" name="correo" nullable="true" collection="false"/>
                 <field type="STRING" length="255" name="telefono" nullable="true" collection="false"/>
->>>>>>> incidencias
+                <relationField type="AGGREGATION" reference="com.company.model.Reserva" fetchType="LAZY" name="reserva" nullable="true" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.company.model.Piso" fetchType="LAZY" name="pisoRelacionado" nullable="true" collection="false"/>
+                <relationField type="AGGREGATION" reference="com.company.model.UserCliente" fetchType="LAZY" name="clienteRelacionado" nullable="true" collection="false"/>
             </fields>
             <uniqueConstraints/>
             <queries/>
