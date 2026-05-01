@@ -4,7 +4,7 @@
   "type" : "form",
   "uuid" : "9049bde3-4fdc-403c-9e7c-4967afa5287f",
   "modelVersion" : "2.6",
-  "lastUpdate" : 1777635837253,
+  "lastUpdate" : 1777652348782,
   "description" : "Page generated with Bonita UI designer",
   "rows" : [
     [
@@ -377,10 +377,11 @@
       "type" : "json",
       "value" : [
         "{\r",
-        "  \"incidenciaInput\" : {\r",
-        "    \"clienteId\" : \"\",\r",
-        "    \"pisoId\" : \"\",\r",
-        "    \"motivo\" : \"\"\r",
+        "  \"incidenciaInput\": {\r",
+        "    \"idReservaInput\": \"\",\r",
+        "    \"motivo\": \"\",\r",
+        "    \"clienteNombre\": \"\",\r",
+        "    \"idTicketOdoo\": \"\"\r",
         "  }\r",
         "}"
       ],
