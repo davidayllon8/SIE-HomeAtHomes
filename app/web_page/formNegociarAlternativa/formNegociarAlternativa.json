@@ -4,7 +4,7 @@
   "type" : "form",
   "uuid" : "feb234ae-ee5d-40f6-83c3-8bf5d38f5591",
   "modelVersion" : "2.6",
-  "lastUpdate" : 1777549932165,
+  "lastUpdate" : 1777634263657,
   "description" : "Page generated with Bonita UI designer",
   "rows" : [
     [
@@ -401,8 +401,8 @@
       "type" : "json",
       "value" : [
         "[\r",
-        "  {\"etiqueta\": \"El cliente acepta quedarse (Compensación económica)\", \"valor\": \"SE_QUEDA\"},\r",
-        "  {\"etiqueta\": \"El cliente exige la devolución total (Cancelar reserva)\", \"valor\": \"DEVOLUCION\"}\r",
+        "  {\"etiqueta\": \"El cliente acepta quedarse (Mantiene Piso)\", \"valor\": \"SE_QUEDA\"},\r",
+        "  {\"etiqueta\": \"El cliente exige la devolución total (Devolución Coste)\", \"valor\": \"DEVOLUCION\"}\r",
         "]"
       ],
       "exposed" : false
