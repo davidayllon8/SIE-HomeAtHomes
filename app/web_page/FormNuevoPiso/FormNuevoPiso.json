@@ -4,7 +4,7 @@
   "type" : "form",
   "uuid" : "1126986c-fb09-45ff-a846-58dd34514557",
   "modelVersion" : "2.6",
-  "lastUpdate" : 1777471217746,
+  "lastUpdate" : 1777650002283,
   "description" : "Page generated with Bonita UI designer",
   "rows" : [
     [
@@ -165,7 +165,8 @@
                     "value" : "nombre"
                   },
                   "returnedKey" : {
-                    "type" : "constant"
+                    "type" : "expression",
+                    "value" : "persistenceId"
                   },
                   "value" : {
                     "type" : "variable",
@@ -322,9 +323,17 @@
     "formOutput" : {
       "type" : "expression",
       "value" : [
-        "return {",
-        "\tnuevoPisoInput: $data.formInput.nuevoPisoInput",
-        "}"
+        "var pisoSeleccionado = $data.formInput.nuevoPisoInput;\r",
+        "var idFinal = pisoSeleccionado;\r",
+        "\r",
+        "// Si el formulario ha guardado un objeto entero, extraemos SOLO el número\r",
+        "if (pisoSeleccionado && pisoSeleccionado.persistenceId) {\r",
+        "    idFinal = pisoSeleccionado.persistenceId;\r",
+        "}\r",
+        "\r",
+        "return {\r",
+        "    'nuevoPisoInput': idFinal\r",
+        "};"
       ],
       "exposed" : false
     },
@@ -343,30 +352,9 @@
       "exposed" : false
     },
     "listaApartamentos" : {
-      "type" : "json",
+      "type" : "url",
       "value" : [
-        "[\r",
-        "  { \"nombre\": \"Abades I Luxury\", \"direccion\": \"Calle Abades, 1, 41004 Sevilla\", \"zona\": \"Santa Cruz\" },\r",
-        "  { \"nombre\": \"Adriano 1.1 View\", \"direccion\": \"Calle Adriano, 1, 41001 Sevilla\", \"zona\": \"Arenal\" },\r",
-        "  { \"nombre\": \"Adriano 1.3\", \"direccion\": \"Calle Adriano, 1, 41001 Sevilla\", \"zona\": \"Arenal\" },\r",
-        "  { \"nombre\": \"Alameda Corner\", \"direccion\": \"Alameda de Hércules, 41002 Sevilla\", \"zona\": \"Alameda\" },\r",
-        "  { \"nombre\": \"Alcázar de María\", \"direccion\": \"Plaza de la Alianza, 41004 Sevilla\", \"zona\": \"Santa Cruz\" },\r",
-        "  { \"nombre\": \"Alfalfa Terrace\", \"direccion\": \"Calle Alfalfa, 8, 41004 Sevilla\", \"zona\": \"Alfalfa\" },\r",
-        "  { \"nombre\": \"Bailén Premium\", \"direccion\": \"Calle Bailén, 18, 41001 Sevilla\", \"zona\": \"Museo\" },\r",
-        "  { \"nombre\": \"Betis Riverside\", \"direccion\": \"Calle Betis, 22, 41010 Sevilla\", \"zona\": \"Triana\" },\r",
-        "  { \"nombre\": \"Casa Palacio San José\", \"direccion\": \"Calle San José, 7, 41004 Sevilla\", \"zona\": \"Santa Cruz\" },\r",
-        "  { \"nombre\": \"Conde de Ibarra\", \"direccion\": \"Calle Conde de Ibarra, 4, 41004 Sevilla\", \"zona\": \"Centro\" },\r",
-        "  { \"nombre\": \"Francos 14 Luxury\", \"direccion\": \"Calle Francos, 14, 41004 Sevilla\", \"zona\": \"Catedral\" },\r",
-        "  { \"nombre\": \"García de Vinuesa Ático\", \"direccion\": \"Calle García de Vinuesa, 12, 41001 Sevilla\", \"zona\": \"Arenal\" },\r",
-        "  { \"nombre\": \"Los Remedios Designer\", \"direccion\": \"Calle de los Remedios, 41011 Sevilla\", \"zona\": \"Los Remedios\" },\r",
-        "  { \"nombre\": \"Luis de Vargas\", \"direccion\": \"Calle Luis de Vargas, 2, 41001 Sevilla\", \"zona\": \"Plaza de Armas\" },\r",
-        "  { \"nombre\": \"Mateos Gago Suite\", \"direccion\": \"Calle Mateos Gago, 20, 41004 Sevilla\", \"zona\": \"Santa Cruz\" },\r",
-        "  { \"nombre\": \"Mesón de los Caballeros\", \"direccion\": \"Calle Mesón de los Caballeros, 1, 41004 Sevilla\", \"zona\": \"Centro\" },\r",
-        "  { \"nombre\": \"Puerta del Arenal I\", \"direccion\": \"Calle Castelar, 4, 41001 Sevilla\", \"zona\": \"Arenal\" },\r",
-        "  { \"nombre\": \"San Fernando Ático\", \"direccion\": \"Calle San Fernando, 29, 41004 Sevilla\", \"zona\": \"Centro\" },\r",
-        "  { \"nombre\": \"Viapol Homes 1.1\", \"direccion\": \"Calle Gregorio Cabeza, 2, 41018 Sevilla\", \"zona\": \"Nervión\" },\r",
-        "  { \"nombre\": \"Viapol Homes 3.1\", \"direccion\": \"Calle Gregorio Cabeza, 2, 41018 Sevilla\", \"zona\": \"Nervión\" }\r",
-        "]"
+        "../API/bdm/businessData/com.company.model.Piso?q=find&p=0&c=50"
       ],
       "exposed" : false
     }
