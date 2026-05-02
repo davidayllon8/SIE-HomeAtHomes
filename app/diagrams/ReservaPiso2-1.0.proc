@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:connectorconfiguration="http://www.bonitasoft.org/model/connector/configuration" xmlns:decision="http://www.bonitasoft.org/ns/bpm/process/decision" xmlns:definition="http://www.bonitasoft.org/ns/connector/definition/6.1" xmlns:expression="http://www.bonitasoft.org/ns/bpm/expression" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:process="http://www.bonitasoft.org/ns/bpm/process">
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:actormapping="http://www.bonitasoft.org/ns/actormapping/6.0" xmlns:configuration="http://www.bonitasoft.org/ns/bpm/configuration" xmlns:connectorconfiguration="http://www.bonitasoft.org/model/connector/configuration" xmlns:decision="http://www.bonitasoft.org/ns/bpm/process/decision" xmlns:definition="http://www.bonitasoft.org/ns/connector/definition/6.1" xmlns:expression="http://www.bonitasoft.org/ns/bpm/expression" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:process="http://www.bonitasoft.org/ns/bpm/process">
   <process:MainProcess xmi:id="_dIrUQEOrEfGgfttdFKB59A" name="ReservaPiso2" bonitaModelVersion="8">
     <elements xmi:type="process:Pool" xmi:id="_dIrUQUOrEfGgfttdFKB59A" name="Reserva2">
       <elements xmi:type="process:Lane" xmi:id="_dIrUQkOrEfGgfttdFKB59A" name="Cliente" actor="_dIr8FUOrEfGgfttdFKB59A">
@@ -362,6 +362,42 @@
       </connections>
       <actors xmi:type="process:Actor" xmi:id="_dIr8FUOrEfGgfttdFKB59A" name="Cliente" initiator="true"/>
       <actors xmi:type="process:Actor" xmi:id="_dIr8FkOrEfGgfttdFKB59A" name="Greeter"/>
+      <configurations xmi:type="configuration:Configuration" xmi:id="_hkBuUEZVEfGL8v_bkevu2w" name="Production" version="8" username="Guille">
+        <actorMappings xmi:type="actormapping:ActorMappingsType" xmi:id="_hkC8cEZVEfGL8v_bkevu2w">
+          <actorMapping xmi:type="actormapping:ActorMapping" xmi:id="_hkC8cUZVEfGL8v_bkevu2w" name="Cliente">
+            <groups xmi:type="actormapping:Groups" xmi:id="_hkC8ckZVEfGL8v_bkevu2w"/>
+            <memberships xmi:type="actormapping:Membership" xmi:id="_hkC8c0ZVEfGL8v_bkevu2w"/>
+            <roles xmi:type="actormapping:Roles" xmi:id="_hkC8dEZVEfGL8v_bkevu2w"/>
+            <users xmi:type="actormapping:Users" xmi:id="_hkDjgEZVEfGL8v_bkevu2w">
+              <user>Guille</user>
+            </users>
+          </actorMapping>
+          <actorMapping xmi:type="actormapping:ActorMapping" xmi:id="_hkDjgUZVEfGL8v_bkevu2w" name="Greeter">
+            <groups xmi:type="actormapping:Groups" xmi:id="_hkDjgkZVEfGL8v_bkevu2w"/>
+            <memberships xmi:type="actormapping:Membership" xmi:id="_hkDjg0ZVEfGL8v_bkevu2w"/>
+            <roles xmi:type="actormapping:Roles" xmi:id="_hkDjhEZVEfGL8v_bkevu2w"/>
+            <users xmi:type="actormapping:Users" xmi:id="_hkDjhUZVEfGL8v_bkevu2w">
+              <user>Guille</user>
+              <user>Julio.I</user>
+            </users>
+          </actorMapping>
+        </actorMappings>
+        <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_hkCVYEZVEfGL8v_bkevu2w" type="CONNECTOR" definitionId="rest-post" definitionVersion="1.5.0" implementationId="rest-post-impl" implementationVersion="1.5.0"/>
+        <definitionMappings xmi:type="configuration:DefinitionMapping" xmi:id="_hkCVYUZVEfGL8v_bkevu2w" type="ACTOR_FILTER" definitionId="bonita-actorfilter-initiator" definitionVersion="1.0" implementationId="bonita-actorfilter-initiator-impl" implementationVersion="1.0.0"/>
+        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_hkCVYkZVEfGL8v_bkevu2w" id="CONNECTOR">
+          <children xmi:type="configuration:FragmentContainer" xmi:id="_hkCVY0ZVEfGL8v_bkevu2w" id="rest-post-impl-1.5.0">
+            <fragments xmi:type="configuration:Fragment" xmi:id="_hkCVZEZVEfGL8v_bkevu2w" key="rest-post-impl -- 1.5.0" value="bonita-connector-rest-1.5.0.jar" type="CONNECTOR"/>
+          </children>
+        </processDependencies>
+        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_hkCVZUZVEfGL8v_bkevu2w" id="GROOVY_SCRIPT"/>
+        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_hkCVZkZVEfGL8v_bkevu2w" id="ACTOR_FILTER">
+          <children xmi:type="configuration:FragmentContainer" xmi:id="_hkCVZ0ZVEfGL8v_bkevu2w" id="bonita-actorfilter-initiator-impl-1.0.0">
+            <fragments xmi:type="configuration:Fragment" xmi:id="_hkCVaEZVEfGL8v_bkevu2w" key="bonita-actorfilter-initiator-impl -- 1.0.0" value="bonita-actorfilter-initiator-1.0.0.jar" type="ACTOR_FILTER"/>
+          </children>
+        </processDependencies>
+        <processDependencies xmi:type="configuration:FragmentContainer" xmi:id="_hkCVaUZVEfGL8v_bkevu2w" id="OTHER"/>
+        <applicationDependencies xmi:type="configuration:FragmentContainer" xmi:id="_hkCVakZVEfGL8v_bkevu2w" id="GROOVY_SCRIPT"/>
+      </configurations>
       <contract xmi:type="process:Contract" xmi:id="_dIr8F0OrEfGgfttdFKB59A">
         <inputs xmi:type="process:ContractInput" xmi:id="_dIr8GEOrEfGgfttdFKB59A" name="pisoSeleccionado">
           <mapping xmi:type="process:ContractInputMapping" xmi:id="_dIr8GUOrEfGgfttdFKB59A"/>
