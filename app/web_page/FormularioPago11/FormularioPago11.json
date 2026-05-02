@@ -4,7 +4,7 @@
   "type" : "form",
   "uuid" : "e688bb08-b2bc-4071-ac9d-481b71609046",
   "modelVersion" : "2.6",
-  "lastUpdate" : 1777549935120,
+  "lastUpdate" : 1777714225629,
   "description" : "Page generated with Bonita UI designer",
   "rows" : [
     [
@@ -403,7 +403,8 @@
                         "value" : "Select an option"
                       },
                       "availableValues" : {
-                        "type" : "constant"
+                        "type" : "expression",
+                        "value" : "posiblesAnyos"
                       },
                       "displayedKey" : {
                         "type" : "constant"

@@ -7,13 +7,22 @@
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_dIrUSEOrEfGgfttdFKB59A" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_dIrUSUOrEfGgfttdFKB59A" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_dIrUSkOrEfGgfttdFKB59A" name="" content="" returnTypeFixed="true"/>
+          <operations xmi:type="expression:Operation" xmi:id="_nhxXYEYOEfGCH_GRzEq-PQ">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_nhxXYUYOEfGCH_GRzEq-PQ" name="reserva" content="reserva" type="TYPE_VARIABLE" returnType="com.company.model.Reserva">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_prMiAEYOEfGCH_GRzEq-PQ" name="reserva" dataType="_dIr8NUOrEfGgfttdFKB59A" className="com.company.model.Reserva"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_nhxXYkYOEfGCH_GRzEq-PQ" name="newScript()" content="return &quot;POR_RECIBIR&quot;" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT"/>
+            <operator xmi:type="expression:Operator" xmi:id="_nhxXY0YOEfGCH_GRzEq-PQ" type="JAVA_METHOD" expression="setEstado">
+              <inputTypes>java.lang.String</inputTypes>
+            </operator>
+          </operations>
           <loopCondition xmi:type="expression:Expression" xmi:id="_dIrUS0OrEfGgfttdFKB59A" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <loopMaximum xmi:type="expression:Expression" xmi:id="_dIrUTEOrEfGgfttdFKB59A" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
           <cardinalityExpression xmi:type="expression:Expression" xmi:id="_dIrUTUOrEfGgfttdFKB59A" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
           <iteratorExpression xmi:type="expression:Expression" xmi:id="_dIrUTkOrEfGgfttdFKB59A" name="multiInstanceIterator" content="multiInstanceIterator" type="MULTIINSTANCE_ITERATOR_TYPE" returnType="java.lang.Object" returnTypeFixed="true"/>
           <completionCondition xmi:type="expression:Expression" xmi:id="_dIrUT0OrEfGgfttdFKB59A" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <formMapping xmi:type="process:FormMapping" xmi:id="_dIrUUEOrEfGgfttdFKB59A">
-            <targetForm xmi:type="expression:Expression" xmi:id="_bHjgQESLEfGKOPKt6cbWHA" name="FormularioPago1" content="e688bb08-b2bc-4071-ac9d-481b71609046" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
+            <targetForm xmi:type="expression:Expression" xmi:id="_bHjgQESLEfGKOPKt6cbWHA" name="FormularioPago11" content="e688bb08-b2bc-4071-ac9d-481b71609046" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
           </formMapping>
           <filters xmi:type="process:ActorFilter" xmi:id="_Bq63QEOuEfGWJfQQ-wAzTg" name="ActorIniciador" definitionId="bonita-actorfilter-initiator" definitionVersion="1.0">
             <configuration xmi:type="connectorconfiguration:ConnectorConfiguration" xmi:id="_Bq63QUOuEfGWJfQQ-wAzTg" definitionId="bonita-actorfilter-initiator" version="1.0">
@@ -231,6 +240,38 @@
           <dynamicLabel xmi:type="expression:Expression" xmi:id="_82WtcUScEfGz0-4TJv7qDg" name="" content="" returnTypeFixed="true"/>
           <dynamicDescription xmi:type="expression:Expression" xmi:id="_82WtcEScEfGz0-4TJv7qDg" name="" content="" returnTypeFixed="true"/>
           <stepSummary xmi:type="expression:Expression" xmi:id="_82WtckScEfGz0-4TJv7qDg" name="" content="" returnTypeFixed="true"/>
+          <operations xmi:type="expression:Operation" xmi:id="_GKAV4EYYEfGCH_GRzEq-PQ">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_GKAV4UYYEfGCH_GRzEq-PQ" name="userCliente" content="userCliente" type="TYPE_VARIABLE" returnType="com.company.model.UserCliente">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_HdFHUEYYEfGCH_GRzEq-PQ" name="userCliente" dataType="_dIr8NUOrEfGgfttdFKB59A" className="com.company.model.UserCliente"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_GKAV4kYYEfGCH_GRzEq-PQ" name="buscaOCreaCliente()" content="// 1. Buscamos si el usuario ya existe por su correo&#xD;&#xA;def listaUsuarios = userClienteDAO.findByCorreoElectronico(correoElectronico, 0, 1)&#xD;&#xA;&#xD;&#xA;def elUsuario&#xD;&#xA;&#xD;&#xA;if (listaUsuarios.size() > 0) {&#xD;&#xA;    // SI EXISTE: Simplemente lo recuperamos y lo devolvemos tal cual está en la BD&#xD;&#xA;    elUsuario = listaUsuarios.get(0)&#xD;&#xA;} else {&#xD;&#xA;    // NO EXISTE: Creamos la instancia y rellenamos sus datos por primera vez&#xD;&#xA;    elUsuario = new com.company.model.UserCliente()&#xD;&#xA;    &#xD;&#xA;    elUsuario.nombre = nombre&#xD;&#xA;    elUsuario.correoElectronico = correoElectronico&#xD;&#xA;&#xD;&#xA;    elUsuario.dni = dni&#xD;&#xA;    &#xD;&#xA;    // Si usas LocalDate en el contrato para la fecha de nacimiento:&#xD;&#xA;    elUsuario.fechaNacimiento = fechaNacimiento&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;return elUsuario" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.UserCliente">
+              <referencedElements xmi:type="expression:Expression" xmi:id="_KULlYEYaEfGCH_GRzEq-PQ" name="userClienteDAO" content="userClienteDAO" type="TYPE_BUSINESS_OBJECT_DAO" returnType="com.company.model.UserClienteDAO" returnTypeFixed="true"/>
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_KULlYUYaEfGCH_GRzEq-PQ" name="correoElectronico">
+                <mapping xmi:type="process:ContractInputMapping" xmi:id="_KULlYkYaEfGCH_GRzEq-PQ"/>
+              </referencedElements>
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_KULlY0YaEfGCH_GRzEq-PQ" name="nombre">
+                <mapping xmi:type="process:ContractInputMapping" xmi:id="_KULlZEYaEfGCH_GRzEq-PQ"/>
+              </referencedElements>
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_KULlZUYaEfGCH_GRzEq-PQ" name="dni">
+                <mapping xmi:type="process:ContractInputMapping" xmi:id="_KULlZkYaEfGCH_GRzEq-PQ"/>
+              </referencedElements>
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_KULlZ0YaEfGCH_GRzEq-PQ" name="fechaNacimiento" type="LOCALDATE">
+                <mapping xmi:type="process:ContractInputMapping" xmi:id="_KULlaEYaEfGCH_GRzEq-PQ"/>
+              </referencedElements>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_GKAV40YYEfGCH_GRzEq-PQ" type="ASSIGNMENT"/>
+          </operations>
+          <operations xmi:type="expression:Operation" xmi:id="_jgWS4EYaEfGCH_GRzEq-PQ">
+            <leftOperand xmi:type="expression:Expression" xmi:id="_jgW58EYaEfGCH_GRzEq-PQ" name="reserva" content="reserva" type="TYPE_VARIABLE" returnType="com.company.model.Reserva">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_lNJL4EYaEfGCH_GRzEq-PQ" name="reserva" dataType="_dIr8NUOrEfGgfttdFKB59A" className="com.company.model.Reserva"/>
+            </leftOperand>
+            <rightOperand xmi:type="expression:Expression" xmi:id="_jgW58UYaEfGCH_GRzEq-PQ" name="userCliente" content="userCliente" type="TYPE_VARIABLE" returnType="com.company.model.UserCliente">
+              <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_s08qwEYaEfGCH_GRzEq-PQ" name="userCliente" dataType="_dIr8NUOrEfGgfttdFKB59A" className="com.company.model.UserCliente"/>
+            </rightOperand>
+            <operator xmi:type="expression:Operator" xmi:id="_jgW58kYaEfGCH_GRzEq-PQ" type="JAVA_METHOD" expression="setPersona">
+              <inputTypes>com.company.model.UserCliente</inputTypes>
+            </operator>
+          </operations>
           <loopCondition xmi:type="expression:Expression" xmi:id="_82Wtc0ScEfGz0-4TJv7qDg" name="" content="" returnType="java.lang.Boolean" returnTypeFixed="true"/>
           <loopMaximum xmi:type="expression:Expression" xmi:id="_82WtdEScEfGz0-4TJv7qDg" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
           <cardinalityExpression xmi:type="expression:Expression" xmi:id="_82WtdUScEfGz0-4TJv7qDg" name="" content="" returnType="java.lang.Integer" returnTypeFixed="true"/>
@@ -281,17 +322,21 @@
         <defaultValue xmi:type="expression:Expression" xmi:id="_dIr7_kOrEfGgfttdFKB59A" name="" content="" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object"/>
       </data>
       <data xmi:type="process:BusinessObjectData" xmi:id="_PXHk0ESbEfGz0-4TJv7qDg" name="reserva" dataType="_dIr8NUOrEfGgfttdFKB59A" className="com.company.model.Reserva">
-        <defaultValue xmi:type="expression:Expression" xmi:id="_PXHk0USbEfGz0-4TJv7qDg" name="init_reserva()" content="def nuevaReserva = new com.company.model.Reserva()&#xD;&#xA;nuevaReserva.piso = pisoSeleccionado&#xD;&#xA;nuevaReserva.fechaEntrada = fechaEntrada&#xD;&#xA;nuevaReserva.fechaSalida = fechaSalida&#xD;&#xA;nuevaReserva.estado = &quot;PENDIENTE_PAGO&quot;&#xD;&#xA;return nuevaReserva" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.Reserva">
-          <referencedElements xmi:type="process:ContractInput" xmi:id="_8Pp-8EVOEfGCH_GRzEq-PQ" name="fechaSalida" type="LOCALDATE">
-            <mapping xmi:type="process:ContractInputMapping" xmi:id="_8Pp-8UVOEfGCH_GRzEq-PQ"/>
+        <defaultValue xmi:type="expression:Expression" xmi:id="_PXHk0USbEfGz0-4TJv7qDg" name="init_reserva()" content="import java.time.ZoneOffset&#xD;&#xA;&#xD;&#xA;// 1. Buscamos el piso usando el DAO que Bonita nos inyecta automáticamente&#xD;&#xA;def elPiso = pisoDAO.findByNombre(pisoSeleccionado, 0, 1).get(0)&#xD;&#xA;&#xD;&#xA;// 2. Creamos la reserva y asignamos el objeto complejo (elPiso)&#xD;&#xA;def nuevaReserva = new com.company.model.Reserva()&#xD;&#xA;nuevaReserva.piso = elPiso&#xD;&#xA;&#xD;&#xA;// 3. Convertimos el LocalDate del contrato a OffsetDateTime para el BDM&#xD;&#xA;nuevaReserva.fechaEntrada = fechaEntrada.atStartOfDay().atOffset(ZoneOffset.UTC)&#xD;&#xA;nuevaReserva.fechaSalida = fechaSalida.atStartOfDay().atOffset(ZoneOffset.UTC)&#xD;&#xA;&#xD;&#xA;nuevaReserva.estado = &quot;PENDIENTE_PAGO&quot;&#xD;&#xA;&#xD;&#xA;return nuevaReserva" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.Reserva">
+          <referencedElements xmi:type="expression:Expression" xmi:id="_rMQXAEYMEfGCH_GRzEq-PQ" name="pisoDAO" content="pisoDAO" type="TYPE_BUSINESS_OBJECT_DAO" returnType="com.company.model.PisoDAO" returnTypeFixed="true"/>
+          <referencedElements xmi:type="process:ContractInput" xmi:id="_rMQXAUYMEfGCH_GRzEq-PQ" name="fechaSalida" type="LOCALDATE">
+            <mapping xmi:type="process:ContractInputMapping" xmi:id="_rMQXAkYMEfGCH_GRzEq-PQ"/>
           </referencedElements>
-          <referencedElements xmi:type="process:ContractInput" xmi:id="_8Pp-8kVOEfGCH_GRzEq-PQ" name="fechaEntrada" type="LOCALDATE">
-            <mapping xmi:type="process:ContractInputMapping" xmi:id="_8Pp-80VOEfGCH_GRzEq-PQ"/>
+          <referencedElements xmi:type="process:ContractInput" xmi:id="_rMQXA0YMEfGCH_GRzEq-PQ" name="fechaEntrada" type="LOCALDATE">
+            <mapping xmi:type="process:ContractInputMapping" xmi:id="_rMQXBEYMEfGCH_GRzEq-PQ"/>
           </referencedElements>
-          <referencedElements xmi:type="process:ContractInput" xmi:id="_8Pp-9EVOEfGCH_GRzEq-PQ" name="pisoSeleccionado">
-            <mapping xmi:type="process:ContractInputMapping" xmi:id="_8Pp-9UVOEfGCH_GRzEq-PQ"/>
+          <referencedElements xmi:type="process:ContractInput" xmi:id="_rMQXBUYMEfGCH_GRzEq-PQ" name="pisoSeleccionado">
+            <mapping xmi:type="process:ContractInputMapping" xmi:id="_rMQXBkYMEfGCH_GRzEq-PQ"/>
           </referencedElements>
         </defaultValue>
+      </data>
+      <data xmi:type="process:BusinessObjectData" xmi:id="_qiLTsEYWEfGCH_GRzEq-PQ" name="userCliente" dataType="_dIr8NUOrEfGgfttdFKB59A" className="com.company.model.UserCliente">
+        <defaultValue xmi:type="expression:Expression" xmi:id="_qiLTsUYWEfGCH_GRzEq-PQ" name="" content="" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object"/>
       </data>
       <formMapping xmi:type="process:FormMapping" xmi:id="_dIr7_0OrEfGgfttdFKB59A">
         <targetForm xmi:type="expression:Expression" xmi:id="_d8fJYES0EfGV0-7d-Czx6g" name="seleccionPisoFecha" content="bd5b95d1-77bd-4fc6-833b-42a934e7a723" type="FORM_REFERENCE_TYPE" returnTypeFixed="true"/>
@@ -327,11 +372,6 @@
         <inputs xmi:type="process:ContractInput" xmi:id="_dIr8HEOrEfGgfttdFKB59A" name="fechaSalida" type="LOCALDATE">
           <mapping xmi:type="process:ContractInputMapping" xmi:id="_dIr8HUOrEfGgfttdFKB59A"/>
         </inputs>
-        <constraints xmi:type="process:ContractConstraint" xmi:id="_a0DSMEVLEfGCH_GRzEq-PQ" expression="def reservaDAO = apiAccessor.getBusinessDataAPI().getDAO(com.company.model.ReservaDAO.class)&#xD;&#xA;&#xD;&#xA;def ocupados = reservaDAO.buscaSolapamiento(pisoSeleccionado,fechaEntrada,fechaSalida,0,1)&#xD;&#xA;return ocupados.isEmpty()" errorMessage="Lo sentimos este piso está ocupado en estas fechas" name="comprobarFechas">
-          <inputNames>fechaSalida</inputNames>
-          <inputNames>fechaEntrada</inputNames>
-          <inputNames>pisoSeleccionado</inputNames>
-        </constraints>
       </contract>
       <searchIndexes xmi:type="process:SearchIndex" xmi:id="_dIr8HkOrEfGgfttdFKB59A">
         <name xmi:type="expression:Expression" xmi:id="_dIr8H0OrEfGgfttdFKB59A" content="" returnTypeFixed="true"/>
