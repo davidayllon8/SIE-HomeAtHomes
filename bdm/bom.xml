@@ -10,6 +10,8 @@
                 <field type="STRING" length="255" name="estado" nullable="false" collection="false"/>
                 <field type="STRING" length="255" name="decisionFinal" nullable="true" collection="false"/>
                 <field type="STRING" length="255" name="pisoNuevoId" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="correo" nullable="true" collection="false"/>
+                <field type="STRING" length="255" name="telefono" nullable="true" collection="false"/>
                 <relationField type="AGGREGATION" reference="com.company.model.Reserva" fetchType="LAZY" name="reserva" nullable="true" collection="false"/>
                 <relationField type="AGGREGATION" reference="com.company.model.Piso" fetchType="LAZY" name="pisoRelacionado" nullable="true" collection="false"/>
                 <relationField type="AGGREGATION" reference="com.company.model.UserCliente" fetchType="LAZY" name="clienteRelacionado" nullable="true" collection="false"/>
@@ -18,6 +20,7 @@
             <queries/>
             <indexes/>
         </businessObject>
+
         <businessObject qualifiedName="com.company.model.Piso">
             <fields>
                 <field type="STRING" length="255" name="nombre" nullable="true" collection="false"/>
@@ -34,6 +37,7 @@
             </queries>
             <indexes/>
         </businessObject>
+
         <businessObject qualifiedName="com.company.model.Reserva">
             <fields>
                 <relationField type="AGGREGATION" reference="com.company.model.Piso" fetchType="LAZY" name="piso" nullable="true" collection="false"/>
@@ -44,13 +48,12 @@
             </fields>
             <uniqueConstraints/>
             <queries>
-                <query name="findActivas" content="SELECT r FROM Reserva r WHERE r.estado = 'Activa'" returnType="com.company.model.Reserva">
+                <query name="findActivas" content="SELECT r FROM Reserva r WHERE r.estado = 'Activa'" returnType="java.util.List">
+                    <queryParameters/>
+                </query>
+                <query name="solapamiento" content="SELECT r FROM Reserva r WHERE r.piso.persistenceId = :pisoId AND r.fechaEntrada &lt; :fechaSalida AND r.fechaSalida &gt; :fechaEntrada" returnType="java.util.List">
                     <queryParameters>
-                        <queryParameter name="fechaEntrada" className="java.time.OffsetDateTime"/>
-                        <queryParameter name="fechaSalida" className="java.time.OffsetDateTime"/>
-                        <queryParameter name="estado" className="java.lang.String"/>
-                <query name="solapamiento" content="SELECT r&#10; FROM Reserva r &#10;WHERE r.piso.persistenceId = :pisoId&#10;AND r.fechaEntrada &lt; :fechaSalida&#10;AND r.fechaSalida &gt; :fechaEntrada" returnType="com.company.model.Reserva">
-                    <queryParameters>
+                        <queryParameter name="pisoId" className="java.lang.Long"/>
                         <queryParameter name="fechaEntrada" className="java.time.OffsetDateTime"/>
                         <queryParameter name="fechaSalida" className="java.time.OffsetDateTime"/>
                     </queryParameters>
@@ -58,31 +61,13 @@
             </queries>
             <indexes/>
         </businessObject>
+
         <businessObject qualifiedName="com.company.model.UserCliente">
             <fields>
                 <field type="STRING" length="255" name="nombre" nullable="true" collection="false"/>
                 <field type="STRING" length="255" name="correoElectronico" nullable="true" collection="false"/>
                 <field type="STRING" length="255" name="dni" nullable="true" collection="false"/>
                 <field type="LOCALDATE" length="255" name="fechaNacimiento" nullable="true" collection="false"/>
-            </fields>
-            <uniqueConstraints/>
-            <queries/>
-            <indexes/>
-        </businessObject>
-        <businessObject qualifiedName="com.company.model.Incidencia">
-            <fields>
-                <field type="STRING" length="255" name="idTicketOdoo" nullable="true" collection="false"/>
-                <field type="STRING" length="255" name="clienteNombre" nullable="false" collection="false"/>
-                <field type="STRING" length="255" name="pisoActual" nullable="false" collection="false"/>
-                <field type="STRING" length="255" name="motivoQueja" nullable="false" collection="false"/>
-                <field type="STRING" length="255" name="estado" nullable="false" collection="false"/>
-                <field type="STRING" length="255" name="decisionFinal" nullable="true" collection="false"/>
-                <field type="STRING" length="255" name="pisoNuevoId" nullable="true" collection="false"/>
-                <field type="STRING" length="255" name="correo" nullable="true" collection="false"/>
-                <field type="STRING" length="255" name="telefono" nullable="true" collection="false"/>
-                <relationField type="AGGREGATION" reference="com.company.model.Reserva" fetchType="LAZY" name="reserva" nullable="true" collection="false"/>
-                <relationField type="AGGREGATION" reference="com.company.model.Piso" fetchType="LAZY" name="pisoRelacionado" nullable="true" collection="false"/>
-                <relationField type="AGGREGATION" reference="com.company.model.UserCliente" fetchType="LAZY" name="clienteRelacionado" nullable="true" collection="false"/>
             </fields>
             <uniqueConstraints/>
             <queries/>
