@@ -4,7 +4,7 @@
   "type" : "form",
   "uuid" : "1126986c-fb09-45ff-a846-58dd34514557",
   "modelVersion" : "2.6",
-  "lastUpdate" : 1777650002283,
+  "lastUpdate" : 1777717190061,
   "description" : "Page generated with Bonita UI designer",
   "rows" : [
     [
@@ -158,7 +158,7 @@
                   },
                   "availableValues" : {
                     "type" : "expression",
-                    "value" : "listaApartamentos"
+                    "value" : "listaPisosLibres"
                   },
                   "displayedKey" : {
                     "type" : "constant",
@@ -355,6 +355,13 @@
       "type" : "url",
       "value" : [
         "../API/bdm/businessData/com.company.model.Piso?q=find&p=0&c=50"
+      ],
+      "exposed" : false
+    },
+    "listaPisosLibres" : {
+      "type" : "url",
+      "value" : [
+        "../API/bdm/businessData/com.company.model.Piso?q=findLibres&p=0&c=100"
       ],
       "exposed" : false
     }
