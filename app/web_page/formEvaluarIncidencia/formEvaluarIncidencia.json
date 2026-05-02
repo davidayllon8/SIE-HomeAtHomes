@@ -4,7 +4,7 @@
   "type" : "form",
   "uuid" : "f02d994d-c163-4fea-a205-e65c9f1121eb",
   "modelVersion" : "2.6",
-  "lastUpdate" : 1777647408000,
+  "lastUpdate" : 1777735026902,
   "description" : "Page generated with Bonita UI designer",
   "rows" : [
     [
@@ -36,6 +36,58 @@
           "hasValidationError" : false,
           "id" : "pbContainer",
           "rows" : [
+            [
+              {
+                "type" : "component",
+                "dimension" : {
+                  "xs" : 12,
+                  "sm" : 12,
+                  "md" : 12,
+                  "lg" : 12
+                },
+                "propertyValues" : {
+                  "cssClasses" : {
+                    "type" : "constant",
+                    "value" : ""
+                  },
+                  "hidden" : {
+                    "type" : "constant",
+                    "value" : false
+                  },
+                  "allowHTML" : {
+                    "type" : "constant",
+                    "value" : true
+                  },
+                  "labelHidden" : {
+                    "type" : "constant",
+                    "value" : true
+                  },
+                  "label" : {
+                    "type" : "interpolation",
+                    "value" : "Default label"
+                  },
+                  "labelPosition" : {
+                    "type" : "constant",
+                    "value" : "top"
+                  },
+                  "labelWidth" : {
+                    "type" : "constant",
+                    "value" : 4
+                  },
+                  "text" : {
+                    "type" : "interpolation",
+                    "value" : "<div class=\"alert alert-info\" style=\"border-left: 5px solid #31708f;\">\n    <h4 style=\"margin-top: 0; color: #31708f;\">📋 Ficha del Cliente</h4>\n    <p style=\"font-size: 14px;\">\n        <b>Cliente afectado:</b> {{incidenciaData.clienteNombre}} <br>\n        <b>Piso actual:</b> {{incidenciaData.pisoActual}} <br>\n        <b>Motivo de la queja:</b> <span style=\"color: #d9534f;\">{{incidenciaData.motivoQueja}}</span>\n    </p>\n</div>"
+                  },
+                  "alignment" : {
+                    "type" : "constant",
+                    "value" : "left"
+                  }
+                },
+                "reference" : "50a79031-ba7d-4179-ba61-9a4fbf53ec48",
+                "hasValidationError" : false,
+                "id" : "pbText"
+              }
+            ],
             [
               {
                 "type" : "component",
@@ -91,7 +143,7 @@
                     "value" : "opcionesDisponibles"
                   },
                   "displayedKey" : {
-                    "type" : "expression",
+                    "type" : "constant",
                     "value" : "label"
                   },
                   "returnedKey" : {
@@ -135,7 +187,7 @@
                   },
                   "label" : {
                     "type" : "interpolation",
-                    "value" : "Envío"
+                    "value" : "Confirmar Decisión"
                   },
                   "dataToSend" : {
                     "type" : "expression",
