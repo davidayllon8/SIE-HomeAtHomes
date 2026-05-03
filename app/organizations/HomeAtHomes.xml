@@ -50,37 +50,46 @@
       <displayName>Administrador</displayName>
       <description>Se encarga de adminsitrar la incidencia de los clientes</description>
     </role>
+    <role name="Cliente">
+      <displayName>Cliente</displayName>
+    </role>
+    <role name="Greeter">
+      <displayName>Greeter</displayName>
+    </role>
   </roles>
   <groups>
-    <group name="Grupo1">
-      <displayName>Grupo1</displayName>
+    <group name="Empleados">
+      <displayName>Empleados</displayName>
+    </group>
+    <group name="Clientes">
+      <displayName>Clientes</displayName>
     </group>
   </groups>
   <memberships>
     <membership>
       <userName>David.A</userName>
       <roleName>Employee</roleName>
-      <groupName>Grupo1</groupName>
+      <groupName>Empleados</groupName>
     </membership>
     <membership>
       <userName>David.R</userName>
       <roleName>Employee</roleName>
-      <groupName>Grupo1</groupName>
+      <groupName>Empleados</groupName>
     </membership>
     <membership>
       <userName>Guille</userName>
       <roleName>Employee</roleName>
-      <groupName>Grupo1</groupName>
+      <groupName>Empleados</groupName>
     </membership>
     <membership>
       <userName>Julio.I</userName>
       <roleName>Administrador</roleName>
-      <groupName>Grupo1</groupName>
+      <groupName>Empleados</groupName>
     </membership>
     <membership>
       <userName>Paco.S</userName>
       <roleName>Employee</roleName>
-      <groupName>Grupo1</groupName>
+      <groupName>Empleados</groupName>
     </membership>
   </memberships>
 </organization:Organization>
