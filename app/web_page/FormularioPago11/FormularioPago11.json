@@ -4,7 +4,7 @@
   "type" : "form",
   "uuid" : "e688bb08-b2bc-4071-ac9d-481b71609046",
   "modelVersion" : "2.6",
-  "lastUpdate" : 1777818865994,
+  "lastUpdate" : 1777820197805,
   "description" : "Page generated with Bonita UI designer",
   "rows" : [
     [
@@ -278,7 +278,7 @@
                 },
                 "allowHTML" : {
                   "type" : "constant",
-                  "value" : false
+                  "value" : true
                 },
                 "labelHidden" : {
                   "type" : "constant",
@@ -352,7 +352,7 @@
                       },
                       "hidden" : {
                         "type" : "constant",
-                        "value" : true
+                        "value" : false
                       },
                       "disabled" : {
                         "type" : "constant",
@@ -372,7 +372,7 @@
                       },
                       "label" : {
                         "type" : "interpolation",
-                        "value" : "Fecha     de"
+                        "value" : ""
                       },
                       "labelPosition" : {
                         "type" : "constant",
@@ -419,7 +419,7 @@
                       },
                       "hidden" : {
                         "type" : "constant",
-                        "value" : true
+                        "value" : false
                       },
                       "disabled" : {
                         "type" : "constant",
@@ -439,7 +439,7 @@
                       },
                       "label" : {
                         "type" : "interpolation",
-                        "value" : "caducidad"
+                        "value" : ""
                       },
                       "labelPosition" : {
                         "type" : "constant",
@@ -492,7 +492,7 @@
                       },
                       "allowHTML" : {
                         "type" : "constant",
-                        "value" : false
+                        "value" : true
                       },
                       "labelHidden" : {
                         "type" : "constant",

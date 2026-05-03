@@ -4,7 +4,7 @@
   "type" : "form",
   "uuid" : "1733bdb0-c090-49c3-9ec9-c3a22ba17276",
   "modelVersion" : "2.6",
-  "lastUpdate" : 1777805526870,
+  "lastUpdate" : 1777820945915,
   "description" : "Page generated with Bonita UI designer",
   "rows" : [
     [
@@ -349,10 +349,11 @@
                   },
                   "label" : {
                     "type" : "interpolation",
-                    "value" : "Dni"
+                    "value" : "DNI"
                   },
                   "placeholder" : {
-                    "type" : "constant"
+                    "type" : "constant",
+                    "value" : "00000000A"
                   },
                   "type" : {
                     "type" : "constant",
@@ -369,6 +370,32 @@
                   "required" : {
                     "type" : "constant",
                     "value" : true
+                  },
+                  "allowHTML" : {
+                    "type" : "constant",
+                    "value" : false
+                  },
+                  "minLength" : {
+                    "type" : "constant",
+                    "value" : 9
+                  },
+                  "maxLength" : {
+                    "type" : "constant",
+                    "value" : 9
+                  },
+                  "debounce" : {
+                    "type" : "constant",
+                    "value" : 0
+                  },
+                  "min" : {
+                    "type" : "constant"
+                  },
+                  "max" : {
+                    "type" : "constant"
+                  },
+                  "step" : {
+                    "type" : "constant",
+                    "value" : 1
                   }
                 },
                 "reference" : "5d8c358f-0f3a-459c-8c7e-9b04948f3966",
@@ -420,7 +447,7 @@
                   },
                   "type" : {
                     "type" : "constant",
-                    "value" : "text"
+                    "value" : "email"
                   },
                   "dimension" : {
                     "type" : "constant",
@@ -433,6 +460,32 @@
                   "required" : {
                     "type" : "constant",
                     "value" : true
+                  },
+                  "allowHTML" : {
+                    "type" : "constant",
+                    "value" : false
+                  },
+                  "minLength" : {
+                    "type" : "constant",
+                    "value" : ""
+                  },
+                  "maxLength" : {
+                    "type" : "constant",
+                    "value" : ""
+                  },
+                  "debounce" : {
+                    "type" : "constant",
+                    "value" : 0
+                  },
+                  "min" : {
+                    "type" : "constant"
+                  },
+                  "max" : {
+                    "type" : "constant"
+                  },
+                  "step" : {
+                    "type" : "constant",
+                    "value" : 1
                   }
                 },
                 "reference" : "8cc214b3-e2e6-4877-91da-9ba492871af1",
@@ -468,7 +521,7 @@
                   },
                   "label" : {
                     "type" : "interpolation",
-                    "value" : "Submit"
+                    "value" : "Enviar Credenciales"
                   },
                   "dataToSend" : {
                     "type" : "expression",
@@ -505,7 +558,7 @@
                   },
                   "disabled" : {
                     "type" : "expression",
-                    "value" : "$form.$invalid"
+                    "value" : "!formularioValido"
                   },
                   "alignment" : {
                     "type" : "constant",
@@ -514,6 +567,27 @@
                   "dimension" : {
                     "type" : "constant",
                     "value" : 12
+                  },
+                  "assign" : {
+                    "type" : "constant",
+                    "value" : false
+                  },
+                  "url" : {
+                    "type" : "interpolation"
+                  },
+                  "responseStatusCode" : {
+                    "type" : "variable"
+                  },
+                  "dataFromSuccess" : {
+                    "type" : "variable"
+                  },
+                  "closeOnSuccess" : {
+                    "type" : "constant",
+                    "value" : false
+                  },
+                  "modalId" : {
+                    "type" : "constant",
+                    "value" : ""
                   }
                 },
                 "reference" : "3dcc3a1f-3a04-414f-a430-8a4729f17b17",
@@ -637,6 +711,36 @@
       "type" : "urlparameter",
       "value" : [
         "id"
+      ],
+      "exposed" : false
+    },
+    "formularioValido" : {
+      "type" : "expression",
+      "value" : [
+        "// 1. Comprobar DNI (8 números y 1 letra final)\r",
+        "var dni = $data.formInput.dni;\r",
+        "var dniValido = false;\r",
+        "if (dni) {\r",
+        "    dniValido = /^\\d{8}[A-Za-z]$/.test(dni);\r",
+        "}\r",
+        "\r",
+        "// 2. Comprobar Correo (Debe contener una arroba '@')\r",
+        "var correo = $data.formInput.correoElectronico;\r",
+        "var correoValido = false;\r",
+        "if (correo) {\r",
+        "    correoValido = correo.includes('@');\r",
+        "}\r",
+        "\r",
+        "// 3. Comprobar Fecha de Nacimiento (Debe ser anterior a 2008)\r",
+        "var fecha = $data.formInput.fechaNacimiento;\r",
+        "var fechaValida = false;\r",
+        "if (fecha) {\r",
+        "    var anioUsuario = new Date(fecha).getFullYear();\r",
+        "    fechaValida = (anioUsuario < 2008);\r",
+        "}\r",
+        "\r",
+        "// RESULTADO FINAL: Devuelve 'true' SOLO si todo está perfecto\r",
+        "return dniValido && correoValido && fechaValida;"
       ],
       "exposed" : false
     }
