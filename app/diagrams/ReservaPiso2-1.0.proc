@@ -245,18 +245,18 @@
               <referencedElements xmi:type="process:BusinessObjectData" xmi:id="_HdFHUEYYEfGCH_GRzEq-PQ" name="userCliente" dataType="_dIr8NUOrEfGgfttdFKB59A" className="com.company.model.UserCliente"/>
             </leftOperand>
             <rightOperand xmi:type="expression:Expression" xmi:id="_GKAV4kYYEfGCH_GRzEq-PQ" name="buscaOCreaCliente()" content="// 1. Buscamos si el usuario ya existe por su correo&#xD;&#xA;def listaUsuarios = userClienteDAO.findByCorreoElectronico(correoElectronico, 0, 1)&#xD;&#xA;&#xD;&#xA;def elUsuario&#xD;&#xA;&#xD;&#xA;if (listaUsuarios.size() > 0) {&#xD;&#xA;    // SI EXISTE: Simplemente lo recuperamos y lo devolvemos tal cual está en la BD&#xD;&#xA;    elUsuario = listaUsuarios.get(0)&#xD;&#xA;} else {&#xD;&#xA;    // NO EXISTE: Creamos la instancia y rellenamos sus datos por primera vez&#xD;&#xA;    elUsuario = new com.company.model.UserCliente()&#xD;&#xA;    &#xD;&#xA;    elUsuario.nombre = nombre&#xD;&#xA;    elUsuario.correoElectronico = correoElectronico&#xD;&#xA;&#xD;&#xA;    elUsuario.dni = dni&#xD;&#xA;    &#xD;&#xA;    // Si usas LocalDate en el contrato para la fecha de nacimiento:&#xD;&#xA;    elUsuario.fechaNacimiento = fechaNacimiento&#xD;&#xA;}&#xD;&#xA;&#xD;&#xA;return elUsuario" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.UserCliente">
-              <referencedElements xmi:type="expression:Expression" xmi:id="_KULlYEYaEfGCH_GRzEq-PQ" name="userClienteDAO" content="userClienteDAO" type="TYPE_BUSINESS_OBJECT_DAO" returnType="com.company.model.UserClienteDAO" returnTypeFixed="true"/>
-              <referencedElements xmi:type="process:ContractInput" xmi:id="_KULlYUYaEfGCH_GRzEq-PQ" name="correoElectronico">
-                <mapping xmi:type="process:ContractInputMapping" xmi:id="_KULlYkYaEfGCH_GRzEq-PQ"/>
+              <referencedElements xmi:type="expression:Expression" xmi:id="_d1trQEbeEfG_x9SMOX4zUg" name="userClienteDAO" content="userClienteDAO" type="TYPE_BUSINESS_OBJECT_DAO" returnType="com.company.model.UserClienteDAO" returnTypeFixed="true"/>
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_d1trQUbeEfG_x9SMOX4zUg" name="correoElectronico">
+                <mapping xmi:type="process:ContractInputMapping" xmi:id="_d1trQkbeEfG_x9SMOX4zUg"/>
               </referencedElements>
-              <referencedElements xmi:type="process:ContractInput" xmi:id="_KULlY0YaEfGCH_GRzEq-PQ" name="nombre">
-                <mapping xmi:type="process:ContractInputMapping" xmi:id="_KULlZEYaEfGCH_GRzEq-PQ"/>
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_d1trQ0beEfG_x9SMOX4zUg" name="nombre">
+                <mapping xmi:type="process:ContractInputMapping" xmi:id="_d1trREbeEfG_x9SMOX4zUg"/>
               </referencedElements>
-              <referencedElements xmi:type="process:ContractInput" xmi:id="_KULlZUYaEfGCH_GRzEq-PQ" name="dni">
-                <mapping xmi:type="process:ContractInputMapping" xmi:id="_KULlZkYaEfGCH_GRzEq-PQ"/>
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_d1trRUbeEfG_x9SMOX4zUg" name="dni">
+                <mapping xmi:type="process:ContractInputMapping" xmi:id="_d1trRkbeEfG_x9SMOX4zUg"/>
               </referencedElements>
-              <referencedElements xmi:type="process:ContractInput" xmi:id="_KULlZ0YaEfGCH_GRzEq-PQ" name="fechaNacimiento" type="LOCALDATE">
-                <mapping xmi:type="process:ContractInputMapping" xmi:id="_KULlaEYaEfGCH_GRzEq-PQ"/>
+              <referencedElements xmi:type="process:ContractInput" xmi:id="_d1trR0beEfG_x9SMOX4zUg" name="fechaNacimiento" type="LOCALDATE">
+                <mapping xmi:type="process:ContractInputMapping" xmi:id="_d1trSEbeEfG_x9SMOX4zUg"/>
               </referencedElements>
             </rightOperand>
             <operator xmi:type="expression:Operator" xmi:id="_GKAV40YYEfGCH_GRzEq-PQ" type="ASSIGNMENT"/>
@@ -290,9 +290,6 @@
             <inputs xmi:type="process:ContractInput" xmi:id="_-ko-wESdEfGz0-4TJv7qDg" name="dni">
               <mapping xmi:type="process:ContractInputMapping" xmi:id="_-ko-wUSdEfGz0-4TJv7qDg"/>
             </inputs>
-            <inputs xmi:type="process:ContractInput" xmi:id="__Pi88ESdEfGz0-4TJv7qDg" name="password">
-              <mapping xmi:type="process:ContractInputMapping" xmi:id="__Pi88USdEfGz0-4TJv7qDg"/>
-            </inputs>
             <inputs xmi:type="process:ContractInput" xmi:id="_M8IW0ESgEfGz0-4TJv7qDg" name="correoElectronico">
               <mapping xmi:type="process:ContractInputMapping" xmi:id="_M8IW0USgEfGz0-4TJv7qDg"/>
             </inputs>
@@ -322,16 +319,16 @@
         <defaultValue xmi:type="expression:Expression" xmi:id="_dIr7_kOrEfGgfttdFKB59A" name="" content="" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object"/>
       </data>
       <data xmi:type="process:BusinessObjectData" xmi:id="_PXHk0ESbEfGz0-4TJv7qDg" name="reserva" dataType="_dIr8NUOrEfGgfttdFKB59A" className="com.company.model.Reserva">
-        <defaultValue xmi:type="expression:Expression" xmi:id="_PXHk0USbEfGz0-4TJv7qDg" name="init_reserva()" content="import java.time.ZoneOffset&#xD;&#xA;&#xD;&#xA;// 1. Buscamos el piso usando el DAO que Bonita nos inyecta automáticamente&#xD;&#xA;def elPiso = pisoDAO.findByNombre(pisoSeleccionado, 0, 1).get(0)&#xD;&#xA;&#xD;&#xA;// 2. Creamos la reserva y asignamos el objeto complejo (elPiso)&#xD;&#xA;def nuevaReserva = new com.company.model.Reserva()&#xD;&#xA;nuevaReserva.piso = elPiso&#xD;&#xA;&#xD;&#xA;// 3. Convertimos el LocalDate del contrato a OffsetDateTime para el BDM&#xD;&#xA;nuevaReserva.fechaEntrada = fechaEntrada.atStartOfDay().atOffset(ZoneOffset.UTC)&#xD;&#xA;nuevaReserva.fechaSalida = fechaSalida.atStartOfDay().atOffset(ZoneOffset.UTC)&#xD;&#xA;&#xD;&#xA;nuevaReserva.estado = &quot;PENDIENTE_PAGO&quot;&#xD;&#xA;&#xD;&#xA;return nuevaReserva" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.Reserva">
-          <referencedElements xmi:type="expression:Expression" xmi:id="_rMQXAEYMEfGCH_GRzEq-PQ" name="pisoDAO" content="pisoDAO" type="TYPE_BUSINESS_OBJECT_DAO" returnType="com.company.model.PisoDAO" returnTypeFixed="true"/>
-          <referencedElements xmi:type="process:ContractInput" xmi:id="_rMQXAUYMEfGCH_GRzEq-PQ" name="fechaSalida" type="LOCALDATE">
-            <mapping xmi:type="process:ContractInputMapping" xmi:id="_rMQXAkYMEfGCH_GRzEq-PQ"/>
+        <defaultValue xmi:type="expression:Expression" xmi:id="_PXHk0USbEfGz0-4TJv7qDg" name="init_reserva()" content="// 1. Buscamos el piso usando el DAO que Bonita nos inyecta automáticamente&#xD;&#xA;def elPiso = pisoDAO.findByNombre(pisoSeleccionado, 0, 1).get(0)&#xD;&#xA;&#xD;&#xA;// 2. Creamos la reserva y asignamos el objeto complejo (elPiso)&#xD;&#xA;def nuevaReserva = new com.company.model.Reserva()&#xD;&#xA;nuevaReserva.piso = elPiso&#xD;&#xA;&#xD;&#xA;// 3. Asignamos las fechas directamente (ya vienen como OffsetDateTime desde el contrato)&#xD;&#xA;nuevaReserva.fechaEntrada = fechaEntrada&#xD;&#xA;nuevaReserva.fechaSalida = fechaSalida&#xD;&#xA;&#xD;&#xA;nuevaReserva.estado = &quot;PENDIENTE_PAGO&quot;&#xD;&#xA;&#xD;&#xA;return nuevaReserva" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="com.company.model.Reserva">
+          <referencedElements xmi:type="expression:Expression" xmi:id="_t-x2AEbdEfG_x9SMOX4zUg" name="pisoDAO" content="pisoDAO" type="TYPE_BUSINESS_OBJECT_DAO" returnType="com.company.model.PisoDAO" returnTypeFixed="true"/>
+          <referencedElements xmi:type="process:ContractInput" xmi:id="_t-x2AUbdEfG_x9SMOX4zUg" name="fechaSalida" type="OFFSETDATETIME">
+            <mapping xmi:type="process:ContractInputMapping" xmi:id="_t-x2AkbdEfG_x9SMOX4zUg"/>
           </referencedElements>
-          <referencedElements xmi:type="process:ContractInput" xmi:id="_rMQXA0YMEfGCH_GRzEq-PQ" name="fechaEntrada" type="LOCALDATE">
-            <mapping xmi:type="process:ContractInputMapping" xmi:id="_rMQXBEYMEfGCH_GRzEq-PQ"/>
+          <referencedElements xmi:type="process:ContractInput" xmi:id="_t-x2A0bdEfG_x9SMOX4zUg" name="fechaEntrada" type="OFFSETDATETIME">
+            <mapping xmi:type="process:ContractInputMapping" xmi:id="_t-x2BEbdEfG_x9SMOX4zUg"/>
           </referencedElements>
-          <referencedElements xmi:type="process:ContractInput" xmi:id="_rMQXBUYMEfGCH_GRzEq-PQ" name="pisoSeleccionado">
-            <mapping xmi:type="process:ContractInputMapping" xmi:id="_rMQXBkYMEfGCH_GRzEq-PQ"/>
+          <referencedElements xmi:type="process:ContractInput" xmi:id="_t-x2BUbdEfG_x9SMOX4zUg" name="pisoSeleccionado">
+            <mapping xmi:type="process:ContractInputMapping" xmi:id="_t-x2BkbdEfG_x9SMOX4zUg"/>
           </referencedElements>
         </defaultValue>
       </data>
@@ -402,10 +399,10 @@
         <inputs xmi:type="process:ContractInput" xmi:id="_dIr8GEOrEfGgfttdFKB59A" name="pisoSeleccionado">
           <mapping xmi:type="process:ContractInputMapping" xmi:id="_dIr8GUOrEfGgfttdFKB59A"/>
         </inputs>
-        <inputs xmi:type="process:ContractInput" xmi:id="_dIr8GkOrEfGgfttdFKB59A" name="fechaEntrada" type="LOCALDATE">
+        <inputs xmi:type="process:ContractInput" xmi:id="_dIr8GkOrEfGgfttdFKB59A" name="fechaEntrada" type="OFFSETDATETIME">
           <mapping xmi:type="process:ContractInputMapping" xmi:id="_dIr8G0OrEfGgfttdFKB59A"/>
         </inputs>
-        <inputs xmi:type="process:ContractInput" xmi:id="_dIr8HEOrEfGgfttdFKB59A" name="fechaSalida" type="LOCALDATE">
+        <inputs xmi:type="process:ContractInput" xmi:id="_dIr8HEOrEfGgfttdFKB59A" name="fechaSalida" type="OFFSETDATETIME">
           <mapping xmi:type="process:ContractInputMapping" xmi:id="_dIr8HUOrEfGgfttdFKB59A"/>
         </inputs>
       </contract>

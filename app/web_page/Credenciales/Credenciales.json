@@ -4,7 +4,7 @@
   "type" : "form",
   "uuid" : "1733bdb0-c090-49c3-9ec9-c3a22ba17276",
   "modelVersion" : "2.6",
-  "lastUpdate" : 1777567132187,
+  "lastUpdate" : 1777805526870,
   "description" : "Page generated with Bonita UI designer",
   "rows" : [
     [
@@ -120,7 +120,16 @@
         "dimension" : {
           "xs" : 12
         },
-        "propertyValues" : { },
+        "propertyValues" : {
+          "cssClasses" : {
+            "type" : "constant",
+            "value" : ""
+          },
+          "hidden" : {
+            "type" : "constant",
+            "value" : false
+          }
+        },
         "reference" : "b0e77498-e198-4299-9463-c04fcca54f0c",
         "hasValidationError" : false,
         "id" : "pbFormContainer",
@@ -404,70 +413,6 @@
                   },
                   "label" : {
                     "type" : "interpolation",
-                    "value" : "Password"
-                  },
-                  "placeholder" : {
-                    "type" : "constant"
-                  },
-                  "type" : {
-                    "type" : "constant",
-                    "value" : "text"
-                  },
-                  "dimension" : {
-                    "type" : "constant",
-                    "value" : 12
-                  },
-                  "value" : {
-                    "type" : "variable",
-                    "value" : "formInput.password"
-                  },
-                  "required" : {
-                    "type" : "constant",
-                    "value" : true
-                  }
-                },
-                "reference" : "8ba8c042-499c-43a2-94bc-0f90b6c1f416",
-                "hasValidationError" : false,
-                "id" : "pbInput",
-                "description" : ""
-              }
-            ],
-            [
-              {
-                "type" : "component",
-                "dimension" : {
-                  "md" : 12,
-                  "sm" : 12,
-                  "xs" : 12,
-                  "lg" : 12
-                },
-                "propertyValues" : {
-                  "labelHidden" : {
-                    "type" : "constant",
-                    "value" : false
-                  },
-                  "hidden" : {
-                    "type" : "constant",
-                    "value" : false
-                  },
-                  "labelPosition" : {
-                    "type" : "constant",
-                    "value" : "top"
-                  },
-                  "cssClasses" : {
-                    "type" : "constant",
-                    "value" : ""
-                  },
-                  "labelWidth" : {
-                    "type" : "constant",
-                    "value" : 1
-                  },
-                  "readOnly" : {
-                    "type" : "constant",
-                    "value" : false
-                  },
-                  "label" : {
-                    "type" : "interpolation",
                     "value" : "Correo Electronico"
                   },
                   "placeholder" : {
@@ -649,7 +594,6 @@
         "  \"nombre\" : \"\",\r",
         "  \"fechaNacimiento\" : null,\r",
         "  \"dni\" : \"\",\r",
-        "  \"password\" : \"\",\r",
         "  \"correoElectronico\" : \"\"\r",
         "}"
       ],
@@ -677,7 +621,6 @@
         "\tnombre: $data.formInput.nombre,",
         "\tfechaNacimiento: $data.formInput.fechaNacimiento,",
         "\tdni: $data.formInput.dni,",
-        "\tpassword: $data.formInput.password,",
         "\tcorreoElectronico: $data.formInput.correoElectronico",
         "}"
       ],
