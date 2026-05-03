@@ -4,7 +4,7 @@
   "type" : "form",
   "uuid" : "e688bb08-b2bc-4071-ac9d-481b71609046",
   "modelVersion" : "2.6",
-  "lastUpdate" : 1777820197805,
+  "lastUpdate" : 1777821495900,
   "description" : "Page generated with Bonita UI designer",
   "rows" : [
     [
@@ -470,58 +470,6 @@
                     "reference" : "067bdc76-889f-48eb-9081-fd0bb3baf004",
                     "hasValidationError" : false,
                     "id" : "pbSelect"
-                  }
-                ],
-                [
-                  {
-                    "type" : "component",
-                    "dimension" : {
-                      "xs" : 12,
-                      "sm" : 12,
-                      "md" : 6,
-                      "lg" : 6
-                    },
-                    "propertyValues" : {
-                      "cssClasses" : {
-                        "type" : "constant",
-                        "value" : "text-danger"
-                      },
-                      "hidden" : {
-                        "type" : "expression",
-                        "value" : "esTarjetaCaducada"
-                      },
-                      "allowHTML" : {
-                        "type" : "constant",
-                        "value" : true
-                      },
-                      "labelHidden" : {
-                        "type" : "constant",
-                        "value" : true
-                      },
-                      "label" : {
-                        "type" : "interpolation",
-                        "value" : "Default label"
-                      },
-                      "labelPosition" : {
-                        "type" : "constant",
-                        "value" : "top"
-                      },
-                      "labelWidth" : {
-                        "type" : "constant",
-                        "value" : 4
-                      },
-                      "text" : {
-                        "type" : "interpolation",
-                        "value" : "<strong>Tarjeta caducada<strong/>"
-                      },
-                      "alignment" : {
-                        "type" : "constant",
-                        "value" : "left"
-                      }
-                    },
-                    "reference" : "9a6384b6-0c8b-4f04-b408-93d66988fb73",
-                    "hasValidationError" : false,
-                    "id" : "pbText"
                   }
                 ]
               ]
