@@ -317,7 +317,6 @@
           </configuration>
         </filters>
       </elements>
-      <elements xmi:type="process:Lane" xmi:id="_dIr760OrEfGgfttdFKB59A" name="Greeter" actor="_dIr8FkOrEfGgfttdFKB59A"/>
       <data xmi:type="process:BusinessObjectData" xmi:id="_dIr7_UOrEfGgfttdFKB59A" name="apartamento" dataType="_dIr8NUOrEfGgfttdFKB59A" className="com.company.model.Piso">
         <defaultValue xmi:type="expression:Expression" xmi:id="_dIr7_kOrEfGgfttdFKB59A" name="" content="" interpreter="GROOVY" type="TYPE_READ_ONLY_SCRIPT" returnType="java.lang.Object"/>
       </data>
@@ -477,15 +476,6 @@
           <styles xmi:type="notation:LineStyle" xmi:id="_dIr8UEOrEfGgfttdFKB59A"/>
           <styles xmi:type="notation:FillStyle" xmi:id="_dIr8UUOrEfGgfttdFKB59A"/>
           <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dIr8UkOrEfGgfttdFKB59A" x="28" y="10" width="1522" height="344"/>
-        </children>
-        <children xmi:type="notation:Node" xmi:id="_dIr8U0OrEfGgfttdFKB59A" type="3007" element="_dIr760OrEfGgfttdFKB59A">
-          <children xmi:type="notation:DecorationNode" xmi:id="_dIr8VEOrEfGgfttdFKB59A" type="5007"/>
-          <children xmi:type="notation:DecorationNode" xmi:id="_dIr8VUOrEfGgfttdFKB59A" type="7002"/>
-          <styles xmi:type="notation:DescriptionStyle" xmi:id="_dIr8YUOrEfGgfttdFKB59A"/>
-          <styles xmi:type="notation:FontStyle" xmi:id="_dIr8YkOrEfGgfttdFKB59A" fontName="Segoe UI"/>
-          <styles xmi:type="notation:LineStyle" xmi:id="_dIr8Y0OrEfGgfttdFKB59A"/>
-          <styles xmi:type="notation:FillStyle" xmi:id="_dIr8ZEOrEfGgfttdFKB59A"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_dIr8ZUOrEfGgfttdFKB59A" x="28" y="296" width="1402" height="360"/>
         </children>
       </children>
       <styles xmi:type="notation:DescriptionStyle" xmi:id="_dIr8ZkOrEfGgfttdFKB59A"/>
