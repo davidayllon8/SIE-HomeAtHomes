@@ -4,7 +4,7 @@
   "type" : "form",
   "uuid" : "e688bb08-b2bc-4071-ac9d-481b71609046",
   "modelVersion" : "2.6",
-  "lastUpdate" : 1777714225629,
+  "lastUpdate" : 1777818865994,
   "description" : "Page generated with Bonita UI designer",
   "rows" : [
     [
@@ -261,6 +261,57 @@
           ],
           [
             {
+              "type" : "component",
+              "dimension" : {
+                "xs" : 12,
+                "sm" : 12,
+                "md" : 12,
+                "lg" : 12
+              },
+              "propertyValues" : {
+                "cssClasses" : {
+                  "type" : "expression"
+                },
+                "hidden" : {
+                  "type" : "constant",
+                  "value" : false
+                },
+                "allowHTML" : {
+                  "type" : "constant",
+                  "value" : false
+                },
+                "labelHidden" : {
+                  "type" : "constant",
+                  "value" : true
+                },
+                "label" : {
+                  "type" : "interpolation",
+                  "value" : "Default label"
+                },
+                "labelPosition" : {
+                  "type" : "constant",
+                  "value" : "top"
+                },
+                "labelWidth" : {
+                  "type" : "constant",
+                  "value" : 4
+                },
+                "text" : {
+                  "type" : "interpolation",
+                  "value" : "<strong>Fecha de caducidad </strong>"
+                },
+                "alignment" : {
+                  "type" : "constant",
+                  "value" : "left"
+                }
+              },
+              "reference" : "d8340f74-6543-448f-b88b-03bfd9aac66c",
+              "hasValidationError" : false,
+              "id" : "pbText"
+            }
+          ],
+          [
+            {
               "type" : "container",
               "dimension" : {
                 "xs" : 12,
@@ -301,7 +352,7 @@
                       },
                       "hidden" : {
                         "type" : "constant",
-                        "value" : false
+                        "value" : true
                       },
                       "disabled" : {
                         "type" : "constant",
@@ -333,7 +384,7 @@
                       },
                       "placeholder" : {
                         "type" : "interpolation",
-                        "value" : "Select an option"
+                        "value" : "Mes"
                       },
                       "availableValues" : {
                         "type" : "expression",
@@ -368,7 +419,7 @@
                       },
                       "hidden" : {
                         "type" : "constant",
-                        "value" : false
+                        "value" : true
                       },
                       "disabled" : {
                         "type" : "constant",
@@ -400,7 +451,7 @@
                       },
                       "placeholder" : {
                         "type" : "interpolation",
-                        "value" : "Select an option"
+                        "value" : "Año"
                       },
                       "availableValues" : {
                         "type" : "expression",
